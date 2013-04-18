@@ -23,6 +23,7 @@ class BlogAction extends Action {
 	public function topic_manage(){
 		$this->checkUser();
 		$this->getAllTopics();
+		$this->getAllCats();
 		$this->display();
 	}
 

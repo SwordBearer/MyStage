@@ -43,9 +43,9 @@
 	</ul>
 	<form class="input-prepend input-append" method="post" action="{:U('addTopic')}">
 		<select required name="new_topic_catid">
-			<option value="1" selected>伤不起的程序猿</option>
-			<option value="2">个人随笔</option>
-			<option value="3">美文网摘</option>
+			<volist name="allCats" id="cat">
+				<option value="{$cat.id}">{$cat.name}</option>
+			</volist>
 		</select>
 		<input type="text" name="new_topic_name"class="input" placeholder="专栏名称" required />
 		<input type="submit" class="btn btn-success" value="添加"/>
