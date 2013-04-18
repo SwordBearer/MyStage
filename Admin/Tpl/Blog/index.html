@@ -1,27 +1,34 @@
-<include file="header"/>
+<include file="Public:libs_import"/>
 <body>
-<div class="main_contant">
-	<ul class="nav nav-pills">
-		<li class="active">
-			<a href="{:U(index)}">博客管理</a>
-		</li>
-		<li>
-			<a href="{:U(add_blog)}">添加博客</a>
-		</li>
-		<li>
-			<a href="{:U(topic_manage)}">专栏管理</a>
-		</li>
-		<li>
-			<a href="{:U(draftbox)}">草稿箱</a>
-		</li>
-		<li>
-			<a href="{:U(wastebasket)}">回收站</a>
-		</li>
-	</ul>
-	<div class="main">
-		<input type="text"   placeholder="Email"/>
-		<input type="password"   placeholder="Password"/>
+<div class="navbar navbar-inverse">
+	<div class="navbar-inner">
+		<a class="brand" href="#">SwordBearer</a>
+		<ul class="nav">
+			<li class="active">
+				<a href="{:U(index)}">首页</a>
+			</li>
+			<li>
+				<a href="{:U(add_blog)}">添加博客</a>
+			</li>
+			<li>
+				<a href="{:U(topic_manage)}">专栏管理</a>
+			</li>
+			<li>
+				<a href="{:U(draftbox)}">草稿箱</a>
+			</li>
+			<li>
+				<a href="{:U(wastebasket)}">回收站</a>
+			</li>
+		</ul>
 	</div>
+</div>
+<div class="main_content">
+	<form method="post" name="blog_form">
+		<empty name="allBlogs">
+			暂时没有博客
+			<else/>
+		</empty>
+	</form>
 </div>
 </body>
 </html>

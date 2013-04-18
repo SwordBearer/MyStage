@@ -6,6 +6,7 @@ class BlogAction extends Action {
 /*****************pages*****************/
 	public function index(){
 		$this->checkUser();
+		$this->getBlogsByStatus(1);
 		$this->display();
 	}
 
@@ -37,41 +38,11 @@ class BlogAction extends Action {
 			$this->error("没有登录",__GROUP__."/Public/login");
 		}
 	}
-
-	public function getAllBlogs(){
+/*根据博客的状态获取 1:已发布;2:草稿;3:垃圾*/
+	public function getBlogsByStatus($status){
 		$Blog=new BlogModel();
-
-	}
-
-/*发布博客*/
-	public function publishBlog(){
-		$data=array();
-		$data['id']=$_POST['blogId'];
-		$data['catid']=$_POST['blog_cat'];
-		$data['topicid']=$_POST['blog_topic'];
-		$data['typeid']=$_POST['blog_type'];
-		$data['status']=1;
-		$data['inputtime']=date('Y-m-d H:i:s',time());
-		$data['updatetime']=date('Y-m-d H:i:s',time());
-		$data['title']=$_POST['blog_title'];
-		$data['title']=$_POST['blog_title'];
-
-		$content=$_POST['blog_content'];
-		$data['content']=$content;
-		$len=strlen($content);
-		//从内容中截取博客的简述
-		if($len<30){
-			$data['description']='';
-		}else if($len>=0&&$len<=120){
-			$data['description']=subString_UTF8($content,0,$len/2);
-		}else{
-			$data['description']=subString_UTF8($content,0,60);
-		}
-		var_dump($data);
-	}
-/*保存草稿*/
-	public function saveBlog(){
-
+		$blogs=$Blog->getByStatus($status);
+		$this->assign("allBlogs",$blogs);
 	}
 
 	public function addBlog(){
@@ -80,13 +51,41 @@ class BlogAction extends Action {
 		if((!$isPublish)&&(!$isSave)){
 			return;
 		}
+		$data=array();
 		//发布博客
-		else if($isPublish){
-			publishBlog();
+		if($isPublish){
+			$data['status']=1;//正常博客
 		}
 		//保存草稿
-		else if($isSave){
-			saveBlog();
+		if($isSave){
+			$data['status']=2;
+		}
+
+		$data['catid']=$_POST['blog_cat'];
+		$data['topicid']=$_POST['blog_topic'];
+		$data['typeid']=$_POST['blog_type'];
+		$data['inputtime']=date('Y-m-d H:i:s',time());
+		$data['updatetime']=date('Y-m-d H:i:s',time());
+		$data['title']=$_POST['blog_title'];
+		$content=$_POST['blog_content'];
+		$data['content']=$content;
+
+		$len=strlen($content);
+		//从内容中截取博客的简述
+		if($len<30){
+			$data['description']='';
+		}else if($len>=0&&$len<=120){
+			$data['description']=$this->subString_UTF8($content,0,$len/2);
+		}else{
+			$data['description']=$this->subString_UTF8($content,0,60);
+		}
+		var_dump($data['description']);
+		$Blog=new BlogModel();
+		$result=$Blog->add($data);
+		if(!$result||$result==0){
+			$this->error('添加博客失败！！！');
+		}else{
+		//	$this->redirect(__GROUP__."/Blog/index");
 		}
 	}
 
@@ -121,7 +120,6 @@ class BlogAction extends Action {
 		}else{
 			$data['catid']=$catid;
 			$data['name']=$topicname;
-			var_dump($data);
 			$Topic=new BlogTopicModel();
 			$result=$Topic->add($data);
 			if(!$result||$result==0){
@@ -159,6 +157,7 @@ class BlogAction extends Action {
 	}
 
 /************Public functions*************/
+/*截取字符串**/
  	function subString_UTF8($str, $start, $lenth){
         $len = strlen($str);
         $r = array();
@@ -193,8 +192,8 @@ class BlogAction extends Action {
                 }
             }
         }
-        return $r;
- 	} // End subString_UTF8;
+        return join('',$r);
+ 	}
 }
 
 ?>

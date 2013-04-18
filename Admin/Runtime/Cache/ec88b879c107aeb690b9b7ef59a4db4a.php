@@ -1,7 +1,7 @@
 <?php if (!defined('THINK_PATH')) exit();?> <!DOCTYPE HTML>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 	<meta name="author" content="xmu.SwordBearer">
 	<link href="__PUBLIC__/admin/css/bootstrap.min.css" rel="stylesheet" />
  	<link href="__PUBLIC__/admin/css/mystage_admin.css" rel="stylesheet"/>

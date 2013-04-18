@@ -6,11 +6,16 @@
      * Time: 上午11:44
      * To change this template use File | Settings | File Templates.
      */
+
+   
+
     header("Content-Type: text/html; charset=utf-8");
     error_reporting( E_ERROR | E_WARNING );
 
     //需要遍历的目录列表，最好使用缩略图地址，否则当网速慢时可能会造成严重的延时
-    $paths = array('upload/','upload1/');
+    //配置的图片存放路径
+    $uploadConfig=require "tyc_upload_config.php"; 
+    $paths = array($uploadConfig['imageManagerPath']);
 
     $action = htmlspecialchars( $_POST[ "action" ] );
     if ( $action == "get" ) {

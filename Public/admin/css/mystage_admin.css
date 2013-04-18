@@ -7,16 +7,13 @@ body{
 .navbar-inner{
 	border-radius: 0px;
 }
-.main_contant{
+.main_content{
 	min-width:960px;
-	width: 80%;
-	padding: 0px;
+	min-height: 1200px;
+	width: 84%;
+	padding:0px;
 	margin: 0px auto;
-	border-radius: 4px;
-	background: #FFFFFF;
 }
-
-
 select{
 	font-family: "微软雅黑","宋体","仿宋","楷体";
 }

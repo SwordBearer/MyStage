@@ -184,15 +184,15 @@ class Uploader
     private function getFolder()
     {
         $pathStr = $this->config[ "savePath" ];
-        if ( strrchr( $pathStr , "/" ) != "/" ) {
+        if (strrchr( $pathStr , "/" ) != "/" ) {
             $pathStr .= "/";
         }
-        $pathStr .= date( "Ymd" );
-        if ( !file_exists( $pathStr ) ) {
-            if ( !mkdir( $pathStr , 0777 , true ) ) {
-                return false;
-            }
-        }
+        // $pathStr .= date( "Ymd" );
+        // if ( !file_exists( $pathStr ) ) {
+        //     if ( !mkdir( $pathStr , 0777 , true ) ) {
+        //         return false;
+        //     }
+        // }
         return $pathStr;
     }
 }

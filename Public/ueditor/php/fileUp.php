@@ -9,8 +9,10 @@
     error_reporting( E_ERROR | E_WARNING );
     include "Uploader.class.php";
     //上传配置
+
+    $uploadConfig=require "tyc_upload_config.php"; 
     $config = array(
-        "savePath" => "upload/" , //保存路径
+        "savePath" => $uploadConfig['fileSavePath'] , //保存路径
         "allowFiles" => array( ".rar" , ".doc" , ".docx" , ".zip" , ".pdf" , ".txt" , ".swf" , ".wmv" ) , //文件允许格式
         "maxSize" => 100000 //文件大小限制，单位KB
     );
