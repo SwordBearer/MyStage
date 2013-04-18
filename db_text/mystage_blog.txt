@@ -1,0 +1,19 @@
+CREATE TABLE mystage_blog (
+  id int(10) NOT NULL AUTO_INCREMENT,
+  catid int(4) NOT NULL,
+  topicid int(4) DEFAULT NULL,
+  typeid int(4) NOT NULL,
+  status int(4) NOT NULL,
+  title varchar(100) NOT NULL,
+  desc varchar(255) DEFAULT NULL,
+  content varchar(255) NOT NULL,
+  inputtime datetime NOT NULL,
+  updatetime datetime NOT NULL,
+  PRIMARY KEY (id),
+  KEY blog_catid (catid),
+  KEY blog_topicid (topicid),
+  KEY blog_tpyeid (typeid),
+  CONSTRAINT blog_tpyeid FOREIGN KEY (typeid) REFERENCES mystage_blog_type (id),
+  CONSTRAINT blog_catid FOREIGN KEY (catid) REFERENCES mystage_blog_cat (id),
+  CONSTRAINT blog_topicid FOREIGN KEY (topicid) REFERENCES mystage_blog_topic (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

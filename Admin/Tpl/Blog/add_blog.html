@@ -1,55 +1,55 @@
 <include file="header"/>
-<script type="text/javascript" charset="utf-8">
-window.UEDITOR_HOME_URL = "__PUBLIC__/ueditor/";</script>
+<script type="text/javascript" charset="utf-8">window.UEDITOR_HOME_URL = "__PUBLIC__/ueditor/";</script>
 <script type="text/javascript" src="__PUBLIC__/ueditor/editor_config.js"></script>
 <script type="text/javascript" src="__PUBLIC__/ueditor/editor_all.js"></script>
-
 </head>
 <body>
-<div class="container">
-	<div class="inner_nav ">
-		<ul class="nav nav-tabs">
-			<li class="active">
-				<a href="">添加博客</a>
-			</li>
-			<li>
-				<a href="">博客管理</a>
-			</li>
-			<li>
-				<a href="#">类别管理</a>
-			</li>
-			<li>
-				<a href="#">博客栏目</a>
-			</li>
-			<li>
-				<a href="#">草稿箱</a>
-			</li>
-			<li>
-				<a href="#">回收站</a>
-			</li>
-		</ul>
-	</div>
-	<div class="main_contant">
-		<span class="form-inline" style="width:100%;">
-			<select required id="blog_type">
-				<option value="-1">请选择类别</option>
-				<option value="1">原创</option>
-				<option value="2">翻译</option>
-				<option value="3">转载</option>
+<div class="main_contant" id="main_vid">
+	<ul class="nav nav-pills">
+		<li><a href="{:U(index)}">博客管理</a></li>
+		<li class="active"><a href="{:U(add_blog)}">添加博客</a></li>
+		<li><a href="{:U(topic_manage)}">专栏管理</a></li>
+		<li><a href="{:U(draftbox)}">草稿箱</a></li>
+		<li><a href="{:U(wastebasket)}">回收站</a></li>
+	</ul>
+	<form method="post" action="{:U(addBlog)}">
+	<span class="input-prepend input-append" style="width:100%;">
+		<select required name="blog_cat">
+			<volist name="allCats" id="cat">
+				<option value="{$cat.id}">{$cat.name}</option>
+			</volist>
+		</select>
+		<select required name="blog_topic">
+			<volist name="allTopics" id="topic">
+				<option value="{$topic.id}">{$topic.name}</option>
+			</volist>
+		</select>
+		<select required name="blog_type">
+			<volist name="allTypes" id="type">
+				<option value="{$type.id}">{$type.name}</option>
+			</volist>
+		</select>
+	</span>
+	<input type="text" required name="blog_title" style="min-width:80%;" placeholder="博客标题"/>
 
-			</select>
-			<input type="text"style="width:600px;" placeholder="博客标题"/>
-		</span>
+<!---*********编辑框***********-->
 		<div>
-			<script type="text/plain" id="blogEditor" name="article_content" >请输入博文</script>
+			<script type="text/plain" id="blogEditor" name="blog_content" >
+			{$currentBlog.content}
+			</script>
 			<script type="text/javascript">
+			var editorWidth=document.getElementById("main_vid").clientWidth-16;
 				UE.getEditor("blogEditor", {
-					theme:"default", //皮肤
-					lang:"zh-cn" //语言
+					lang:"zh-cn", //语言
+					initialFrameWidth:editorWidth
 				});
 			</script>
 		</div>
-	</div>
+		<center style="margin:10px;">
+			<input type="submit" class="btn btn-success btn-large" value="发布文章" name="publish"/>
+			<input type="submit" class="btn btn-primary btn-large" value="保存草稿" name="save"/>
+		</center>
+	</form>
 </div>
 </body>
 </html>

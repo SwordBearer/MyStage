@@ -1,0 +1,106 @@
+<include file="header"/>
+<script language="Javascript">
+
+	function editTopic(id,name){
+		jQuery('#editDialog').modal('show').on('shown',function(){
+		jQuery('#newTopicName').val(name);
+		jQuery("#btnSave").click(function(){
+			var newName=jQuery('#newTopicName').val();
+			newName=newName.replace(/(^\s*)|(\s*$)/g, "");
+			if(newName==name){
+				return;
+			}else{
+			jQuery(this).attr('href','__URL__/editTopic/topicid/'+id+'/topicname/'+newName);
+		}
+		});
+		});
+	}
+	function deleteTopic(id){
+		jQuery('#deleteDialog').modal('show').on('shown',function(){
+		jQuery("#btnDel").attr('href','__URL__/deleteTopic/topicid/'+id);
+		});
+	}
+</script>
+</head>
+<body>
+<div class="main_contant">
+	<ul class="nav nav-pills">
+		<li>
+			<a href="{:U(index)}">博客管理</a>
+		</li>
+		<li>
+			<a href="{:U(add_blog)}">添加博客</a>
+		</li>
+		<li class="active">
+			<a href="{:U(topic_manage)}">专栏管理</a>
+		</li>
+		<li>
+			<a href="{:U(draftbox)}">草稿箱</a>
+		</li>
+		<li>
+			<a href="{:U(wastebasket)}">回收站</a>
+		</li>
+	</ul>
+	<form class="input-prepend input-append" method="post" action="{:U('addTopic')}">
+		<select required name="new_topic_catid">
+			<option value="1" selected>伤不起的程序猿</option>
+			<option value="2">个人随笔</option>
+			<option value="3">美文网摘</option>
+		</select>
+		<input type="text" name="new_topic_name"class="input" placeholder="专栏名称" required />
+		<input type="submit" class="btn btn-success" value="添加"/>
+	</form>
+	<form method="post" name="topic_form">
+		<table class="table table-hover table-condensed table-hover">
+			<thead>
+				<tr class="tbl_head">
+					<th>类别</th>
+					<th>名称</th>
+					<th>博客</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<volist name="allTopics" id="topic">
+					<tr>
+						<td>{$topic.catname}</td>
+						<td>{$topic.name}</td>
+						<td>{$topic.blogcount}</td>
+						<td>
+							<input type="button" class="btn btn-small btn-warning" onClick="editTopic({$topic.id},'{$topic.name}')" value="编辑">
+							<input type="button" class="btn btn-small btn-danger"onClick="deleteTopic({$topic.id})" value="删除">
+						</td>
+					</tr>
+				</volist>
+			</tbody>
+		</table>
+	</form>
+	<div class="modal hide fade" id="editDialog">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>修改专栏</h3>
+		</div>
+		<div class="modal-body form-inline">
+			<label>请输入新的专栏名称</label><input id="newTopicName" class="input-xlarge" type="text" autofocus/>
+		</div>
+		<div class="modal-footer">
+			<a id="btnSave" href="#" class="btn btn-primary">保存</a>
+			<button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+		</div>
+	</div>
+	<div class="modal hide" id="deleteDialog">
+		<div class="modal-header warning">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>删除专栏</h3>
+		</div>
+		<div class="modal-body">
+			<lable>确定要删除该专栏吗？</lable>
+		</div>
+		<div class="modal-footer">
+			<a id="btnDel" href="#" class="btn btn-danger">删除</a>
+			<button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+		</div>
+	</div>
+</div>
+</body>
+</html>

@@ -25,10 +25,11 @@
     </ul>
   </div>
 </div>
+</head>
 <body>
-<div class="main_contant">
-	<ul class="nav nav-pills">
-		<li class="active">
+	<div class="main_contant">
+		<ul class="nav nav-pills">
+		<li>
 			<a href="<?php echo U(index);?>">博客管理</a>
 		</li>
 		<li>
@@ -40,14 +41,10 @@
 		<li>
 			<a href="<?php echo U(draftbox);?>">草稿箱</a>
 		</li>
-		<li>
+		<li class="active">
 			<a href="<?php echo U(wastebasket);?>">回收站</a>
 		</li>
 	</ul>
-	<div class="main">
-		<input type="text"   placeholder="Email"/>
-		<input type="password"   placeholder="Password"/>
 	</div>
-</div>
 </body>
 </html>

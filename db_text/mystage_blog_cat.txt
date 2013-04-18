@@ -1,0 +1,6 @@
+CREATE TABLE mystage_blog_cat (
+  id int(4) NOT NULL AUTO_INCREMENT,
+  name varchar(30) NOT NULL,
+  PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+

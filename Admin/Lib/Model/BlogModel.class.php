@@ -7,5 +7,9 @@ Class BlogModel extends Model{
 	public function update($data){
 		return $this->save($data);
 	}
+
+	public function insert(){
+	}
+
 }
 ?>

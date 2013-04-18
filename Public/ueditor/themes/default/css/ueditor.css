@@ -1,7 +1,7 @@
 /*基础UI构建
 */
 /* common layer */
-.edui-default .edui-box {
+.edui-default .edui-box {/*编辑器中的单个按钮*/
     border: none;
     padding: 0;
     margin: 1px;
