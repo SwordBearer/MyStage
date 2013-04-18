@@ -69,9 +69,7 @@
 	</ul>
 	<form class="input-prepend input-append" method="post" action="<?php echo U('addTopic');?>">
 		<select required name="new_topic_catid">
-			<option value="1" selected>伤不起的程序猿</option>
-			<option value="2">个人随笔</option>
-			<option value="3">美文网摘</option>
+			<?php if(is_array($allCats)): $i = 0; $__LIST__ = $allCats;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$cat): $mod = ($i % 2 );++$i;?><option value="<?php echo ($cat["id"]); ?>"><?php echo ($cat["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
 		</select>
 		<input type="text" name="new_topic_name"class="input" placeholder="专栏名称" required />
 		<input type="submit" class="btn btn-success" value="添加"/>
@@ -82,6 +80,7 @@
 				<tr class="tbl_head">
 					<th>类别</th>
 					<th>名称</th>
+					<th>序号</th>
 					<th>博客</th>
 					<th>操作</th>
 				</tr>
@@ -90,6 +89,7 @@
 				<?php if(is_array($allTopics)): $i = 0; $__LIST__ = $allTopics;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$topic): $mod = ($i % 2 );++$i;?><tr>
 						<td><?php echo ($topic["catname"]); ?></td>
 						<td><?php echo ($topic["name"]); ?></td>
+						<td><?php echo ($topic["listorder"]); ?></td>
 						<td><?php echo ($topic["blogcount"]); ?></td>
 						<td>
 							<input type="button" class="btn btn-small btn-warning" onClick="editTopic(<?php echo ($topic["id"]); ?>,'<?php echo ($topic["name"]); ?>')" value="编辑">

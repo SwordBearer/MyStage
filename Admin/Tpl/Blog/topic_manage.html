@@ -56,6 +56,7 @@
 				<tr class="tbl_head">
 					<th>类别</th>
 					<th>名称</th>
+					<th>序号</th>
 					<th>博客</th>
 					<th>操作</th>
 				</tr>
@@ -65,6 +66,7 @@
 					<tr>
 						<td>{$topic.catname}</td>
 						<td>{$topic.name}</td>
+						<td>{$topic.listorder}</td>
 						<td>{$topic.blogcount}</td>
 						<td>
 							<input type="button" class="btn btn-small btn-warning" onClick="editTopic({$topic.id},'{$topic.name}')" value="编辑">

@@ -3,8 +3,9 @@ CREATE TABLE mystage_blog_topic (
   catid int(4) NOT NULL,
   name varchar(40) NOT NULL,
   blogcount int(10) NOT NULL DEFAULT '0',
+  listorder int(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (id),
   KEY catid (catid),
   CONSTRAINT catid FOREIGN KEY (catid) REFERENCES mystage_blog_cat (id) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
