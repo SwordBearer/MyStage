@@ -4,7 +4,9 @@ class PublicAction extends Action{
 	/*******************pages***********************/
 	public function admin_login(){
 		if(isset($_SESSION[C('USER_AUTH_KEY')])){
-			$this->redirect(__GROUP__."/Index/index");
+			$this->display();
+
+			//$this->redirect(__GROUP__."/Index/index");
 		}else{
 			$this->display();
 		}

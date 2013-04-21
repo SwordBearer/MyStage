@@ -10,16 +10,18 @@
 </head>
 <script language="Javascript">
 
-	function editTopic(id,name){
-		jQuery('#newTopicName').val(name+"TEST");
+	function editTopic(id,name,listorder){
+		jQuery('#newTopicName').val(name);
+		jQuery('#newTopicOrder').val(listorder);
 		jQuery('#editDialog').modal('show').on('shown',function(){
 		jQuery("#btnSave").click(function(){
 			var newName=jQuery('#newTopicName').val();
+			var newOrder=jQuery('#newTopicOrder').val();
 			newName=newName.replace(/(^\s*)|(\s*$)/g, "");
-			if(newName==name){
+			if(newName==name&&newOrder==listorder){
 				return;
 			}else{
-			jQuery(this).attr('href','__URL__/editTopic/topicid/'+id+'/topicname/'+newName);
+			jQuery(this).attr('href','__URL__/editTopic/topicid/'+id+'/topicname/'+newName+'/listorder/'+newOrder);
 		}
 		});
 		});
@@ -37,10 +39,7 @@
 		<a class="brand" href="#">SwordBearer</a>
 		<ul class="nav">
 			<li>
-				<a href="<?php echo U(index);?>">首页</a>
-			</li>
-			<li>
-				<a href="<?php echo U(add_blog);?>">添加博客</a>
+				<a href="<?php echo U(index);?>">博客管理</a>
 			</li>
 			<li class="active">
 				<a href="<?php echo U(topic_manage);?>">专栏管理</a>
@@ -51,6 +50,9 @@
 			<li>
 				<a href="<?php echo U(wastebasket);?>">回收站</a>
 			</li>
+			<li>
+				<a href="<?php echo U(add_blog);?>">添加博客</a>
+			</li>
 		</ul>
 	</div>
 </div>
@@ -59,6 +61,7 @@
 		<select required name="new_topic_catid">
 			<?php if(is_array($allCats)): $i = 0; $__LIST__ = $allCats;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$cat): $mod = ($i % 2 );++$i;?><option value="<?php echo ($cat["id"]); ?>"><?php echo ($cat["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
 		</select>
+		<input type="text" name="new_topic_order"class="input input-small" placeholder="专栏序号" required />
 		<input type="text" name="new_topic_name"class="input" placeholder="专栏名称" required />
 		<input type="submit" class="btn btn-success" value="添加"/>
 	</form>
@@ -75,15 +78,14 @@
 			</thead>
 			<tbody>
 				<?php if(is_array($allTopics)): $i = 0; $__LIST__ = $allTopics;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$topic): $mod = ($i % 2 );++$i;?><tr>
-					<td><?php echo ($topic["catname"]); ?></td>
-					<td><?php echo ($topic["name"]); ?></td>
-					<td><?php echo ($topic["listorder"]); ?></td>
-					<td><?php echo ($topic["blogcount"]); ?></td>
-					<td>
-						<input type="button" class="btn btn-small btn-warning" value="编辑"onClick="editTopic(<?php echo ($topic["id"]); ?>,'<?php echo ($topic["name"]); ?>')">
-						<input type="button" class="btn btn-small btn-danger"value="删除" onClick="deleteTopic(<?php echo ($topic["id"]); ?>)" >
-						</td>
-				</tr><?php endforeach; endif; else: echo "" ;endif; ?>
+						<td><?php echo ($topic["catname"]); ?></td>
+						<td><?php echo ($topic["name"]); ?></td>
+						<td><?php echo ($topic["listorder"]); ?></td>
+						<td><?php echo ($topic["blogcount"]); ?></td>
+						<td>
+							<input type="button" class="btn btn-small btn-warning" value="编辑"onClick="editTopic(<?php echo ($topic["id"]); ?>,'<?php echo ($topic["name"]); ?>',<?php echo ($topic["listorder"]); ?>)">
+							<input type="button" class="btn btn-small btn-danger"value="删除" onClick="deleteTopic(<?php echo ($topic["id"]); ?>)" ></td>
+					</tr><?php endforeach; endif; else: echo "" ;endif; ?>
 			</tbody>
 		</table>
 	</form>
@@ -92,8 +94,15 @@
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 			<h3>修改专栏</h3>
 		</div>
-		<div class="modal-body form-inline">
-			<label>请输入新的专栏名称</label><input id="newTopicName" class="input-xlarge" type="text" autofocus/>
+		<div class="modal-body">
+			<div class="input-prepend">
+				<label class="add-on">专栏序号</label>
+				<input id="newTopicOrder"  type="text" autofocus/>
+			</div>
+			<div class="input-prepend">
+				<label class="add-on">专栏名称</label>
+				<input id="newTopicName" type="text"/>
+			</div>
 		</div>
 		<div class="modal-footer">
 			<a id="btnSave" href="#" class="btn btn-primary">保存</a>

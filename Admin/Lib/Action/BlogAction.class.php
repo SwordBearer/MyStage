@@ -10,6 +10,21 @@ class BlogAction extends Action {
 		$this->display();
 	}
 
+	public function blog_details(){
+		$blogid=$_REQUEST['blogid'];
+		if($blogid==NULL){
+			$this->error("数据错误!");
+		}
+		$Blog=new BlogModel();
+		$blog=$Blog->find($blogid);
+		if(!blog){
+			$this->error("获取博客数据错误");
+		}else{
+			$this->assign("curBlog",$blog);
+		}
+		$this->display();
+	}
+
 	public function add_blog(){
 		$this->getAllTopics();
 		$this->getAllCats();
@@ -29,6 +44,8 @@ class BlogAction extends Action {
 	}
 
 	public function wastebasket(){
+		$this->checkUser();
+		$this->getBlogsByStatus(-1);
 		$this->display();
 	}
 
@@ -62,30 +79,71 @@ class BlogAction extends Action {
 		}
 
 		$data['catid']=$_POST['blog_cat'];
-		$data['topicid']=$_POST['blog_topic'];
 		$data['typeid']=$_POST['blog_type'];
 		$data['inputtime']=date('Y-m-d H:i:s',time());
 		$data['updatetime']=date('Y-m-d H:i:s',time());
 		$data['title']=$_POST['blog_title'];
 		$content=$_POST['blog_content'];
 		$data['content']=$content;
-
-		$len=strlen($content);
-		//从内容中截取博客的简述
-		if($len<30){
-			$data['description']='';
-		}else if($len>=0&&$len<=120){
-			$data['description']=$this->subString_UTF8($content,0,$len/2);
-		}else{
-			$data['description']=$this->subString_UTF8($content,0,60);
-		}
-		var_dump($data['description']);
 		$Blog=new BlogModel();
 		$result=$Blog->add($data);
 		if(!$result||$result==0){
 			$this->error('添加博客失败！！！');
 		}else{
-		//	$this->redirect(__GROUP__."/Blog/index");
+			$TopicMap=M('TopicBlogMap');
+			$data2['topicid']=$_POST['blog_topic'];
+			$data2['blogid']=$result;
+			$result2=$TopicMap->add($data2);
+			$this->redirect(__GROUP__."/Blog/index");
+		}
+	}
+
+	public function wasteBlog(){
+		$blogid=$_REQUEST['blogid'];
+		if($blogid==NULL){
+			$this->error("数据错误!");
+		}
+		$this->checkUser();
+		$Blog=new BlogModel();
+		$data['id']=$blogid;
+		$data['status']=-1;
+		$result=$Blog->save($data);
+		if(!$result||$result==0){
+			$this->error('删除博客失败');
+		}else{
+			$this->redirect(__GROUP__."/Blog/index");
+		}
+	}
+
+	public function recoveryBlog(){
+		$blogid=$_REQUEST['blogid'];
+		if($blogid==NULL){
+			$this->error("数据错误!");
+		}
+		$this->checkUser();
+		$Blog=new BlogModel();
+		$data['id']=$blogid;
+		$data['status']=1;
+		$result=$Blog->save($data);
+		if(!$result||$result==0){
+			$this->error('恢复博客失败');
+		}else{
+			$this->redirect(__GROUP__."/Blog/wastebasket");
+		}
+	}
+	public function deleteBlog(){
+		$blogid=$_REQUEST['blogid'];
+		if($blogid==NULL){
+			$this->error("数据错误!");
+		}
+		$this->checkUser();
+		$Blog=new BlogModel();
+		$data['id']=$blogid;
+		$result=$Blog->where($data)->delete();
+		if(!$result||$result==0){
+			$this->error('删除博客失败！！！');
+		}else{
+			$this->redirect(__GROUP__."/Blog/wastebasket");
 		}
 	}
 
@@ -115,11 +173,13 @@ class BlogAction extends Action {
 		$this->checkUser();
 		$catid=$_POST['new_topic_catid'];
 		$topicname=$_POST['new_topic_name'];
+		$topicorder=$_POST['new_topic_order'];
 		if($catid==NULL||$topicname==NULL){
 			$this->error("输入有误!");
 		}else{
 			$data['catid']=$catid;
 			$data['name']=$topicname;
+			$data['listorder']=$topicorder;
 			$Topic=new BlogTopicModel();
 			$result=$Topic->add($data);
 			if(!$result||$result==0){
@@ -132,14 +192,24 @@ class BlogAction extends Action {
 
 	public function deleteTopic(){
 		$this->checkUser();
-		$Topic=new BlogTopicModel();
-		var_dump($_REQUEST['topicid']);
-		$result=$Topic->delete($_REQUEST['topicid']);
-		var_dump($result);
-		if(!$result||$result==0){
-			$this->error('删除失败');
+		$topicid=$_REQUEST['topicid'];
+
+		/*先将该专栏下的博客修改到默认专栏下面*/
+		$TopicBlogMap=M('TopicBlogMap');
+		$condition['topicid']=$topicid;
+		$data['topicid']=0;
+		$result=$TopicBlogMap->where($condition)->save($data);
+		var_dump("修改的文章专栏数:"+($result));
+		if($result==0||$result>0){
+			$Topic=new BlogTopicModel();
+			$result=$Topic->delete($_REQUEST['topicid']);
+			if(!$result||$result==0){
+				$this->error('删除失败');
+			}else{
+				$this->redirect(__GROUP__."/Blog/topic_manage");
+			}
 		}else{
-			$this->redirect(__GROUP__."/Blog/topic_manage");
+			$this->error('删除失败');
 		}
 	}
 
@@ -148,6 +218,7 @@ class BlogAction extends Action {
 		$Topic=new BlogTopicModel();
 		$data['id']=$_REQUEST['topicid'];
 		$data['name']=$_REQUEST['topicname'];
+		$data['listorder']=$_REQUEST['listorder'];
 		$result=$Topic->save($data);
 		if(!$result||$result==0){
 			$this->error('编辑失败');
@@ -158,7 +229,7 @@ class BlogAction extends Action {
 
 /************Public functions*************/
 /*截取字符串**/
- 	function subString_UTF8($str, $start, $lenth){
+ 	function abd_subString_UTF8($str, $start, $lenth){
         $len = strlen($str);
         $r = array();
         $n = 0;

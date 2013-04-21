@@ -18,10 +18,7 @@
 		<a class="brand" href="#">SwordBearer</a>
 		<ul class="nav">
 			<li>
-				<a href="<?php echo U(index);?>">首页</a>
-			</li>
-			<li class="active">
-				<a href="<?php echo U(add_blog);?>">添加博客</a>
+				<a href="<?php echo U(index);?>">博客管理</a>
 			</li>
 			<li>
 				<a href="<?php echo U(topic_manage);?>">专栏管理</a>
@@ -31,6 +28,9 @@
 			</li>
 			<li>
 				<a href="<?php echo U(wastebasket);?>">回收站</a>
+			</li>
+			<li class="active">
+				<a href="<?php echo U(add_blog);?>">添加博客</a>
 			</li>
 		</ul>
 	</div>

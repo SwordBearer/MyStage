@@ -1,0 +1,11 @@
+CREATE TABLE mystage_topic_blog_map (
+  id int(10) NOT NULL AUTO_INCREMENT,
+  topicid int(10) NOT NULL,
+  blogid int(10) NOT NULL,
+  PRIMARY KEY (id),
+  KEY topic_blog_tid (topicid),
+  KEY topic_blog_bid (blogid),
+  CONSTRAINT topic_blog_bid FOREIGN KEY (blogid) REFERENCES mystage_blog (id) ON DELETE CASCADE,
+  CONSTRAINT topic_blog_tid FOREIGN KEY (topicid) REFERENCES mystage_blog_topic (id) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+

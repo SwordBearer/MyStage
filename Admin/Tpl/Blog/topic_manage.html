@@ -1,16 +1,18 @@
 <include file="Public:libs_import"/>
 <script language="Javascript">
 
-	function editTopic(id,name){
-		jQuery('#newTopicName').val(name+"TEST");
+	function editTopic(id,name,listorder){
+		jQuery('#newTopicName').val(name);
+		jQuery('#newTopicOrder').val(listorder);
 		jQuery('#editDialog').modal('show').on('shown',function(){
 		jQuery("#btnSave").click(function(){
 			var newName=jQuery('#newTopicName').val();
+			var newOrder=jQuery('#newTopicOrder').val();
 			newName=newName.replace(/(^\s*)|(\s*$)/g, "");
-			if(newName==name){
+			if(newName==name&&newOrder==listorder){
 				return;
 			}else{
-			jQuery(this).attr('href','__URL__/editTopic/topicid/'+id+'/topicname/'+newName);
+			jQuery(this).attr('href','__URL__/editTopic/topicid/'+id+'/topicname/'+newName+'/listorder/'+newOrder);
 		}
 		});
 		});
@@ -28,10 +30,7 @@
 		<a class="brand" href="#">SwordBearer</a>
 		<ul class="nav">
 			<li>
-				<a href="{:U(index)}">首页</a>
-			</li>
-			<li>
-				<a href="{:U(add_blog)}">添加博客</a>
+				<a href="{:U(index)}">博客管理</a>
 			</li>
 			<li class="active">
 				<a href="{:U(topic_manage)}">专栏管理</a>
@@ -41,6 +40,9 @@
 			</li>
 			<li>
 				<a href="{:U(wastebasket)}">回收站</a>
+			</li>
+			<li>
+				<a href="{:U(add_blog)}">添加博客</a>
 			</li>
 		</ul>
 	</div>
@@ -52,6 +54,7 @@
 				<option value="{$cat.id}">{$cat.name}</option>
 			</volist>
 		</select>
+		<input type="text" name="new_topic_order"class="input input-small" placeholder="专栏序号" required />
 		<input type="text" name="new_topic_name"class="input" placeholder="专栏名称" required />
 		<input type="submit" class="btn btn-success" value="添加"/>
 	</form>
@@ -68,16 +71,15 @@
 			</thead>
 			<tbody>
 				<volist name="allTopics" id="topic">
-				<tr>
-					<td>{$topic.catname}</td>
-					<td>{$topic.name}</td>
-					<td>{$topic.listorder}</td>
-					<td>{$topic.blogcount}</td>
-					<td>
-						<input type="button" class="btn btn-small btn-warning" value="编辑"onClick="editTopic({$topic.id},'{$topic.name}')">
-						<input type="button" class="btn btn-small btn-danger"value="删除" onClick="deleteTopic({$topic.id})" >
-						</td>
-				</tr>
+					<tr>
+						<td>{$topic.catname}</td>
+						<td>{$topic.name}</td>
+						<td>{$topic.listorder}</td>
+						<td>{$topic.blogcount}</td>
+						<td>
+							<input type="button" class="btn btn-small btn-warning" value="编辑"onClick="editTopic({$topic.id},'{$topic.name}',{$topic.listorder})">
+							<input type="button" class="btn btn-small btn-danger"value="删除" onClick="deleteTopic({$topic.id})" ></td>
+					</tr>
 				</volist>
 			</tbody>
 		</table>
@@ -87,8 +89,15 @@
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 			<h3>修改专栏</h3>
 		</div>
-		<div class="modal-body form-inline">
-			<label>请输入新的专栏名称</label><input id="newTopicName" class="input-xlarge" type="text" autofocus/>
+		<div class="modal-body">
+			<div class="input-prepend">
+				<label class="add-on">专栏序号</label>
+				<input id="newTopicOrder"  type="text" autofocus/>
+			</div>
+			<div class="input-prepend">
+				<label class="add-on">专栏名称</label>
+				<input id="newTopicName" type="text"/>
+			</div>
 		</div>
 		<div class="modal-footer">
 			<a id="btnSave" href="#" class="btn btn-primary">保存</a>

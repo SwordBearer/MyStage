@@ -26,6 +26,10 @@ select{
 	vertical-align:center;
 }
 
+.table caption{
+	font-size: 14px;
+	font-weight:bold;
+}
 .tbl_head{
 	background:#96CDCD;
 }

@@ -1,16 +1,24 @@
 <include file="Public:libs_import"/>
+
+<script language="Javascript">
+	function wasteBlog(id){
+		jQuery("#btnDel").attr('href','__URL__/wasteBlog/blogid/'+id);
+		jQuery('#deleteDialog').modal('show');
+	}
+</script>
+</head>
 <body>
 <div class="navbar navbar-inverse">
 	<div class="navbar-inner">
 		<a class="brand" href="#">SwordBearer</a>
 		<ul class="nav">
-			<li>
+			<li class="active">
 				<a href="{:U(index)}">博客管理</a>
 			</li>
 			<li>
 				<a href="{:U(topic_manage)}">专栏管理</a>
 			</li>
-			<li class="active">
+			<li>
 				<a href="{:U(draftbox)}">草稿箱</a>
 			</li>
 			<li>
@@ -21,6 +29,15 @@
 			</li>
 		</ul>
 	</div>
+</div>
+<div class="main_content">
+	<h3>{$curBlog.title}</h3>
+	<div class="blog_info">
+		<label>评论数{$curBlog.commentcount}</label>
+		<label>创建日期{$curBlog.inputtime}</label>
+		<label>修改日期{$curBlog.updatetime}</label>
+	</div>
+	<div>{$curBlog.content}</div>
 </div>
 </body>
 </html>
