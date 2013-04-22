@@ -77,8 +77,9 @@
 						<td>{$topic.listorder}</td>
 						<td>{$topic.blogcount}</td>
 						<td>
-							<input type="button" class="btn btn-small btn-warning" value="编辑"onClick="editTopic({$topic.id},'{$topic.name}',{$topic.listorder})">
-							<input type="button" class="btn btn-small btn-danger"value="删除" onClick="deleteTopic({$topic.id})" ></td>
+							<a class="btn btn-small" onClick="editTopic({$topic.id},'{$topic.name}',{$topic.listorder})">编辑</a>
+							<a class="btn btn-small" onClick="deleteTopic({$topic.id})" >删除</a>
+						</td>
 					</tr>
 				</volist>
 			</tbody>
@@ -114,7 +115,7 @@
 		</div>
 		<div class="modal-footer">
 			<a id="btnDel" href="#" class="btn btn-danger">删除</a>
-			<button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+			<a class="btn" data-dismiss="modal" aria-hidden="true">取消</a>
 		</div>
 	</div>
 </div>

@@ -61,8 +61,9 @@
 							<td><?php echo ($blog["topicname"]); ?></td>
 							<td><?php echo ($blog["inputtime"]); ?></td>
 							<td>
-								<a href="<?php echo U(edit_blog);?>/blogid/<?php echo ($blog["id"]); ?>"class="btn btn-small btn-warning">编辑</a>
-								<input type="button" class="btn btn-small btn-danger"value="删除" onClick="wasteBlog(<?php echo ($blog["id"]); ?>)" ></td>
+								<a href="<?php echo U(edit_blog);?>/blogid/<?php echo ($blog["id"]); ?>"class="btn btn-small">编辑</a>
+								<a class="btn btn-small" onClick="wasteBlog(<?php echo ($blog["id"]); ?>)" >删除</a>
+							</td>
 						</tr><?php endforeach; endif; else: echo "" ;endif; ?>
 				</tbody>
 			</table><?php endif; ?>
@@ -77,7 +78,7 @@
 		</div>
 		<div class="modal-footer">
 			<a id="btnDel" href="#" class="btn btn-danger">删除</a>
-			<button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+			<a class="btn" data-dismiss="modal" aria-hidden="true">取消</a>
 		</div>
 	</div>
 </div>

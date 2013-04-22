@@ -50,6 +50,8 @@ class BlogAction extends Action {
 		$this->display();
 	}
 	public function draftbox(){
+		$this->checkUser();
+		$this->getBlogsByStatus(2);
 		$this->display();
 	}
 
@@ -78,7 +80,7 @@ class BlogAction extends Action {
 		$blogs=$Blog->getByStatus($status);
 		$this->assign("allBlogs",$blogs);
 	}
-
+/*添加博客*/
 	public function addBlog(){
 		$isPublish=isset($_POST['publish']);
 		$isSave=isset($_POST['save']);
@@ -114,7 +116,7 @@ class BlogAction extends Action {
 			$this->redirect(__GROUP__."/Blog/index");
 		}
 	}
-
+/*保存草稿*/
 	public function saveBlog(){
 		$isPublish=isset($_POST['publish']);
 		$isSave=isset($_POST['save']);
@@ -130,7 +132,8 @@ class BlogAction extends Action {
 		if($isSave){
 			$data['status']=2;
 		}
-		$data['id']=$_POST['blog_id'];
+		$blogid=$_POST['blog_id'];
+		$data['id']=$blogid;
 		$data['catid']=$_POST['blog_cat'];
 		$data['typeid']=$_POST['blog_type'];
 		$data['inputtime']=date('Y-m-d H:i:s',time());
@@ -143,15 +146,29 @@ class BlogAction extends Action {
 		if(!$result||$result==0){
 			$this->error('发布博客失败！！！');
 		}else{
-			//此处有问题，要更新对应的topic_blog_map 表
 			$TopicMap=M('TopicBlogMap');
 			$data2['topicid']=$_POST['blog_topic'];
-			$data2['blogid']=$result;
-			$result2=$TopicMap->save($data2);
+			$condition['blogid']=$blogid;
+			$result2=$TopicMap->where($condition)->save($data2);
 			$this->redirect(__GROUP__."/Blog/index");
 		}
 	}
 
+	public function publishBlog(){
+		$blogid=$_REQUEST['blogid'];
+		if($blogid==NULL){
+			$this->error("数据错误!");
+		}
+		$data['status']=1;
+		$condition['id']=$blogid;
+		$Blog=new BlogModel();
+		$result=$Blog->where($condition)->save($data);
+		if(!$result||$result==0){
+			$this->error('发布博客失败！！！');
+		}else{
+			$this->redirect(__GROUP__."/Blog/draftbox");
+		}
+	}
 	public function wasteBlog(){
 		$blogid=$_REQUEST['blogid'];
 		if($blogid==NULL){

@@ -36,37 +36,35 @@
 	</div>
 </div>
 <div class="main_content" id="main_content">
-	<form method="post" action="<?php echo U(addBlog);?>">
-		<div style="width:800px;">
-			<div class="input-prepend">
-				<label class="add-on">标题</label>
-				<input type="text" required name="blog_title" class="input-xxlarge" style="width:600px;" value="<?php echo ($curBlog["title"]); ?>"/>
-			</div>
-			<br/>
-			<div class="input-prepend">
-				<label class="add-on">分类</label>
-				<select required name="blog_cat">
-					<?php if(is_array($allCats)): $i = 0; $__LIST__ = $allCats;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$cat): $mod = ($i % 2 );++$i; if($cat["id"] == $curBlog["catid"] ): ?><option value="<?php echo ($cat["id"]); ?>" selected><?php echo ($cat["name"]); ?></option>
-							<?php else: ?>
-							<option value="<?php echo ($cat["id"]); ?>"><?php echo ($cat["name"]); ?></option><?php endif; endforeach; endif; else: echo "" ;endif; ?>
-				</select>
-			</div>
-			<div class="input-prepend">
-				<label class="add-on">专栏</label>
-				<select required name="blog_topic">
-					<?php if(is_array($allTopics)): $i = 0; $__LIST__ = $allTopics;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$topic): $mod = ($i % 2 );++$i; if($topic["id"] == $curBlog["topicid"] ): ?><option value="<?php echo ($topic["id"]); ?>" selected ><?php echo ($topic["name"]); ?></option>
-							<?php else: ?>
-							<option value="<?php echo ($topic["id"]); ?>"><?php echo ($topic["name"]); ?></option><?php endif; endforeach; endif; else: echo "" ;endif; ?>
-				</select>
-			</div>
-			<div class="input-prepend">
-				<label class="add-on">类型</label>
-				<select required name="blog_type">
-					<?php if(is_array($allTypes)): $i = 0; $__LIST__ = $allTypes;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$type): $mod = ($i % 2 );++$i; if($type["id"] == $curBlog["typeid"] ): ?><option value="<?php echo ($type["id"]); ?>" selected><?php echo ($type["name"]); ?></option>
-							<?php else: ?>
-							<option value="<?php echo ($type["id"]); ?>"><?php echo ($type["name"]); ?></option><?php endif; endforeach; endif; else: echo "" ;endif; ?>
-				</select>
-			</div>
+	<form method="post" action="<?php echo U(saveBlog);?>" onkeydown="if(event.keyCode==13){return false;}">
+		<div class="input-prepend">
+			<label class="add-on">标题</label>
+			<input type="text" required name="blog_title" class="input-xxlarge" value="<?php echo ($curBlog["title"]); ?>"/>
+		</div>
+		<br/>
+		<div class="input-prepend">
+			<label class="add-on">分类</label>
+			<select required name="blog_cat">
+				<?php if(is_array($allCats)): $i = 0; $__LIST__ = $allCats;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$cat): $mod = ($i % 2 );++$i; if($cat["id"] == $curBlog["catid"] ): ?><option value="<?php echo ($cat["id"]); ?>" selected><?php echo ($cat["name"]); ?></option>
+						<?php else: ?>
+						<option value="<?php echo ($cat["id"]); ?>"><?php echo ($cat["name"]); ?></option><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+			</select>
+		</div>
+		<div class="input-prepend">
+			<label class="add-on">专栏</label>
+			<select required name="blog_topic">
+				<?php if(is_array($allTopics)): $i = 0; $__LIST__ = $allTopics;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$topic): $mod = ($i % 2 );++$i; if($topic["id"] == $curBlog["topicid"] ): ?><option value="<?php echo ($topic["id"]); ?>" selected ><?php echo ($topic["name"]); ?></option>
+						<?php else: ?>
+						<option value="<?php echo ($topic["id"]); ?>"><?php echo ($topic["name"]); ?></option><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+			</select>
+		</div>
+		<div class="input-prepend">
+			<label class="add-on">类型</label>
+			<select required name="blog_type">
+				<?php if(is_array($allTypes)): $i = 0; $__LIST__ = $allTypes;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$type): $mod = ($i % 2 );++$i; if($type["id"] == $curBlog["typeid"] ): ?><option value="<?php echo ($type["id"]); ?>" selected><?php echo ($type["name"]); ?></option>
+						<?php else: ?>
+						<option value="<?php echo ($type["id"]); ?>"><?php echo ($type["name"]); ?></option><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+			</select>
 		</div>
 		<input type="hidden" value="<?php echo ($curBlog["id"]); ?>" name="blog_id"/>
 		<!---*********编辑框***********-->

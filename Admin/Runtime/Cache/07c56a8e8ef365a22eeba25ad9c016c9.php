@@ -83,8 +83,9 @@
 						<td><?php echo ($topic["listorder"]); ?></td>
 						<td><?php echo ($topic["blogcount"]); ?></td>
 						<td>
-							<input type="button" class="btn btn-small btn-warning" value="编辑"onClick="editTopic(<?php echo ($topic["id"]); ?>,'<?php echo ($topic["name"]); ?>',<?php echo ($topic["listorder"]); ?>)">
-							<input type="button" class="btn btn-small btn-danger"value="删除" onClick="deleteTopic(<?php echo ($topic["id"]); ?>)" ></td>
+							<a class="btn btn-small" onClick="editTopic(<?php echo ($topic["id"]); ?>,'<?php echo ($topic["name"]); ?>',<?php echo ($topic["listorder"]); ?>)">编辑</a>
+							<a class="btn btn-small" onClick="deleteTopic(<?php echo ($topic["id"]); ?>)" >删除</a>
+						</td>
 					</tr><?php endforeach; endif; else: echo "" ;endif; ?>
 			</tbody>
 		</table>
@@ -119,7 +120,7 @@
 		</div>
 		<div class="modal-footer">
 			<a id="btnDel" href="#" class="btn btn-danger">删除</a>
-			<button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+			<a class="btn" data-dismiss="modal" aria-hidden="true">取消</a>
 		</div>
 	</div>
 </div>

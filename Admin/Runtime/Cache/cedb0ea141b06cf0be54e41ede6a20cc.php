@@ -36,7 +36,7 @@
 	</div>
 </div>
 <div class="main_content" id="main_content">
-	<form method="post" action="<?php echo U(addBlog);?>" >
+	<form method="post" action="<?php echo U(addBlog);?>" onkeydown="if(event.keyCode==13){return false;}">
 		<div class="input-prepend">
 			<label class="add-on">标题</label>
 			<input type="text" required name="blog_title" class="input-xxlarge"/>
