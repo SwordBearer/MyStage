@@ -17,5 +17,11 @@ class BlogModel extends Model{
 		$result=$this->query($sql);
 		return $result;
 	}
+
+	public function getById($blogid){
+		$sql="SELECT blog.*,topicmap.topicid FROM mystage_blog AS blog,mystage_topic_blog_map AS topicmap WHERE blog.id=".$blogid." AND blog.id=topicmap.blogid limit 1";
+		$result=$this->query($sql);
+		return $result[0];
+	}
 }
 ?>

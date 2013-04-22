@@ -32,6 +32,23 @@ class BlogAction extends Action {
 		$this->display();
 	}
 
+	public function edit_blog(){
+		$blogid=$_REQUEST['blogid'];
+		if($blogid==NULL){
+			$this->error("数据错误!");
+		}
+		$Blog=new BlogModel();
+		$blog=$Blog->getById($blogid);
+		if(!$blog){
+			$this->error("获取博客数据错误");
+		}else{
+			$this->assign("curBlog",$blog);
+		}
+		$this->getAllTopics();
+		$this->getAllCats();
+		$this->getAllTypes();
+		$this->display();
+	}
 	public function draftbox(){
 		$this->display();
 	}
@@ -94,6 +111,43 @@ class BlogAction extends Action {
 			$data2['topicid']=$_POST['blog_topic'];
 			$data2['blogid']=$result;
 			$result2=$TopicMap->add($data2);
+			$this->redirect(__GROUP__."/Blog/index");
+		}
+	}
+
+	public function saveBlog(){
+		$isPublish=isset($_POST['publish']);
+		$isSave=isset($_POST['save']);
+		if((!$isPublish)&&(!$isSave)){
+			return;
+		}
+		$data=array();
+		//发布博客
+		if($isPublish){
+			$data['status']=1;//正常博客
+		}
+		//保存草稿
+		if($isSave){
+			$data['status']=2;
+		}
+		$data['id']=$_POST['blog_id'];
+		$data['catid']=$_POST['blog_cat'];
+		$data['typeid']=$_POST['blog_type'];
+		$data['inputtime']=date('Y-m-d H:i:s',time());
+		$data['updatetime']=date('Y-m-d H:i:s',time());
+		$data['title']=$_POST['blog_title'];
+		$content=$_POST['blog_content'];
+		$data['content']=$content;
+		$Blog=new BlogModel();
+		$result=$Blog->save($data);
+		if(!$result||$result==0){
+			$this->error('发布博客失败！！！');
+		}else{
+			//此处有问题，要更新对应的topic_blog_map 表
+			$TopicMap=M('TopicBlogMap');
+			$data2['topicid']=$_POST['blog_topic'];
+			$data2['blogid']=$result;
+			$result2=$TopicMap->save($data2);
 			$this->redirect(__GROUP__."/Blog/index");
 		}
 	}

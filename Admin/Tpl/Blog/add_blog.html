@@ -26,40 +26,53 @@
 		</ul>
 	</div>
 </div>
-<form method="post" action="{:U(addBlog)}" class="main_content" id="form">
-	<span class="input-prepend input-append" style="width:100%;">
-		<select required name="blog_cat">
-			<volist name="allCats" id="cat">
-				<option value="{$cat.id}">{$cat.name}</option>
-			</volist>
-		</select>
-		<select required name="blog_topic">
-			<volist name="allTopics" id="topic">
-				<option value="{$topic.id}">{$topic.name}</option>
-			</volist>
-		</select>
-		<select required name="blog_type">
-			<volist name="allTypes" id="type">
-				<option value="{$type.id}">{$type.name}</option>
-			</volist>
-		</select>
-	</span>
-	<input type="text" required name="blog_title" style="min-width:80%;" placeholder="博客标题"/>
-	<!---*********编辑框***********-->
-	<div>
-		<script type="text/plain" id="blogEditor" name="blog_content" ></script>
-		<script type="text/javascript">
-			var editorWidth=document.getElementById("form").clientWidth-16;
+<div class="main_content" id="main_content">
+	<form method="post" action="{:U(addBlog)}" >
+		<div class="input-prepend">
+			<label class="add-on">标题</label>
+			<input type="text" required name="blog_title" class="input-xxlarge"/>
+		</div>
+		<br/>
+		<div class="input-prepend">
+			<label class="add-on">分类</label>
+			<select required name="blog_cat">
+				<volist name="allCats" id="cat">
+					<option value="{$cat.id}">{$cat.name}</option>
+				</volist>
+			</select>
+		</div>
+		<span class="input-prepend">
+			<label class="add-on">专栏</label>
+			<select required name="blog_topic">
+				<volist name="allTopics" id="topic">
+					<option value="{$topic.id}">{$topic.name}</option>
+				</volist>
+			</select>
+		</span>
+		<span class="input-prepend">
+			<label class="add-on">类型</label>
+			<select required name="blog_type">
+				<volist name="allTypes" id="type">
+					<option value="{$type.id}">{$type.name}</option>
+				</volist>
+			</select>
+		</span>
+		<!---*********编辑框***********-->
+		<div>
+			<script type="text/plain" id="blogEditor" name="blog_content" ></script>
+			<script type="text/javascript">
+			var editorWidth=document.getElementById("main_content").clientWidth-12;
 				UE.getEditor("blogEditor", {
 					lang:"zh-cn", //语言
 					initialFrameWidth:editorWidth
 				});
 			</script>
-	</div>
-	<center style="margin:10px;">
-		<input type="submit" class="btn btn-success btn-large" value="发布文章" name="publish"/>
-		<input type="submit" class="btn btn-primary btn-large" value="保存草稿" name="save"/>
-	</center>
-</form>
+		</div>
+		<center style="margin:10px;">
+			<input type="submit" class="btn btn-success btn-large" value="发布文章" name="publish"/>
+			<input type="submit" class="btn btn-primary btn-large" value="保存草稿" name="save"/>
+		</center>
+	</form>
+</div>
 </body>
 </html>

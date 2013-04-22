@@ -1,50 +1,80 @@
-<include file="header"/>
+<include file="Public:libs_import"/>
 <script type="text/javascript">window.UEDITOR_HOME_URL="__PUBLIC__/ueditor/";</script>
 <script type="text/javascript" src="__PUBLIC__/ueditor/editor_config.js"></script>
 <script type="text/javascript" src="__PUBLIC__/ueditor/editor_all.js"></script>
 </head>
 <body>
-<div class="main_contant" id="main_vid">
-	<ul class="nav nav-pills">
-		<li>
-			<a href="{:U(index)}">博客管理</a>
-		</li>
-		<li class="active">
-			<a href="{:U(add_blog)}">添加博客</a>
-		</li>
-		<li>
-			<a href="{:U(topic_manage)}">专栏管理</a>
-		</li>
-		<li>
-			<a href="{:U(draftbox)}">草稿箱</a>
-		</li>
-		<li>
-			<a href="{:U(wastebasket)}">回收站</a>
-		</li>
-	</ul>
+<div class="navbar navbar-inverse">
+	<div class="navbar-inner">
+		<a class="brand" href="#">SwordBearer</a>
+		<ul class="nav">
+			<li class="active">
+				<a href="{:U(index)}">博客管理</a>
+			</li>
+			<li>
+				<a href="{:U(topic_manage)}">专栏管理</a>
+			</li>
+			<li>
+				<a href="{:U(draftbox)}">草稿箱</a>
+			</li>
+			<li>
+				<a href="{:U(wastebasket)}">回收站</a>
+			</li>
+			<li>
+				<a href="{:U(add_blog)}">添加博客</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="main_content" id="main_content">
 	<form method="post" action="{:U(addBlog)}">
-		<span class="input-prepend input-append" style="width:100%;">
+		<div class="input-prepend">
+			<label class="add-on">标题</label>
+			<input type="text" required name="blog_title" class="input-xxlarge" value="{$curBlog.title}"/>
+		</div>
+		<br/>
+		<div class="input-prepend">
+			<label class="add-on">分类</label>
 			<select required name="blog_cat">
 				<volist name="allCats" id="cat">
-					<option value="{$cat.id}">{$cat.name}</option>
+					<if condition="$cat.id eq  $curBlog.catid ">
+						<option value="{$cat.id}" selected>{$cat.name}</option>
+						<else/>
+						<option value="{$cat.id}">{$cat.name}</option>
+					</if>
 				</volist>
 			</select>
+		</div>
+		<div class="input-prepend">
+			<label class="add-on">专栏</label>
 			<select required name="blog_topic">
 				<volist name="allTopics" id="topic">
-					<option value="{$topic.id}">{$topic.name}</option>
+					<if condition="$topic.id eq  $curBlog.topicid ">
+						<option value="{$topic.id}" selected >{$topic.name}</option>
+						<else/>
+						<option value="{$topic.id}">{$topic.name}</option>
+					</if>
 				</volist>
 			</select>
+		</div>
+		<div class="input-prepend">
+			<label class="add-on">类型</label>
 			<select required name="blog_type">
 				<volist name="allTypes" id="type">
-					<option value="{$type.id}">{$type.name}</option>
+					<if condition="$type.id eq  $curBlog.typeid ">
+						<option value="{$type.id}" selected>{$type.name}</option>
+						<else/>
+						<option value="{$type.id}">{$type.name}</option>
+					</if>
 				</volist>
 			</select>
-		</span>
+		</div>
+		<input type="hidden" value="{$curBlog.id}" name="blog_id"/>
 		<!---*********编辑框***********-->
 		<div>
-			<script type="text/plain" id="blogEditor" name="blog_content" >{$currentBlog.content}</script>
+			<script type="text/plain" id="blogEditor" name="blog_content" >{$curBlog.content}</script>
 			<script type="text/javascript">
-			var editorWidth=document.getElementById("main_vid").clientWidth-16;
+			var editorWidth=document.getElementById("main_content").clientWidth-12;
 				UE.getEditor("blogEditor", {
 					lang:"zh-cn", //语言
 					initialFrameWidth:editorWidth
@@ -52,11 +82,9 @@
 			</script>
 		</div>
 		<center style="margin:10px;">
-			<input type="submit" class="btn btn-success btn-large" value="发布文章" name="publish"/>
-			<input type="submit" class="btn btn-primary btn-large" value="保存草稿" name="save"/>
+			<input type="submit" class="btn btn-success btn-large" value="发布博客" name="publish"/>
+			<input type="submit" class="btn btn-primary btn-large" value="保存为草稿" name="save"/>
 		</center>
-		<input type="text" required name="blog_title" style="min-width:80%;" placeholder="博客标题"/>
-
 	</form>
 </div>
 </body>

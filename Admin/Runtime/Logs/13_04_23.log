@@ -1,0 +1,1071 @@
+[ 2013-04-23T01:01:04+08:00 ] 0.0.0.0 /mystage/admin.php/public/admin_login
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.002237s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002364s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000959s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001044s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.002096s ]
+INFO: [ view_template ] --END-- [ RunTime:0.002184s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.070724s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.070872s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001452s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.001429s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.001170s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001424s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005807s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.002093s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002190s ]
+
+[ 2013-04-23T01:01:34+08:00 ] 0.0.0.0 /mystage/admin.php/blog/index
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.000575s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000628s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000481s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000519s ]
+SQL: SHOW COLUMNS FROM `mystage_blog` [ RunTime:0.029164s ]
+SQL: SELECT blog.id,blog.title,blog.inputtime,topic.name AS topicname FROM mystage_blog AS blog,mystage_blog_topic AS topic,mystage_topic_blog_map AS topicmap WHERE blog.status=1 AND topicmap.topicid=topic.id AND topicmap.blogid=blog.id ORDER BY updatetime DESC  [ RunTime:0.059019s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.003283s ]
+INFO: [ view_template ] --END-- [ RunTime:0.003417s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 24 行.
+NOTIC: [8] Use of undefined constant topic_manage - assumed 'topic_manage' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 27 行.
+NOTIC: [8] Use of undefined constant draftbox - assumed 'draftbox' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 30 行.
+NOTIC: [8] Use of undefined constant wastebasket - assumed 'wastebasket' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 33 行.
+NOTIC: [8] Use of undefined constant add_blog - assumed 'add_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 36 行.
+NOTIC: [8] Use of undefined constant blog_details - assumed 'blog_details' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 59 行.
+NOTIC: [8] Use of undefined constant edit_blog - assumed 'edit_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 64 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.029561s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029683s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001572s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.001746s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.001513s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001673s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006861s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001960s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002066s ]
+
+[ 2013-04-23T01:01:37+08:00 ] 0.0.0.0 /mystage/admin.php/blog/edit_blog/blogid/30
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.000819s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000890s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000582s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000633s ]
+SQL: SHOW COLUMNS FROM `mystage_blog` [ RunTime:0.002808s ]
+SQL: SELECT blog.*,topicmap.topicid FROM mystage_blog AS blog,mystage_topic_blog_map AS topicmap WHERE blog.id=30 AND blog.id=topicmap.blogid limit 1 [ RunTime:0.035228s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_topic` [ RunTime:0.002984s ]
+SQL: SELECT cat.name AS catname,topic.*
+			FROM mystage_blog_topic AS topic,mystage_blog_cat AS cat
+			WHERE topic.catid=cat.id ORDER BY cat.id,topic.listorder [ RunTime:0.034173s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_cat` [ RunTime:0.002707s ]
+SQL: SELECT * FROM `mystage_blog_cat`  [ RunTime:0.000268s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_type` [ RunTime:0.019086s ]
+SQL: SELECT * FROM `mystage_blog_type`  [ RunTime:0.000284s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000749s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000797s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 21 行.
+NOTIC: [8] Use of undefined constant topic_manage - assumed 'topic_manage' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 24 行.
+NOTIC: [8] Use of undefined constant draftbox - assumed 'draftbox' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 27 行.
+NOTIC: [8] Use of undefined constant wastebasket - assumed 'wastebasket' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 30 行.
+NOTIC: [8] Use of undefined constant add_blog - assumed 'add_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 33 行.
+NOTIC: [8] Use of undefined constant addBlog - assumed 'addBlog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 39 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.011397s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011446s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000427s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000377s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000290s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000442s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001654s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000552s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000593s ]
+
+[ 2013-04-23T01:01:41+08:00 ] 0.0.0.0 /mystage/admin.php/blog/index
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.000714s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000793s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000515s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000563s ]
+SQL: SHOW COLUMNS FROM `mystage_blog` [ RunTime:0.003160s ]
+SQL: SELECT blog.id,blog.title,blog.inputtime,topic.name AS topicname FROM mystage_blog AS blog,mystage_blog_topic AS topic,mystage_topic_blog_map AS topicmap WHERE blog.status=1 AND topicmap.topicid=topic.id AND topicmap.blogid=blog.id ORDER BY updatetime DESC  [ RunTime:0.000453s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000540s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000591s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 24 行.
+NOTIC: [8] Use of undefined constant topic_manage - assumed 'topic_manage' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 27 行.
+NOTIC: [8] Use of undefined constant draftbox - assumed 'draftbox' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 30 行.
+NOTIC: [8] Use of undefined constant wastebasket - assumed 'wastebasket' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 33 行.
+NOTIC: [8] Use of undefined constant add_blog - assumed 'add_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 36 行.
+NOTIC: [8] Use of undefined constant blog_details - assumed 'blog_details' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 59 行.
+NOTIC: [8] Use of undefined constant edit_blog - assumed 'edit_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 64 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.009022s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009066s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000335s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000402s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000301s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000391s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001537s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000544s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000581s ]
+
+[ 2013-04-23T01:01:42+08:00 ] 0.0.0.0 /mystage/admin.php/blog/topic_manage
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.000724s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000790s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000515s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000561s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_topic` [ RunTime:0.003849s ]
+SQL: SELECT cat.name AS catname,topic.*
+			FROM mystage_blog_topic AS topic,mystage_blog_cat AS cat
+			WHERE topic.catid=cat.id ORDER BY cat.id,topic.listorder [ RunTime:0.000544s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_cat` [ RunTime:0.002622s ]
+SQL: SELECT * FROM `mystage_blog_cat`  [ RunTime:0.000288s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000764s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000821s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\07c56a8e8ef365a22eeba25ad9c016c9.php 第 42 行.
+NOTIC: [8] Use of undefined constant topic_manage - assumed 'topic_manage' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\07c56a8e8ef365a22eeba25ad9c016c9.php 第 45 行.
+NOTIC: [8] Use of undefined constant draftbox - assumed 'draftbox' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\07c56a8e8ef365a22eeba25ad9c016c9.php 第 48 行.
+NOTIC: [8] Use of undefined constant wastebasket - assumed 'wastebasket' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\07c56a8e8ef365a22eeba25ad9c016c9.php 第 51 行.
+NOTIC: [8] Use of undefined constant add_blog - assumed 'add_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\07c56a8e8ef365a22eeba25ad9c016c9.php 第 54 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.008662s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008707s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000409s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000342s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000266s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000421s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001540s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000470s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000507s ]
+
+[ 2013-04-23T01:01:59+08:00 ] 0.0.0.0 /mystage/admin.php/blog/add_blog
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.000716s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000778s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000602s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000653s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_topic` [ RunTime:0.002822s ]
+SQL: SELECT cat.name AS catname,topic.*
+			FROM mystage_blog_topic AS topic,mystage_blog_cat AS cat
+			WHERE topic.catid=cat.id ORDER BY cat.id,topic.listorder [ RunTime:0.000611s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_cat` [ RunTime:0.003297s ]
+SQL: SELECT * FROM `mystage_blog_cat`  [ RunTime:0.000335s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_type` [ RunTime:0.002208s ]
+SQL: SELECT * FROM `mystage_blog_type`  [ RunTime:0.000313s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000983s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001071s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 21 行.
+NOTIC: [8] Use of undefined constant topic_manage - assumed 'topic_manage' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 24 行.
+NOTIC: [8] Use of undefined constant draftbox - assumed 'draftbox' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 27 行.
+NOTIC: [8] Use of undefined constant wastebasket - assumed 'wastebasket' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 30 行.
+NOTIC: [8] Use of undefined constant add_blog - assumed 'add_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 33 行.
+NOTIC: [8] Use of undefined constant addBlog - assumed 'addBlog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 39 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.008684s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008727s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000337s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000395s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000267s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000357s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001462s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000489s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000529s ]
+
+[ 2013-04-23T01:02:06+08:00 ] 0.0.0.0 /mystage/admin.php/blog/wastebasket
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.000720s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000785s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000516s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000565s ]
+SQL: SHOW COLUMNS FROM `mystage_blog` [ RunTime:0.003255s ]
+SQL: SELECT blog.id,blog.title,blog.inputtime,topic.name AS topicname FROM mystage_blog AS blog,mystage_blog_topic AS topic,mystage_topic_blog_map AS topicmap WHERE blog.status=-1 AND topicmap.topicid=topic.id AND topicmap.blogid=blog.id ORDER BY updatetime DESC  [ RunTime:0.067814s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.002714s ]
+INFO: [ view_template ] --END-- [ RunTime:0.002912s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\e4ec5a2f63ab1ba1619db52e6dcbcdbc.php 第 24 行.
+NOTIC: [8] Use of undefined constant topic_manage - assumed 'topic_manage' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\e4ec5a2f63ab1ba1619db52e6dcbcdbc.php 第 27 行.
+NOTIC: [8] Use of undefined constant draftbox - assumed 'draftbox' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\e4ec5a2f63ab1ba1619db52e6dcbcdbc.php 第 30 行.
+NOTIC: [8] Use of undefined constant wastebasket - assumed 'wastebasket' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\e4ec5a2f63ab1ba1619db52e6dcbcdbc.php 第 33 行.
+NOTIC: [8] Use of undefined constant add_blog - assumed 'add_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\e4ec5a2f63ab1ba1619db52e6dcbcdbc.php 第 36 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.027597s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027693s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000518s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000473s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000358s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000572s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002071s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000702s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000753s ]
+
+[ 2013-04-23T01:02:08+08:00 ] 0.0.0.0 /mystage/admin.php/blog/index
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.000769s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000834s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000514s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000562s ]
+SQL: SHOW COLUMNS FROM `mystage_blog` [ RunTime:0.003440s ]
+SQL: SELECT blog.id,blog.title,blog.inputtime,topic.name AS topicname FROM mystage_blog AS blog,mystage_blog_topic AS topic,mystage_topic_blog_map AS topicmap WHERE blog.status=1 AND topicmap.topicid=topic.id AND topicmap.blogid=blog.id ORDER BY updatetime DESC  [ RunTime:0.000510s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000565s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000616s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 24 行.
+NOTIC: [8] Use of undefined constant topic_manage - assumed 'topic_manage' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 27 行.
+NOTIC: [8] Use of undefined constant draftbox - assumed 'draftbox' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 30 行.
+NOTIC: [8] Use of undefined constant wastebasket - assumed 'wastebasket' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 33 行.
+NOTIC: [8] Use of undefined constant add_blog - assumed 'add_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 36 行.
+NOTIC: [8] Use of undefined constant blog_details - assumed 'blog_details' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 59 行.
+NOTIC: [8] Use of undefined constant edit_blog - assumed 'edit_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 64 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.008374s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008418s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000356s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000326s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000266s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000366s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001414s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000477s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000510s ]
+
+[ 2013-04-23T01:02:09+08:00 ] 0.0.0.0 /mystage/admin.php/blog/edit_blog/blogid/30
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.000719s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000785s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000521s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000567s ]
+SQL: SHOW COLUMNS FROM `mystage_blog` [ RunTime:0.002707s ]
+SQL: SELECT blog.*,topicmap.topicid FROM mystage_blog AS blog,mystage_topic_blog_map AS topicmap WHERE blog.id=30 AND blog.id=topicmap.blogid limit 1 [ RunTime:0.000508s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_topic` [ RunTime:0.002307s ]
+SQL: SELECT cat.name AS catname,topic.*
+			FROM mystage_blog_topic AS topic,mystage_blog_cat AS cat
+			WHERE topic.catid=cat.id ORDER BY cat.id,topic.listorder [ RunTime:0.000403s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_cat` [ RunTime:0.002196s ]
+SQL: SELECT * FROM `mystage_blog_cat`  [ RunTime:0.000194s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_type` [ RunTime:0.002034s ]
+SQL: SELECT * FROM `mystage_blog_type`  [ RunTime:0.000190s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000564s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000613s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 21 行.
+NOTIC: [8] Use of undefined constant topic_manage - assumed 'topic_manage' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 24 行.
+NOTIC: [8] Use of undefined constant draftbox - assumed 'draftbox' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 27 行.
+NOTIC: [8] Use of undefined constant wastebasket - assumed 'wastebasket' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 30 行.
+NOTIC: [8] Use of undefined constant add_blog - assumed 'add_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 33 行.
+NOTIC: [8] Use of undefined constant addBlog - assumed 'addBlog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 39 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.010122s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010167s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000398s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000332s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000250s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000407s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001488s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000484s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000521s ]
+
+[ 2013-04-23T01:03:50+08:00 ] 0.0.0.0 /mystage/admin.php/blog/edit_blog/blogid/30
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001334s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001405s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000720s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000770s ]
+SQL: SHOW COLUMNS FROM `mystage_blog` [ RunTime:0.002592s ]
+SQL: SELECT blog.*,topicmap.topicid FROM mystage_blog AS blog,mystage_topic_blog_map AS topicmap WHERE blog.id=30 AND blog.id=topicmap.blogid limit 1 [ RunTime:0.000465s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_topic` [ RunTime:0.002395s ]
+SQL: SELECT cat.name AS catname,topic.*
+			FROM mystage_blog_topic AS topic,mystage_blog_cat AS cat
+			WHERE topic.catid=cat.id ORDER BY cat.id,topic.listorder [ RunTime:0.000347s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_cat` [ RunTime:0.002210s ]
+SQL: SELECT * FROM `mystage_blog_cat`  [ RunTime:0.000210s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_type` [ RunTime:0.002297s ]
+SQL: SELECT * FROM `mystage_blog_type`  [ RunTime:0.000259s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001194s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001238s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 21 行.
+NOTIC: [8] Use of undefined constant topic_manage - assumed 'topic_manage' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 24 行.
+NOTIC: [8] Use of undefined constant draftbox - assumed 'draftbox' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 27 行.
+NOTIC: [8] Use of undefined constant wastebasket - assumed 'wastebasket' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 30 行.
+NOTIC: [8] Use of undefined constant add_blog - assumed 'add_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 33 行.
+NOTIC: [8] Use of undefined constant addBlog - assumed 'addBlog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 39 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.011065s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011109s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000639s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000540s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000454s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000564s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002311s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000691s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000729s ]
+
+[ 2013-04-23T01:03:53+08:00 ] 0.0.0.0 /mystage/admin.php/blog/edit_blog/blogid/30
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001594s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001717s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000727s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000772s ]
+SQL: SHOW COLUMNS FROM `mystage_blog` [ RunTime:0.002790s ]
+SQL: SELECT blog.*,topicmap.topicid FROM mystage_blog AS blog,mystage_topic_blog_map AS topicmap WHERE blog.id=30 AND blog.id=topicmap.blogid limit 1 [ RunTime:0.000598s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_topic` [ RunTime:0.002450s ]
+SQL: SELECT cat.name AS catname,topic.*
+			FROM mystage_blog_topic AS topic,mystage_blog_cat AS cat
+			WHERE topic.catid=cat.id ORDER BY cat.id,topic.listorder [ RunTime:0.000429s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_cat` [ RunTime:0.002245s ]
+SQL: SELECT * FROM `mystage_blog_cat`  [ RunTime:0.000233s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_type` [ RunTime:0.002168s ]
+SQL: SELECT * FROM `mystage_blog_type`  [ RunTime:0.000229s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001153s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001198s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 21 行.
+NOTIC: [8] Use of undefined constant topic_manage - assumed 'topic_manage' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 24 行.
+NOTIC: [8] Use of undefined constant draftbox - assumed 'draftbox' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 27 行.
+NOTIC: [8] Use of undefined constant wastebasket - assumed 'wastebasket' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 30 行.
+NOTIC: [8] Use of undefined constant add_blog - assumed 'add_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 33 行.
+NOTIC: [8] Use of undefined constant addBlog - assumed 'addBlog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 39 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.011018s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011061s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000567s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000481s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000445s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000579s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002176s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000642s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000677s ]
+
+[ 2013-04-23T01:04:07+08:00 ] 0.0.0.0 /mystage/admin.php/blog/edit_blog/blogid/30
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001303s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001371s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000879s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000954s ]
+SQL: SHOW COLUMNS FROM `mystage_blog` [ RunTime:0.003091s ]
+SQL: SELECT blog.*,topicmap.topicid FROM mystage_blog AS blog,mystage_topic_blog_map AS topicmap WHERE blog.id=30 AND blog.id=topicmap.blogid limit 1 [ RunTime:0.000701s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_topic` [ RunTime:0.002747s ]
+SQL: SELECT cat.name AS catname,topic.*
+			FROM mystage_blog_topic AS topic,mystage_blog_cat AS cat
+			WHERE topic.catid=cat.id ORDER BY cat.id,topic.listorder [ RunTime:0.000433s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_cat` [ RunTime:0.002288s ]
+SQL: SELECT * FROM `mystage_blog_cat`  [ RunTime:0.000226s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_type` [ RunTime:0.002183s ]
+SQL: SELECT * FROM `mystage_blog_type`  [ RunTime:0.000226s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001137s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001182s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 21 行.
+NOTIC: [8] Use of undefined constant topic_manage - assumed 'topic_manage' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 24 行.
+NOTIC: [8] Use of undefined constant draftbox - assumed 'draftbox' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 27 行.
+NOTIC: [8] Use of undefined constant wastebasket - assumed 'wastebasket' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 30 行.
+NOTIC: [8] Use of undefined constant add_blog - assumed 'add_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 33 行.
+NOTIC: [8] Use of undefined constant addBlog - assumed 'addBlog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 39 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.011223s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011267s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000607s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000480s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000442s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000526s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002154s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000642s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000676s ]
+
+[ 2013-04-23T01:05:02+08:00 ] 0.0.0.0 /mystage/admin.php/blog/index
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001571s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001652s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001089s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001163s ]
+SQL: SHOW COLUMNS FROM `mystage_blog` [ RunTime:0.002569s ]
+SQL: SELECT blog.id,blog.title,blog.inputtime,topic.name AS topicname FROM mystage_blog AS blog,mystage_blog_topic AS topic,mystage_topic_blog_map AS topicmap WHERE blog.status=1 AND topicmap.topicid=topic.id AND topicmap.blogid=blog.id ORDER BY updatetime DESC  [ RunTime:0.000382s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001149s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001195s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 24 行.
+NOTIC: [8] Use of undefined constant topic_manage - assumed 'topic_manage' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 27 行.
+NOTIC: [8] Use of undefined constant draftbox - assumed 'draftbox' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 30 行.
+NOTIC: [8] Use of undefined constant wastebasket - assumed 'wastebasket' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 33 行.
+NOTIC: [8] Use of undefined constant add_blog - assumed 'add_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 36 行.
+NOTIC: [8] Use of undefined constant blog_details - assumed 'blog_details' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 59 行.
+NOTIC: [8] Use of undefined constant edit_blog - assumed 'edit_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 64 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.009964s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010008s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000562s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000573s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000400s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000601s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002239s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000663s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000697s ]
+
+[ 2013-04-23T01:05:04+08:00 ] 0.0.0.0 /mystage/admin.php/blog/edit_blog/blogid/30
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.000727s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000792s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000528s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000576s ]
+SQL: SHOW COLUMNS FROM `mystage_blog` [ RunTime:0.002922s ]
+SQL: SELECT blog.*,topicmap.topicid FROM mystage_blog AS blog,mystage_topic_blog_map AS topicmap WHERE blog.id=30 AND blog.id=topicmap.blogid limit 1 [ RunTime:0.000488s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_topic` [ RunTime:0.002735s ]
+SQL: SELECT cat.name AS catname,topic.*
+			FROM mystage_blog_topic AS topic,mystage_blog_cat AS cat
+			WHERE topic.catid=cat.id ORDER BY cat.id,topic.listorder [ RunTime:0.000396s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_cat` [ RunTime:0.002457s ]
+SQL: SELECT * FROM `mystage_blog_cat`  [ RunTime:0.000207s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_type` [ RunTime:0.002535s ]
+SQL: SELECT * FROM `mystage_blog_type`  [ RunTime:0.000214s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000774s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000825s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 21 行.
+NOTIC: [8] Use of undefined constant topic_manage - assumed 'topic_manage' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 24 行.
+NOTIC: [8] Use of undefined constant draftbox - assumed 'draftbox' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 27 行.
+NOTIC: [8] Use of undefined constant wastebasket - assumed 'wastebasket' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 30 行.
+NOTIC: [8] Use of undefined constant add_blog - assumed 'add_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 33 行.
+NOTIC: [8] Use of undefined constant addBlog - assumed 'addBlog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\715c292e7c23ef4538e5c68f0a7531c5.php 第 39 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.011117s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011162s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000380s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000310s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000236s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000386s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001408s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000488s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000523s ]
+
+[ 2013-04-23T01:05:38+08:00 ] 0.0.0.0 /mystage/admin.php/blog/add_blog
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.000723s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000804s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000536s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000585s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_topic` [ RunTime:0.002637s ]
+SQL: SELECT cat.name AS catname,topic.*
+			FROM mystage_blog_topic AS topic,mystage_blog_cat AS cat
+			WHERE topic.catid=cat.id ORDER BY cat.id,topic.listorder [ RunTime:0.000608s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_cat` [ RunTime:0.002454s ]
+SQL: SELECT * FROM `mystage_blog_cat`  [ RunTime:0.000245s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_type` [ RunTime:0.002249s ]
+SQL: SELECT * FROM `mystage_blog_type`  [ RunTime:0.000235s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000660s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000704s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 21 行.
+NOTIC: [8] Use of undefined constant topic_manage - assumed 'topic_manage' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 24 行.
+NOTIC: [8] Use of undefined constant draftbox - assumed 'draftbox' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 27 行.
+NOTIC: [8] Use of undefined constant wastebasket - assumed 'wastebasket' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 30 行.
+NOTIC: [8] Use of undefined constant add_blog - assumed 'add_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 33 行.
+NOTIC: [8] Use of undefined constant addBlog - assumed 'addBlog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 39 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.008771s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008814s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000370s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000354s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000357s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000431s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001641s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000684s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000728s ]
+
+[ 2013-04-23T01:06:00+08:00 ] 0.0.0.0 /mystage/admin.php/blog/add_blog
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001343s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001410s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000718s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000766s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_topic` [ RunTime:0.002651s ]
+SQL: SELECT cat.name AS catname,topic.*
+			FROM mystage_blog_topic AS topic,mystage_blog_cat AS cat
+			WHERE topic.catid=cat.id ORDER BY cat.id,topic.listorder [ RunTime:0.000476s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_cat` [ RunTime:0.002555s ]
+SQL: SELECT * FROM `mystage_blog_cat`  [ RunTime:0.000275s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_type` [ RunTime:0.002299s ]
+SQL: SELECT * FROM `mystage_blog_type`  [ RunTime:0.000328s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000740s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000789s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 21 行.
+NOTIC: [8] Use of undefined constant topic_manage - assumed 'topic_manage' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 24 行.
+NOTIC: [8] Use of undefined constant draftbox - assumed 'draftbox' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 27 行.
+NOTIC: [8] Use of undefined constant wastebasket - assumed 'wastebasket' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 30 行.
+NOTIC: [8] Use of undefined constant add_blog - assumed 'add_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 33 行.
+NOTIC: [8] Use of undefined constant addBlog - assumed 'addBlog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 39 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.009890s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009931s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000550s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000521s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000429s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000578s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002189s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000649s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000686s ]
+
+[ 2013-04-23T01:06:01+08:00 ] 0.0.0.0 /mystage/admin.php/blog/add_blog
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.000586s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000649s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000445s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000483s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_topic` [ RunTime:0.002669s ]
+SQL: SELECT cat.name AS catname,topic.*
+			FROM mystage_blog_topic AS topic,mystage_blog_cat AS cat
+			WHERE topic.catid=cat.id ORDER BY cat.id,topic.listorder [ RunTime:0.000597s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_cat` [ RunTime:0.002582s ]
+SQL: SELECT * FROM `mystage_blog_cat`  [ RunTime:0.000373s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_type` [ RunTime:0.002421s ]
+SQL: SELECT * FROM `mystage_blog_type`  [ RunTime:0.000441s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000669s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000726s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 21 行.
+NOTIC: [8] Use of undefined constant topic_manage - assumed 'topic_manage' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 24 行.
+NOTIC: [8] Use of undefined constant draftbox - assumed 'draftbox' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 27 行.
+NOTIC: [8] Use of undefined constant wastebasket - assumed 'wastebasket' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 30 行.
+NOTIC: [8] Use of undefined constant add_blog - assumed 'add_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 33 行.
+NOTIC: [8] Use of undefined constant addBlog - assumed 'addBlog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 39 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.008466s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008516s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000372s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000339s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000262s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000385s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001466s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000534s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000576s ]
+
+[ 2013-04-23T01:06:02+08:00 ] 0.0.0.0 /mystage/admin.php/blog/add_blog
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.000726s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000792s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000526s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000574s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_topic` [ RunTime:0.002861s ]
+SQL: SELECT cat.name AS catname,topic.*
+			FROM mystage_blog_topic AS topic,mystage_blog_cat AS cat
+			WHERE topic.catid=cat.id ORDER BY cat.id,topic.listorder [ RunTime:0.000505s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_cat` [ RunTime:0.002830s ]
+SQL: SELECT * FROM `mystage_blog_cat`  [ RunTime:0.000289s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_type` [ RunTime:0.002653s ]
+SQL: SELECT * FROM `mystage_blog_type`  [ RunTime:0.000356s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000865s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000932s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 21 行.
+NOTIC: [8] Use of undefined constant topic_manage - assumed 'topic_manage' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 24 行.
+NOTIC: [8] Use of undefined constant draftbox - assumed 'draftbox' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 27 行.
+NOTIC: [8] Use of undefined constant wastebasket - assumed 'wastebasket' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 30 行.
+NOTIC: [8] Use of undefined constant add_blog - assumed 'add_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 33 行.
+NOTIC: [8] Use of undefined constant addBlog - assumed 'addBlog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 39 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.009432s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009480s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000366s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000325s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000260s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000395s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001459s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000506s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000542s ]
+
+[ 2013-04-23T01:06:11+08:00 ] 0.0.0.0 /mystage/admin.php/blog/add_blog
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001351s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001423s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000766s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000820s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_topic` [ RunTime:0.002595s ]
+SQL: SELECT cat.name AS catname,topic.*
+			FROM mystage_blog_topic AS topic,mystage_blog_cat AS cat
+			WHERE topic.catid=cat.id ORDER BY cat.id,topic.listorder [ RunTime:0.000520s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_cat` [ RunTime:0.002276s ]
+SQL: SELECT * FROM `mystage_blog_cat`  [ RunTime:0.000275s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_type` [ RunTime:0.002464s ]
+SQL: SELECT * FROM `mystage_blog_type`  [ RunTime:0.000299s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001154s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001198s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 21 行.
+NOTIC: [8] Use of undefined constant topic_manage - assumed 'topic_manage' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 24 行.
+NOTIC: [8] Use of undefined constant draftbox - assumed 'draftbox' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 27 行.
+NOTIC: [8] Use of undefined constant wastebasket - assumed 'wastebasket' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 30 行.
+NOTIC: [8] Use of undefined constant add_blog - assumed 'add_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 33 行.
+NOTIC: [8] Use of undefined constant addBlog - assumed 'addBlog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 39 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.009979s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010030s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000576s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000504s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000399s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000545s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002135s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000678s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000720s ]
+
+[ 2013-04-23T01:06:12+08:00 ] 0.0.0.0 /mystage/admin.php/blog/add_blog
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001349s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001422s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000731s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000780s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_topic` [ RunTime:0.002916s ]
+SQL: SELECT cat.name AS catname,topic.*
+			FROM mystage_blog_topic AS topic,mystage_blog_cat AS cat
+			WHERE topic.catid=cat.id ORDER BY cat.id,topic.listorder [ RunTime:0.000579s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_cat` [ RunTime:0.002933s ]
+SQL: SELECT * FROM `mystage_blog_cat`  [ RunTime:0.000352s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_type` [ RunTime:0.002792s ]
+SQL: SELECT * FROM `mystage_blog_type`  [ RunTime:0.000308s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001378s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001431s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 21 行.
+NOTIC: [8] Use of undefined constant topic_manage - assumed 'topic_manage' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 24 行.
+NOTIC: [8] Use of undefined constant draftbox - assumed 'draftbox' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 27 行.
+NOTIC: [8] Use of undefined constant wastebasket - assumed 'wastebasket' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 30 行.
+NOTIC: [8] Use of undefined constant add_blog - assumed 'add_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 33 行.
+NOTIC: [8] Use of undefined constant addBlog - assumed 'addBlog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 39 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.010496s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010541s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000569s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000477s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000482s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000697s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002336s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000907s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000945s ]
+
+[ 2013-04-23T01:06:13+08:00 ] 0.0.0.0 /mystage/admin.php/blog/add_blog
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.000645s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000706s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000597s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000658s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_topic` [ RunTime:0.002384s ]
+SQL: SELECT cat.name AS catname,topic.*
+			FROM mystage_blog_topic AS topic,mystage_blog_cat AS cat
+			WHERE topic.catid=cat.id ORDER BY cat.id,topic.listorder [ RunTime:0.000388s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_cat` [ RunTime:0.002244s ]
+SQL: SELECT * FROM `mystage_blog_cat`  [ RunTime:0.000184s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_type` [ RunTime:0.002197s ]
+SQL: SELECT * FROM `mystage_blog_type`  [ RunTime:0.000179s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000472s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000516s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 21 行.
+NOTIC: [8] Use of undefined constant topic_manage - assumed 'topic_manage' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 24 行.
+NOTIC: [8] Use of undefined constant draftbox - assumed 'draftbox' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 27 行.
+NOTIC: [8] Use of undefined constant wastebasket - assumed 'wastebasket' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 30 行.
+NOTIC: [8] Use of undefined constant add_blog - assumed 'add_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 33 行.
+NOTIC: [8] Use of undefined constant addBlog - assumed 'addBlog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 39 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.008689s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008733s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000367s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000325s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000257s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000381s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001433s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000491s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000528s ]
+
+[ 2013-04-23T01:06:34+08:00 ] 0.0.0.0 /mystage/admin.php/blog/add_blog
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.000637s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000704s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000445s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000483s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_topic` [ RunTime:0.002526s ]
+SQL: SELECT cat.name AS catname,topic.*
+			FROM mystage_blog_topic AS topic,mystage_blog_cat AS cat
+			WHERE topic.catid=cat.id ORDER BY cat.id,topic.listorder [ RunTime:0.000619s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_cat` [ RunTime:0.002750s ]
+SQL: SELECT * FROM `mystage_blog_cat`  [ RunTime:0.000294s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_type` [ RunTime:0.002328s ]
+SQL: SELECT * FROM `mystage_blog_type`  [ RunTime:0.000269s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000500s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000543s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 21 行.
+NOTIC: [8] Use of undefined constant topic_manage - assumed 'topic_manage' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 24 行.
+NOTIC: [8] Use of undefined constant draftbox - assumed 'draftbox' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 27 行.
+NOTIC: [8] Use of undefined constant wastebasket - assumed 'wastebasket' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 30 行.
+NOTIC: [8] Use of undefined constant add_blog - assumed 'add_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 33 行.
+NOTIC: [8] Use of undefined constant addBlog - assumed 'addBlog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 39 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.008448s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008489s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000470s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000315s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000240s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000393s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001515s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000448s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000491s ]
+
+[ 2013-04-23T01:06:36+08:00 ] 0.0.0.0 /mystage/admin.php/blog/index
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001145s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001206s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000671s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000728s ]
+SQL: SHOW COLUMNS FROM `mystage_blog` [ RunTime:0.002652s ]
+SQL: SELECT blog.id,blog.title,blog.inputtime,topic.name AS topicname FROM mystage_blog AS blog,mystage_blog_topic AS topic,mystage_topic_blog_map AS topicmap WHERE blog.status=1 AND topicmap.topicid=topic.id AND topicmap.blogid=blog.id ORDER BY updatetime DESC  [ RunTime:0.000423s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001206s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001251s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 24 行.
+NOTIC: [8] Use of undefined constant topic_manage - assumed 'topic_manage' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 27 行.
+NOTIC: [8] Use of undefined constant draftbox - assumed 'draftbox' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 30 行.
+NOTIC: [8] Use of undefined constant wastebasket - assumed 'wastebasket' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 33 行.
+NOTIC: [8] Use of undefined constant add_blog - assumed 'add_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 36 行.
+NOTIC: [8] Use of undefined constant blog_details - assumed 'blog_details' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 59 行.
+NOTIC: [8] Use of undefined constant edit_blog - assumed 'edit_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 64 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.009145s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009190s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000584s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000512s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000423s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000574s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002198s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000656s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000693s ]
+
+[ 2013-04-23T01:06:36+08:00 ] 0.0.0.0 /mystage/admin.php/blog/topic_manage
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.000727s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000792s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000523s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000570s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_topic` [ RunTime:0.003052s ]
+SQL: SELECT cat.name AS catname,topic.*
+			FROM mystage_blog_topic AS topic,mystage_blog_cat AS cat
+			WHERE topic.catid=cat.id ORDER BY cat.id,topic.listorder [ RunTime:0.000457s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_cat` [ RunTime:0.002530s ]
+SQL: SELECT * FROM `mystage_blog_cat`  [ RunTime:0.000219s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000768s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000816s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\07c56a8e8ef365a22eeba25ad9c016c9.php 第 42 行.
+NOTIC: [8] Use of undefined constant topic_manage - assumed 'topic_manage' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\07c56a8e8ef365a22eeba25ad9c016c9.php 第 45 行.
+NOTIC: [8] Use of undefined constant draftbox - assumed 'draftbox' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\07c56a8e8ef365a22eeba25ad9c016c9.php 第 48 行.
+NOTIC: [8] Use of undefined constant wastebasket - assumed 'wastebasket' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\07c56a8e8ef365a22eeba25ad9c016c9.php 第 51 行.
+NOTIC: [8] Use of undefined constant add_blog - assumed 'add_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\07c56a8e8ef365a22eeba25ad9c016c9.php 第 54 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.010078s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010126s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000447s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000345s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000279s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000396s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001582s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000480s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000522s ]
+
+[ 2013-04-23T01:06:37+08:00 ] 0.0.0.0 /mystage/admin.php/blog/draftbox
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.000732s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000799s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000525s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000574s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000663s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000734s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\b8dfc9fcf1d43c22f64c3e8bc46ee8fc.php 第 17 行.
+NOTIC: [8] Use of undefined constant topic_manage - assumed 'topic_manage' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\b8dfc9fcf1d43c22f64c3e8bc46ee8fc.php 第 20 行.
+NOTIC: [8] Use of undefined constant draftbox - assumed 'draftbox' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\b8dfc9fcf1d43c22f64c3e8bc46ee8fc.php 第 23 行.
+NOTIC: [8] Use of undefined constant wastebasket - assumed 'wastebasket' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\b8dfc9fcf1d43c22f64c3e8bc46ee8fc.php 第 26 行.
+NOTIC: [8] Use of undefined constant add_blog - assumed 'add_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\b8dfc9fcf1d43c22f64c3e8bc46ee8fc.php 第 29 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.007280s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007329s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000393s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000381s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000300s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000443s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001634s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000559s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000600s ]
+
+[ 2013-04-23T01:06:38+08:00 ] 0.0.0.0 /mystage/admin.php/blog/add_blog
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.000672s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000734s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000450s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000488s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_topic` [ RunTime:0.002697s ]
+SQL: SELECT cat.name AS catname,topic.*
+			FROM mystage_blog_topic AS topic,mystage_blog_cat AS cat
+			WHERE topic.catid=cat.id ORDER BY cat.id,topic.listorder [ RunTime:0.000516s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_cat` [ RunTime:0.002494s ]
+SQL: SELECT * FROM `mystage_blog_cat`  [ RunTime:0.000323s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_type` [ RunTime:0.002333s ]
+SQL: SELECT * FROM `mystage_blog_type`  [ RunTime:0.000294s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000685s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000730s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 21 行.
+NOTIC: [8] Use of undefined constant topic_manage - assumed 'topic_manage' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 24 行.
+NOTIC: [8] Use of undefined constant draftbox - assumed 'draftbox' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 27 行.
+NOTIC: [8] Use of undefined constant wastebasket - assumed 'wastebasket' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 30 行.
+NOTIC: [8] Use of undefined constant add_blog - assumed 'add_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 33 行.
+NOTIC: [8] Use of undefined constant addBlog - assumed 'addBlog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 39 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.008561s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008603s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000365s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000326s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000285s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000382s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001461s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000523s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000561s ]
+
+[ 2013-04-23T01:08:01+08:00 ] 0.0.0.0 /mystage/admin.php/blog/index
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.000868s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000938s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000536s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000585s ]
+SQL: SHOW COLUMNS FROM `mystage_blog` [ RunTime:0.003461s ]
+SQL: SELECT blog.id,blog.title,blog.inputtime,topic.name AS topicname FROM mystage_blog AS blog,mystage_blog_topic AS topic,mystage_topic_blog_map AS topicmap WHERE blog.status=1 AND topicmap.topicid=topic.id AND topicmap.blogid=blog.id ORDER BY updatetime DESC  [ RunTime:0.000479s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000549s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000602s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 24 行.
+NOTIC: [8] Use of undefined constant topic_manage - assumed 'topic_manage' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 27 行.
+NOTIC: [8] Use of undefined constant draftbox - assumed 'draftbox' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 30 行.
+NOTIC: [8] Use of undefined constant wastebasket - assumed 'wastebasket' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 33 行.
+NOTIC: [8] Use of undefined constant add_blog - assumed 'add_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 36 行.
+NOTIC: [8] Use of undefined constant blog_details - assumed 'blog_details' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 59 行.
+NOTIC: [8] Use of undefined constant edit_blog - assumed 'edit_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 64 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.009119s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009163s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000339s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000308s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000282s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000456s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001487s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000557s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000597s ]
+
+[ 2013-04-23T01:08:02+08:00 ] 0.0.0.0 /mystage/admin.php/blog/topic_manage
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.000751s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000818s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000537s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000585s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_topic` [ RunTime:0.002525s ]
+SQL: SELECT cat.name AS catname,topic.*
+			FROM mystage_blog_topic AS topic,mystage_blog_cat AS cat
+			WHERE topic.catid=cat.id ORDER BY cat.id,topic.listorder [ RunTime:0.000539s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_cat` [ RunTime:0.002335s ]
+SQL: SELECT * FROM `mystage_blog_cat`  [ RunTime:0.000289s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000456s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000498s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\07c56a8e8ef365a22eeba25ad9c016c9.php 第 42 行.
+NOTIC: [8] Use of undefined constant topic_manage - assumed 'topic_manage' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\07c56a8e8ef365a22eeba25ad9c016c9.php 第 45 行.
+NOTIC: [8] Use of undefined constant draftbox - assumed 'draftbox' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\07c56a8e8ef365a22eeba25ad9c016c9.php 第 48 行.
+NOTIC: [8] Use of undefined constant wastebasket - assumed 'wastebasket' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\07c56a8e8ef365a22eeba25ad9c016c9.php 第 51 行.
+NOTIC: [8] Use of undefined constant add_blog - assumed 'add_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\07c56a8e8ef365a22eeba25ad9c016c9.php 第 54 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.008794s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008838s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000375s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000308s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000240s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000394s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001415s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000442s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000475s ]
+
+[ 2013-04-23T01:08:05+08:00 ] 0.0.0.0 /mystage/admin.php/blog/draftbox
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.000720s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000785s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000553s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000603s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000413s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000485s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\b8dfc9fcf1d43c22f64c3e8bc46ee8fc.php 第 17 行.
+NOTIC: [8] Use of undefined constant topic_manage - assumed 'topic_manage' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\b8dfc9fcf1d43c22f64c3e8bc46ee8fc.php 第 20 行.
+NOTIC: [8] Use of undefined constant draftbox - assumed 'draftbox' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\b8dfc9fcf1d43c22f64c3e8bc46ee8fc.php 第 23 行.
+NOTIC: [8] Use of undefined constant wastebasket - assumed 'wastebasket' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\b8dfc9fcf1d43c22f64c3e8bc46ee8fc.php 第 26 行.
+NOTIC: [8] Use of undefined constant add_blog - assumed 'add_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\b8dfc9fcf1d43c22f64c3e8bc46ee8fc.php 第 29 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.006911s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006958s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000402s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000376s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000291s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000450s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001636s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000563s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000605s ]
+
+[ 2013-04-23T01:08:06+08:00 ] 0.0.0.0 /mystage/admin.php/blog/topic_manage
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.000738s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000803s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000534s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000581s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_topic` [ RunTime:0.002738s ]
+SQL: SELECT cat.name AS catname,topic.*
+			FROM mystage_blog_topic AS topic,mystage_blog_cat AS cat
+			WHERE topic.catid=cat.id ORDER BY cat.id,topic.listorder [ RunTime:0.000662s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_cat` [ RunTime:0.002452s ]
+SQL: SELECT * FROM `mystage_blog_cat`  [ RunTime:0.000324s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000474s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000517s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\07c56a8e8ef365a22eeba25ad9c016c9.php 第 42 行.
+NOTIC: [8] Use of undefined constant topic_manage - assumed 'topic_manage' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\07c56a8e8ef365a22eeba25ad9c016c9.php 第 45 行.
+NOTIC: [8] Use of undefined constant draftbox - assumed 'draftbox' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\07c56a8e8ef365a22eeba25ad9c016c9.php 第 48 行.
+NOTIC: [8] Use of undefined constant wastebasket - assumed 'wastebasket' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\07c56a8e8ef365a22eeba25ad9c016c9.php 第 51 行.
+NOTIC: [8] Use of undefined constant add_blog - assumed 'add_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\07c56a8e8ef365a22eeba25ad9c016c9.php 第 54 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.008670s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008714s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000358s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000334s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000237s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000395s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001424s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000478s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000514s ]
+
+[ 2013-04-23T01:08:09+08:00 ] 0.0.0.0 /mystage/admin.php/blog/wastebasket
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.000582s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000638s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000561s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000612s ]
+SQL: SHOW COLUMNS FROM `mystage_blog` [ RunTime:0.003283s ]
+SQL: SELECT blog.id,blog.title,blog.inputtime,topic.name AS topicname FROM mystage_blog AS blog,mystage_blog_topic AS topic,mystage_topic_blog_map AS topicmap WHERE blog.status=-1 AND topicmap.topicid=topic.id AND topicmap.blogid=blog.id ORDER BY updatetime DESC  [ RunTime:0.000362s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000682s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000729s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\e4ec5a2f63ab1ba1619db52e6dcbcdbc.php 第 24 行.
+NOTIC: [8] Use of undefined constant topic_manage - assumed 'topic_manage' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\e4ec5a2f63ab1ba1619db52e6dcbcdbc.php 第 27 行.
+NOTIC: [8] Use of undefined constant draftbox - assumed 'draftbox' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\e4ec5a2f63ab1ba1619db52e6dcbcdbc.php 第 30 行.
+NOTIC: [8] Use of undefined constant wastebasket - assumed 'wastebasket' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\e4ec5a2f63ab1ba1619db52e6dcbcdbc.php 第 33 行.
+NOTIC: [8] Use of undefined constant add_blog - assumed 'add_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\e4ec5a2f63ab1ba1619db52e6dcbcdbc.php 第 36 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.008376s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008419s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000378s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000348s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000241s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000358s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001421s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000486s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000519s ]
+
