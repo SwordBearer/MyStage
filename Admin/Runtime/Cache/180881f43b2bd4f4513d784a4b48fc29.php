@@ -3,10 +3,10 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 	<meta name="author" content="xmu.SwordBearer[ranxiedao@163.com]">
-	<link href="__PUBLIC__/admin/css/bootstrap.min.css" rel="stylesheet" />
- 	<link href="__PUBLIC__/admin/css/mystage_admin.css" rel="stylesheet"/>
-  	<script src="__PUBLIC__/admin/js/jquery-1.9.1.js" type="text/javascript" ></script>
-  	<script src="__PUBLIC__/admin/js/bootstrap.min.js" type="text/javascript" ></script>
+	<link href="__PUBLIC__/res/css/bootstrap.min.css" rel="stylesheet" />
+ 	<link href="__PUBLIC__/res/css/mystage_admin.min.css" rel="stylesheet"/>
+  	<script src="__PUBLIC__/res/js/jquery-1.9.1.min.js" type="text/javascript" ></script>
+  	<script src="__PUBLIC__/res/js/bootstrap.min.js" type="text/javascript" ></script>
 </head>
 
 <script language="Javascript">

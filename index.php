@@ -1,9 +1,8 @@
 <?php
-
 define('APP_DEBUG',true);
-define('APP_NAME', 'MyStage');
-define('APP_PATH', './MyStage/');
+define('APP_NAME', 'Home');
+define('APP_PATH', './Home/');
 define('THINK_PATH','./ThinkPHP/');
 define('ENGINE_NAME','cluster');
-require THINK_PATH.'ThinkPHP.php';
+require THINK_PATH.'/ThinkPHP.php';
 ?>
