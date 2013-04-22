@@ -1,4 +1,3 @@
 MyStage 
-  my personal blog
 =======
-found on April 14th 2013
+My personal blog:found on April 14th 2013
