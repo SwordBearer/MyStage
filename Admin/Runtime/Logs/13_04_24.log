@@ -1,0 +1,57 @@
+[ 2013-04-24T00:54:02+08:00 ] 0.0.0.0 /mystage/admin.php/public/admin_login
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001342s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001471s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000957s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001030s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.002447s ]
+INFO: [ view_template ] --END-- [ RunTime:0.002533s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.020369s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020455s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000612s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000577s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000462s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000673s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002504s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000878s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000944s ]
+
+[ 2013-04-24T00:54:05+08:00 ] 0.0.0.0 /mystage/admin.php/blog/index
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.000939s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001021s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000714s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000775s ]
+SQL: SHOW COLUMNS FROM `mystage_blog` [ RunTime:0.053950s ]
+SQL: SELECT blog.id,blog.title,blog.inputtime,topic.name AS topicname FROM mystage_blog AS blog,mystage_blog_topic AS topic,mystage_topic_blog_map AS topicmap WHERE blog.status=1 AND topicmap.topicid=topic.id AND topicmap.blogid=blog.id ORDER BY updatetime DESC  [ RunTime:0.067309s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.005533s ]
+INFO: [ view_template ] --END-- [ RunTime:0.005690s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 24 行.
+NOTIC: [8] Use of undefined constant topic_manage - assumed 'topic_manage' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 27 行.
+NOTIC: [8] Use of undefined constant draftbox - assumed 'draftbox' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 30 行.
+NOTIC: [8] Use of undefined constant wastebasket - assumed 'wastebasket' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 33 行.
+NOTIC: [8] Use of undefined constant add_blog - assumed 'add_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 36 行.
+NOTIC: [8] Use of undefined constant blog_details - assumed 'blog_details' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 59 行.
+NOTIC: [8] Use of undefined constant edit_blog - assumed 'edit_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 64 行.
+NOTIC: [8] Use of undefined constant blog_details - assumed 'blog_details' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 59 行.
+NOTIC: [8] Use of undefined constant edit_blog - assumed 'edit_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 64 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.057269s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.057416s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001607s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.001377s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.001302s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001496s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006167s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001894s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002025s ]
+

@@ -1,0 +1,75 @@
+body{
+	padding: 0px;
+	margin:0px;
+	font-family: "微软雅黑","黑体","宋体","仿宋","楷体";
+	background: #D2D8DE;
+}
+
+
+.header{
+	margin:0 auto;
+}
+.navbar-inner{
+	border-radius: 0px;
+}
+
+.main_content{
+	width: 80%;
+	min-width: 1000px;
+	margin: 0 auto;
+	background: red;
+}
+.main{
+	float:left;
+	width:78%;
+	background:orange;
+	min-height: 500px;
+}
+.sidebar{
+	float:left;
+	width:21%;
+	max-width: 280px;
+	margin-left:10px;
+	border-radius: 7px;
+}
+.baseDiv{
+	padding: 0;
+	margin-bottom: 10px;
+	border-radius: 6px;
+	box-shadow: 1px 1px 2px #A7A8AD;
+	background: #FaFcFd;
+}
+.sidebarTitle{
+	color: #fff;
+	margin:-1px;
+	font-size: 1.2em;
+	border-bottom: 1px solid #DADFE1;
+	height: 1.5em;
+	line-height: 1.5em;
+	background: #4A708B;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+	padding: 5px;
+	text-indent: 1em;
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.sidebarMenu{
+	margin: 0;
+	border: 1px solid #C7CACC;
+	list-style:none;
+	font-size: 13px;
+}
+.sidebarMenu li a{
+	text-decoration: none;
+	display: block;
+	padding-left: 10px;
+	line-height: 36px;
+	border-bottom: 1px solid #C6C8CB;
+	color: #444;
+}
+.sidebarMenu li a:hover{
+	background: #F0F1F2;
+	box-shadow: inset 0 0 6px #ccc;
+	font-weight: bold;
+}

@@ -3,6 +3,7 @@ return array(
 	//SAE下固定mysql配置
 	'DB_TYPE'=> 'mysql',     // 数据库类型
 	'DB_DEPLOY_TYPE'=> 1,
+	'URL_HTML_SUFFIX'=>'.tyc',
 	'DB_RW_SEPARATE'=>true,
 	'DB_HOST'=> SAE_MYSQL_HOST_M.','.SAE_MYSQL_HOST_S, // 服务器地址
 	'DB_NAME'=> SAE_MYSQL_DB,        // 数据库名

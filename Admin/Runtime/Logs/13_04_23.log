@@ -9834,3 +9834,64 @@ INFO: [ view_end ] --START--
 INFO: Run ShowPageTrace Behavior [ RunTime:0.000677s ]
 INFO: [ view_end ] --END-- [ RunTime:0.000715s ]
 
+[ 2013-04-23T14:41:33+08:00 ] 0.0.0.0 /MyStage/admin.php/public/admin_login
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.000708s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000759s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000463s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000502s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000639s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000682s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.005974s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006021s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000444s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000435s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000358s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000483s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001821s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000583s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000620s ]
+
+[ 2013-04-23T14:43:19+08:00 ] 0.0.0.0 /MyStage/admin.php/blog/index
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.000615s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000662s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000455s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000492s ]
+SQL: SHOW COLUMNS FROM `mystage_blog` [ RunTime:0.017520s ]
+SQL: SELECT blog.id,blog.title,blog.inputtime,topic.name AS topicname FROM mystage_blog AS blog,mystage_blog_topic AS topic,mystage_topic_blog_map AS topicmap WHERE blog.status=1 AND topicmap.topicid=topic.id AND topicmap.blogid=blog.id ORDER BY updatetime DESC  [ RunTime:0.033986s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001448s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001529s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 24 行.
+NOTIC: [8] Use of undefined constant topic_manage - assumed 'topic_manage' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 27 行.
+NOTIC: [8] Use of undefined constant draftbox - assumed 'draftbox' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 30 行.
+NOTIC: [8] Use of undefined constant wastebasket - assumed 'wastebasket' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 33 行.
+NOTIC: [8] Use of undefined constant add_blog - assumed 'add_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 36 行.
+NOTIC: [8] Use of undefined constant blog_details - assumed 'blog_details' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 59 行.
+NOTIC: [8] Use of undefined constant edit_blog - assumed 'edit_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 64 行.
+NOTIC: [8] Use of undefined constant blog_details - assumed 'blog_details' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 59 行.
+NOTIC: [8] Use of undefined constant edit_blog - assumed 'edit_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 64 行.
+NOTIC: [8] Use of undefined constant blog_details - assumed 'blog_details' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 59 行.
+NOTIC: [8] Use of undefined constant edit_blog - assumed 'edit_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 64 行.
+NOTIC: [8] Use of undefined constant blog_details - assumed 'blog_details' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 59 行.
+NOTIC: [8] Use of undefined constant edit_blog - assumed 'edit_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\d759778e500ef01dd827314dff0dcd80.php 第 64 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.016550s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016624s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000895s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000979s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000711s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000959s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003770s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001116s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001190s ]
+
