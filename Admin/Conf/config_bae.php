@@ -1,6 +1,6 @@
 ﻿<?php
 return array(
-	'URL_MODEL'=> '3', 
+	'URL_MODEL'=>3, 
 	'BUCKET_PREFIX'=>'mystage-',
 	'DB_TYPE'=>'mysql',
 	'URL_HTML_SUFFIX'=>'.tyc',

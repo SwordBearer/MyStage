@@ -16,20 +16,20 @@ body{
 .main_content{
 	width: 80%;
 	min-width: 1000px;
-	margin: 0 auto;
-	background: red;
+	margin: 60px auto;
 }
 .main{
 	float:left;
+	margin-left:10px;
 	width:78%;
 	background:orange;
-	min-height: 500px;
+	min-height: 300px;
+	padding:10px;
 }
 .sidebar{
 	float:left;
 	width:21%;
 	max-width: 280px;
-	margin-left:10px;
 	border-radius: 7px;
 }
 .baseDiv{
@@ -56,7 +56,6 @@ body{
 
 .sidebarMenu{
 	margin: 0;
-	border: 1px solid #C7CACC;
 	list-style:none;
 	font-size: 13px;
 }
@@ -71,5 +70,25 @@ body{
 .sidebarMenu li a:hover{
 	background: #F0F1F2;
 	box-shadow: inset 0 0 6px #ccc;
-	font-weight: bold;
+}
+
+.blogEntry{
+	padding: 5px;
+	background: red;
+	margin-bottom: 3px;
+}
+.blogTitle a{
+	margin-left: 20px;
+}
+.blogTitle .ico_type_Translated {
+	background: url(../img/ico_Translated.gif) no-repeat 0 0;
+	vertical-align: middle;
+}
+.blogTitle .ico_type_Original{
+	background: url(../img/ico_Original.gif) no-repeat 0 0;
+	vertical-align: middle;
+}
+
+
+.blogManage{
 }
