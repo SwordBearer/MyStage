@@ -10,7 +10,7 @@
 </head>
 <body>
 <div class="header">
-	<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="navbar navbar-inverse navbar-fixesd-top">
 		<div class="navbar-inner">
 			<div class="container">
 				<a class="brand" href="#">SwordBearer's Stage</a>
@@ -35,23 +35,23 @@
 		</div>
 	</div>
 </div>
-
 <div class="main_content">
-	<!-- 侧边栏 -->
-	<div class="sidebar">
+	<!-- 左侧栏 -->
+	<div class="leftSide">
 		<div id="weiboInfo" class="baseDiv">
 			<h4 class="sidebarTitle">W T F ?</h4>
 			<!-- 微博秀 -->
-			<iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=1&ptype=1&speed=100&skin=9&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=2407334984&verifier=ec0391a3&dpc=1"></iframe>
+			<iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=1&ptype=1&skin=9&isTitle=0&noborder=1&isWeibo=1&isFans=1&uid=2407334984&verifier=ec0391a3&colors=d6f3f7,ffffff,666666,0082cb,ecfbfd&dpc=1"></iframe>
 			<ul class="sidebarMenu">
-				<li>
-					<a>日访问量:200</a>
-				</li>
-				<li>
-					<a>总访问量:3000</a>
-				</li>
+				<li>日访问量：237</li>
+				<li>总访问量：3743</li>
 			</ul>
 		</div>
+	</div>
+	<!-- end 左侧栏 -->
+
+	<!--右侧栏-->
+	<div  class="rightSide">
 		<!-- 所有专栏Topic -->
 		<div id="commnets" class="baseDiv">
 			<h4 class="sidebarTitle">博客专栏</h4>
@@ -62,12 +62,13 @@
 			</ul>
 		</div>
 	</div>
-	<!-- end 侧边栏 -->
+	<!-- end 右侧栏 -->
 	<div class="main baseDiv">
 		<?php if(is_array($allBlogs)): $i = 0; $__LIST__ = $allBlogs;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$blog): $mod = ($i % 2 );++$i;?><div class="blogEntry">
-				<div class="blogTitle">
-					<span class="ico_type_Original"/>
-					<a href="<?php echo U(blog_details);?>/<?php echo ($blog["id"]); ?>"><?php echo ($blog["title"]); ?></a>
+				<span class="ico_type_Original"/>
+				<a href="<?php echo U(blog_details);?>/<?php echo ($blog["id"]); ?>"><?php echo ($blog["title"]); ?></a>
+				<div class="blogManage">
+					<?php echo ($blog["inputtime"]); ?>&nbsp;[<?php echo ($blog["readcount"]); ?>/<?php echo ($blog["commentcount"]); ?>]
 				</div>
 			</div><?php endforeach; endif; else: echo "" ;endif; ?>
 	</div>

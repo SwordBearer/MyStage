@@ -7,7 +7,7 @@ class BlogModel extends Model{
 	}
 
 	public function getByCat($catid){
-		$sql1="SELECT blog.id,blog.title,blog.inputtime,blog.readcount,blog.type,(SELECT count(comm.id) FROM mystage_blog_comment AS comm WHERE blog.id=comm.blogid ) AS commentcount FROM mystage_blog AS blog WHERE blog.status=1 ";
+		$sql1="SELECT blog.id,blog.title,blog.inputtime,blog.readcount,blog.typeid,(SELECT count(comm.id) FROM mystage_blog_comment AS comm WHERE blog.id=comm.blogid ) AS commentcount FROM mystage_blog AS blog WHERE blog.status=1 ";
 		$sql2="";
 		$sql3=" ORDER BY updatetime DESC ";
 		if($catid!=-1){
@@ -15,6 +15,7 @@ class BlogModel extends Model{
 		}
 		$sql=$sql1.$sql2.$sql3;
 		$result=$this->query($sql);
+		var_dump($sql);
 		return $result;
 	}
 

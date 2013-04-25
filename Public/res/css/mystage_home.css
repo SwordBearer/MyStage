@@ -5,7 +5,6 @@ body{
 	background: #D2D8DE;
 }
 
-
 .header{
 	margin:0 auto;
 }
@@ -18,52 +17,63 @@ body{
 	min-width: 1000px;
 	margin: 60px auto;
 }
+/*左侧栏*/
+.leftSide{
+	width: 250px;
+	float: left;
+	margin-right: 10px;
+}
+
+/*右侧栏*/
+.rightSide{
+	width: 250px;
+	float: right;
+	margin-left: 10px;
+}
+/*主体内容*/
 .main{
-	float:left;
-	margin-left:10px;
-	width:78%;
 	background:orange;
-	min-height: 300px;
+	min-height: 400px;
 	padding:10px;
+	overflow:hidden;
 }
-.sidebar{
-	float:left;
-	width:21%;
-	max-width: 280px;
-	border-radius: 7px;
-}
+
 .baseDiv{
 	padding: 0;
 	margin-bottom: 10px;
 	border-radius: 6px;
 	box-shadow: 1px 1px 2px #A7A8AD;
-	background: #FaFcFd;
+	background: #FcFcFc;
 }
+
 .sidebarTitle{
+	height: 1.5em;
 	color: #fff;
 	margin:-1px;
+	padding: 5px;
+	vertical-align: top;
 	font-size: 1.2em;
-	border-bottom: 1px solid #DADFE1;
-	height: 1.5em;
 	line-height: 1.5em;
 	background: #4A708B;
+	border-bottom: 1px solid #DADFE1;
 	border-top-left-radius: 7px;
 	border-top-right-radius: 7px;
-	padding: 5px;
 	text-indent: 1em;
 	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
 }
-
 .sidebarMenu{
 	margin: 0;
 	list-style:none;
-	font-size: 13px;
+	font-size: 1em;
+}
+
+.sidebarMenu li{
 }
 .sidebarMenu li a{
 	text-decoration: none;
 	display: block;
-	padding-left: 10px;
 	line-height: 36px;
+	padding-left: 10px;
 	border-bottom: 1px solid #C6C8CB;
 	color: #444;
 }
@@ -74,21 +84,32 @@ body{
 
 .blogEntry{
 	padding: 5px;
-	background: red;
-	margin-bottom: 3px;
+	height: 30px;
+	border-bottom: 1px solid #c0c0c0;
 }
-.blogTitle a{
+.blogEntry:hover{
+	background: #F0F1Ff;
+}
+.blogEntry a{
+	display: inline;
 	margin-left: 20px;
 }
-.blogTitle .ico_type_Translated {
+.blogEntry .ico_type_Translated {
 	background: url(../img/ico_Translated.gif) no-repeat 0 0;
 	vertical-align: middle;
 }
-.blogTitle .ico_type_Original{
+.blogEntry .ico_type_Original{
 	background: url(../img/ico_Original.gif) no-repeat 0 0;
 	vertical-align: middle;
 }
 
-
-.blogManage{
+.blogEntry .blogManage{
+	float:right;
+	padding: 0 !important;
+	line-height: 30px !important;
+	text-align: right !important;
+	white-space: nowrap;
+}
+.blogEntry .blogManage *{
+	dissplay: inline;
 }

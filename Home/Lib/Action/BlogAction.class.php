@@ -6,6 +6,10 @@ class BlogAction extends Action {
     	$this->display();
 	}
 
+	public function blog_details(){
+		$this->display();
+	}
+
 
 /************************************/
 	public function getAllTopics(){
