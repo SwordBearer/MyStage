@@ -13,26 +13,25 @@ body{
 }
 
 .main_content{
-	width: 80%;
-	min-width: 1000px;
+	width:1200px;
 	margin: 60px auto;
 }
 /*左侧栏*/
 .leftSide{
-	width: 250px;
+	width: 240px;
 	float: left;
 	margin-right: 10px;
 }
 
 /*右侧栏*/
 .rightSide{
-	width: 250px;
+	width: 240px;
 	float: right;
 	margin-left: 10px;
 }
 /*主体内容*/
 .main{
-	background:orange;
+	width: 700px;
 	min-height: 400px;
 	padding:10px;
 	overflow:hidden;

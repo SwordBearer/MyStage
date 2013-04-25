@@ -3,7 +3,6 @@ return array(
 	'URL_MODEL'=>3, 
 	'BUCKET_PREFIX'=>'mystage-',
 	'DB_TYPE'=>'mysql',
-	'URL_HTML_SUFFIX'=>'.tyc',
 	'DB_HOST'=>HTTP_BAE_ENV_ADDR_SQL_IP,
 	'DB_USER'=>HTTP_BAE_ENV_AK,
 	'DB_PWD'=>HTTP_BAE_ENV_SK,

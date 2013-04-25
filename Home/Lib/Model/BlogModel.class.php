@@ -15,7 +15,6 @@ class BlogModel extends Model{
 		}
 		$sql=$sql1.$sql2.$sql3;
 		$result=$this->query($sql);
-		var_dump($sql);
 		return $result;
 	}
 

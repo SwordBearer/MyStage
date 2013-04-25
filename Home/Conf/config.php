@@ -1,7 +1,6 @@
 <?php
 return array(
 	'SHOW_PAGE_TRACE'=>false,
-	'URL_HTML_SUFFIX'=>'.tyc',
 	'DB_TYPE'=>'mysql',
 	'DB_HOST'=>'127.0.0.1',
 	'DB_USER'=>'root',

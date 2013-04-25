@@ -10,7 +10,7 @@
 </head>
 <body>
 <div class="header">
-	<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="navbar navbar-inverse navbar-fixesd-top">
 		<div class="navbar-inner">
 			<div class="container">
 				<a class="brand" href="#">SwordBearer's Stage</a>
@@ -36,20 +36,6 @@
 	</div>
 </div>
 <div class="main_content">
-	<!-- 左侧栏 -->
-	<div class="leftSide">
-		<div id="weiboInfo" class="baseDiv">
-			<h4 class="sidebarTitle">W T F ?</h4>
-			<!-- 微博秀 -->
-			<iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=1&ptype=1&skin=9&isTitle=0&noborder=1&isWeibo=1&isFans=1&uid=2407334984&verifier=ec0391a3&colors=d6f3f7,ffffff,666666,0082cb,ecfbfd&dpc=1"></iframe>
-			<ul class="sidebarMenu">
-				<li>日访问量：237</li>
-				<li>总访问量：3743</li>
-			</ul>
-		</div>
-	</div>
-	<!-- end 左侧栏 -->
-
 	<!--右侧栏-->
 	<div  class="rightSide">
 		<!-- 所有专栏Topic -->

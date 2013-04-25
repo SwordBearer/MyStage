@@ -1,7 +1,7 @@
 <include file="Public:libs_import"/>
 <body>
 <div class="header">
-	<div class="navbar navbar-inverse navbar-fixesd-top">
+	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
 				<a class="brand" href="#">SwordBearer's Stage</a>
@@ -60,7 +60,7 @@
 		<volist name="allBlogs" id="blog">
 			<div class="blogEntry">
 				<span class="ico_type_Original"/>
-				<a href="{:U(blog_details)}/{$blog.id}">{$blog.title}</a>
+				<a href="{:U(blog_details)}/blogid/{$blog.id}" target="_blank">{$blog.title}</a>
 				<div class="blogManage">
 					{$blog.inputtime}&nbsp;[{$blog.readcount}/{$blog.commentcount}]
 				</div>

@@ -2,7 +2,6 @@
 //BAE下固定mysql配置
 return array(
 		'URL_MODEL'=>3,
-		'URL_HTML_SUFFIX'=>'.tyc',
 		'BUCKET_PREFIX'=>'mystage-',
 		'DB_TYPE'=> 'mysql',     // 数据库类型
 		'DB_HOST'=> HTTP_BAE_ENV_ADDR_SQL_IP, // 服务器地址
