@@ -1,28 +1,15 @@
 body{
 	padding: 0px;
 	margin:0px;
-	font-family: "微软雅黑","黑体","宋体","仿宋","楷体";
+	font-family: "Helvetica Neue", "Hiragino Sans GB", "Segoe UI", "Microsoft Yahei", "微软雅黑", Tahoma, Arial, STHeiti, sans-serif;
+	cursor: default;
 	background: #D2D8DE;
 }
 
-.header{
-	margin:0 auto;
-}
-.navbar-inner{
-	border-radius: 0px;
-}
-
 .main_content{
-	width:1200px;
+	width:1000px;
 	margin: 60px auto;
 }
-/*左侧栏*/
-.leftSide{
-	width: 240px;
-	float: left;
-	margin-right: 10px;
-}
-
 /*右侧栏*/
 .rightSide{
 	width: 240px;
@@ -31,22 +18,22 @@ body{
 }
 /*主体内容*/
 .main{
-	width: 700px;
+	width: 750px;
 	min-height: 400px;
-	padding:10px;
+	padding:0px;
 	overflow:hidden;
+
 }
 
 .baseDiv{
 	padding: 0;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 	border-radius: 6px;
 	box-shadow: 1px 1px 2px #A7A8AD;
 	background: #FcFcFc;
 }
 
 .sidebarTitle{
-	height: 1.5em;
 	color: #fff;
 	margin:-1px;
 	padding: 5px;
@@ -55,8 +42,8 @@ body{
 	line-height: 1.5em;
 	background: #4A708B;
 	border-bottom: 1px solid #DADFE1;
-	border-top-left-radius: 7px;
-	border-top-right-radius: 7px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
 	text-indent: 1em;
 	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
 }
@@ -81,34 +68,37 @@ body{
 	box-shadow: inset 0 0 6px #ccc;
 }
 
-.blogEntry{
-	padding: 5px;
-	height: 30px;
-	border-bottom: 1px solid #c0c0c0;
+.feed{
+	margin-bottom: 20px;
+	max-height: 200px;
+	color: #444;
+	padding: 15px 20px 0 20px;
+	overflow: hidden;
+	display: block;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.06);
 }
-.blogEntry:hover{
-	background: #F0F1Ff;
+.feed .title{
 }
-.blogEntry a{
-	display: inline;
+.feed .title a{
+	text-decoration: none;
 	margin-left: 20px;
 }
-.blogEntry .ico_type_Translated {
+.ico_type_Translated {
 	background: url(../img/ico_Translated.gif) no-repeat 0 0;
 	vertical-align: middle;
 }
-.blogEntry .ico_type_Original{
+.ico_type_Original{
 	background: url(../img/ico_Original.gif) no-repeat 0 0;
 	vertical-align: middle;
 }
 
-.blogEntry .blogManage{
+.feedManage{
 	float:right;
 	padding: 0 !important;
 	line-height: 30px !important;
 	text-align: right !important;
 	white-space: nowrap;
 }
-.blogEntry .blogManage *{
-	dissplay: inline;
+.feedManage *{
+	display: inline;
 }
