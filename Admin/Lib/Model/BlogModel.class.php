@@ -1,7 +1,7 @@
 <?php
 class BlogModel extends Model{
 	public function getByStatus($status){
-		$sql="SELECT blog.id,blog.title,blog.inputtime,topic.name AS topicname FROM mystage_blog AS blog,mystage_blog_topic AS topic,mystage_topic_blog_map AS topicmap WHERE blog.status=".$status." AND topicmap.topicid=topic.id AND topicmap.blogid=blog.id ORDER BY updatetime DESC ";
+		$sql="SELECT blog.id,blog.title,blog.inputtime,topic.name AS topicname FROM mystage_blog AS blog,mystage_blog_topic AS topic WHERE blog.status=".$status." AND blog.topicid=topic.id  ORDER BY updatetime DESC ";
 		$result=$this->query($sql);
 		return $result;
 	}

@@ -12,7 +12,7 @@ CREATE TABLE mystage_blog (
   PRIMARY KEY (id),
   KEY blog_cat_id (catid),
   KEY blog_topic_id (topicid),
-  CONSTRAINT blog_topic_id FOREIGN KEY (topicid) REFERENCES mystage_blog_topic (id) ON DELETE SET NULL,
-  CONSTRAINT blog_cat_id FOREIGN KEY (catid) REFERENCES mystage_blog_cat (id) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
+  CONSTRAINT blog_cat_id FOREIGN KEY (catid) REFERENCES mystage_blog_cat (id) ON DELETE SET NULL ON UPDATE CASCADE,
+  CONSTRAINT blog_topic_id FOREIGN KEY (topicid) REFERENCES mystage_blog_topic (id) ON DELETE SET NULL
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
 

@@ -10,25 +10,25 @@
 </head>
 <body>
 <div class="header">
-	<div class="navbar navbar-inverse navbar-fixesd-top">
+	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
-				<a class="brand" href="#">SwordBearer's Stage</a>
+				<a class="brand" href="#">SwordBearer's Lab</a>
 				<ul class="nav">
-					<li class="active">
+					<li>
 						<a href="<?php echo U(index);?>">首页</a>
 					</li>
 					<li>
-						<a href="#">程序猿</a>
+						<a href="<?php echo U(monkey);?>">程序猿</a>
 					</li>
 					<li>
-						<a href="#">个人日志</a>
+						<a href="<?php echo U(essay);?>">个人日志</a>
 					</li>
 					<li>
-						<a href="#">收藏</a>
+						<a href="<?php echo U(enshrine);?>">收藏</a>
 					</li>
 					<li>
-						<a href="#">关于</a>
+						<a href="<?php echo U(about);?>">关于</a>
 					</li>
 				</ul>
 			</div>
@@ -36,28 +36,37 @@
 	</div>
 </div>
 <div class="main_content">
-	<!--右侧栏-->
-	<div  class="rightSide">
-		<!-- 所有专栏Topic -->
-		<div id="commnets" class="baseDiv">
-			<h4 class="sidebarTitle">博客专栏</h4>
-			<ul class="sidebarMenu">
-				<?php if(is_array($allTopics)): $i = 0; $__LIST__ = $allTopics;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$topic): $mod = ($i % 2 );++$i;?><li>
-						<a href=""><?php echo ($topic["name"]); ?></a>
-					</li><?php endforeach; endif; else: echo "" ;endif; ?>
-			</ul>
+	<div class="blogDetails baseDiv">
+		<div class="title">
+			<a href="<?php echo U(blog_details);?>/blogid/<?php echo ($blog["id"]); ?>" target="_parent"><?php echo ($curBlog["title"]); ?></a>
 		</div>
+		<div class="blogInfo"></div>
+		<div class="blogBody"><?php echo ($curBlog["content"]); ?></div>
 	</div>
-	<!-- end 右侧栏 -->
-	<div class="main baseDiv">
-		<?php if(is_array($allBlogs)): $i = 0; $__LIST__ = $allBlogs;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$blog): $mod = ($i % 2 );++$i;?><div class="blogEntry">
-				<span class="ico_type_Original"/>
-				<a href="<?php echo U(blog_details);?>/blogid/<?php echo ($blog["id"]); ?>" target="_blank"><?php echo ($blog["title"]); ?></a>
-				<div class="blogManage">
-					<?php echo ($blog["inputtime"]); ?>&nbsp;[<?php echo ($blog["readcount"]); ?>/<?php echo ($blog["commentcount"]); ?>]
-				</div>
-			</div><?php endforeach; endif; else: echo "" ;endif; ?>
+	<div id="gototop" style="display:none;">
+		<a id="gototop_hint" href="#" title="回到顶部">
+			<img src="__PUBLIC__/res/img/gototop.png" alt="TOP" />
+		</a>
 	</div>
+	<script type="text/javascript">
+    $(function(){
+        var d_top=$('#gototop');
+        document.onscroll=function(){
+            var scrTop=(document.body.scrollTop||document.documentElement.scrollTop);
+            if(scrTop>500){
+                d_top.show();
+            }else{
+                d_top.hide();
+            }
+        }
+        $('#gototop_hint').click(function(){
+            scrollTo(0,0);
+            this.blur();
+            return false;
+        });
+    });
+	</script>
+
 </div>
 </body>
 </html>

@@ -27,10 +27,24 @@ class BlogAction extends Action {
 	}
 
 	public function enshrine(){
+		$topicid=$_REQUEST['topicid'];
+		if(is_null($topicid)){
+			$topicid=-1;
+		}
+		$this->assign("curCat",3);
+		$this->getTopicsByCat(3);
+		$this->getBlogsByTopic(3,$topicid);
 		$this->display();
 	}
 
 	public function blog_details(){
+		$blogid=$_REQUEST['blogid'];
+		if(is_null($blogid)){
+			$this->error("数据错误");
+		}
+		$Blog=new BlogModel();
+		$blog=$Blog->getById($blogid);
+		$this->assign("curBlog",$blog);
 		$this->display();
 	}
 

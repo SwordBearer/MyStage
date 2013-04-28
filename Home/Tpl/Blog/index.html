@@ -39,19 +39,48 @@
 	</div>
 	<!-- end 右侧栏 -->
 	<!-- 主要内容 -->
-	<div class="main">
+	<div class="main baseDiv">
 		<volist name="allBlogs" id="blog">
-			<div class="feed baseDiv">
-				<div class="title">
-				<span class="ico_type_Original"/>
-				<a href="{:U(blog_details)}/blogid/{$blog.id}" target="_blank">{$blog.title}</a></div>
-				<div>{$blog.content}</div>
+			<div class="feed">
 				<div class="feedManage">
 					{$blog.inputtime}&nbsp;[{$blog.readcount}/{$blog.commentcount}]
+				</div>
+				<div class="title">
+					<if condition="$blog['catid'] eq 1" >
+						<img src="__PUBLIC__/res/img/ico_monkey.png" />
+						<elseif condition="$blog['catid'] eq 2 "/>
+						<img src="__PUBLIC__/res/img/ico_essay.png" />
+						<else/>
+						<img src="__PUBLIC__/res/img/ico_enshrine.png" />
+					</if>
+					<a href="{:U(blog_details)}/blogid/{$blog.id}" target="_parent">{$blog.title}</a>
 				</div>
 			</div>
 		</volist>
 	</div>
+	<div id="gototop" style="display:none;">
+		<a id="gototop_hint" href="#" title="回到顶部">
+			<img src="__PUBLIC__/res/img/gototop.png" alt="TOP" />
+		</a>
+	</div>
+	<script type="text/javascript">
+    $(function(){
+        var d_top=$('#gototop');
+        document.onscroll=function(){
+            var scrTop=(document.body.scrollTop||document.documentElement.scrollTop);
+            if(scrTop>500){
+                d_top.show();
+            }else{
+                d_top.hide();
+            }
+        }
+        $('#gototop_hint').click(function(){
+            scrollTo(0,0);
+            this.blur();
+            return false;
+        });
+    });
+	</script>
 </div>
 </body>
 </html>

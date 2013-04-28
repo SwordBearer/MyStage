@@ -48,17 +48,44 @@
 	</div>
 	<!-- end 右侧栏 -->
 	<!-- 主要内容 -->
-	<div class="main">
-		<?php if(is_array($allBlogs)): $i = 0; $__LIST__ = $allBlogs;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$blog): $mod = ($i % 2 );++$i;?><div class="feed baseDiv">
-				<div class="title">
-				<span class="ico_type_Original"/>
-				<a href="<?php echo U(blog_details);?>/blogid/<?php echo ($blog["id"]); ?>" target="_blank"><?php echo ($blog["title"]); ?></a></div>
-				<div><?php echo ($blog["content"]); ?></div>
+	<div class="main baseDiv">
+		<?php if(is_array($allBlogs)): $i = 0; $__LIST__ = $allBlogs;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$blog): $mod = ($i % 2 );++$i;?><div class="feed">
 				<div class="feedManage">
 					<?php echo ($blog["inputtime"]); ?>&nbsp;[<?php echo ($blog["readcount"]); ?>/<?php echo ($blog["commentcount"]); ?>]
 				</div>
+				<div class="title">
+					<?php if($blog['catid'] == 1): ?><img src="__PUBLIC__/res/img/ico_monkey.png" />
+						<?php elseif($blog['catid'] == 2 ): ?>
+						<img src="__PUBLIC__/res/img/ico_essay.png" />
+						<?php else: ?>
+						<img src="__PUBLIC__/res/img/ico_enshrine.png" /><?php endif; ?>
+					<a href="<?php echo U(blog_details);?>/blogid/<?php echo ($blog["id"]); ?>" target="_parent"><?php echo ($blog["title"]); ?></a>
+				</div>
 			</div><?php endforeach; endif; else: echo "" ;endif; ?>
 	</div>
+	<div id="gototop" style="display:none;">
+		<a id="gototop_hint" href="#" title="回到顶部">
+			<img src="__PUBLIC__/res/img/gototop.png" alt="TOP" />
+		</a>
+	</div>
+	<script type="text/javascript">
+    $(function(){
+        var d_top=$('#gototop');
+        document.onscroll=function(){
+            var scrTop=(document.body.scrollTop||document.documentElement.scrollTop);
+            if(scrTop>500){
+                d_top.show();
+            }else{
+                d_top.hide();
+            }
+        }
+        $('#gototop_hint').click(function(){
+            scrollTo(0,0);
+            this.blur();
+            return false;
+        });
+    });
+	</script>
 </div>
 </body>
 </html>
