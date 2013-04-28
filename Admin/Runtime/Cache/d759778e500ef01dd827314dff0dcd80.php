@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 	<meta name="author" content="xmu.SwordBearer[ranxiedao@163.com]">
 	<link href="__PUBLIC__/res/css/bootstrap.min.css" rel="stylesheet" />
- 	<link href="__PUBLIC__/res/css/mystage_admin.min.css" rel="stylesheet"/>
+ 	<link href="__PUBLIC__/res/css/mystage_admin.css" rel="stylesheet"/>
   	<script src="__PUBLIC__/res/js/jquery-1.9.1.min.js" type="text/javascript" ></script>
   	<script src="__PUBLIC__/res/js/bootstrap.min.js" type="text/javascript" ></script>
 </head>
@@ -16,26 +16,28 @@
 </script>
 </head>
 <body>
-<div class="navbar navbar-inverse">
+<div class="navbar navbar-inverse navbar-fixed-top">
 	<div class="navbar-inner">
-		<a class="brand" href="#">SwordBearer</a>
-		<ul class="nav">
-			<li class="active">
-				<a href="<?php echo U(index);?>">博客管理</a>
-			</li>
-			<li>
-				<a href="<?php echo U(topic_manage);?>">专栏管理</a>
-			</li>
-			<li>
-				<a href="<?php echo U(draftbox);?>">草稿箱</a>
-			</li>
-			<li>
-				<a href="<?php echo U(wastebasket);?>">回收站</a>
-			</li>
-			<li>
-				<a href="<?php echo U(add_blog);?>">添加博客</a>
-			</li>
-		</ul>
+		<div class="container">
+			<a class="brand" href="#">SwordBearer</a>
+			<ul class="nav">
+				<li class="active">
+					<a href="<?php echo U(index);?>">博客管理</a>
+				</li>
+				<li>
+					<a href="<?php echo U(topic_manage);?>">专栏管理</a>
+				</li>
+				<li>
+					<a href="<?php echo U(draftbox);?>">草稿箱</a>
+				</li>
+				<li>
+					<a href="<?php echo U(wastebasket);?>">回收站</a>
+				</li>
+				<li>
+					<a href="<?php echo U(add_blog);?>">添加博客</a>
+				</li>
+			</ul>
+		</div>
 	</div>
 </div>
 <div class="main_content">
@@ -68,18 +70,18 @@
 				</tbody>
 			</table><?php endif; ?>
 	</form>
-	<div class="modal hide" id="deleteDialog">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-			<h3>删除博客</h3>
-		</div>
-		<div class="modal-body">
-			<lable>确定要删除该博客吗(可以从回收站中找回)？</lable>
-		</div>
-		<div class="modal-footer">
-			<a id="btnDel" href="#" class="btn btn-danger">删除</a>
-			<a class="btn" data-dismiss="modal" aria-hidden="true">取消</a>
-		</div>
+</div>
+<div class="modal hide" id="deleteDialog">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<h3>删除博客</h3>
+	</div>
+	<div class="modal-body">
+		<lable>确定要删除该博客吗(可以从回收站中找回)？</lable>
+	</div>
+	<div class="modal-footer">
+		<a id="btnDel" href="#" class="btn btn-danger">删除</a>
+		<a class="btn" data-dismiss="modal" aria-hidden="true">取消</a>
 	</div>
 </div>
 </body>

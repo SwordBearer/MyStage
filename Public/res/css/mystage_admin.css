@@ -9,11 +9,15 @@ body{
 }
 .main_content{
 	min-width:960px;
-	min-height: 1200px;
-	width: 84%;
-	padding:0px;
-	margin: 0px auto;
+	min-height: 300px;
+	width: 80%;
+	margin: 60px auto;
+	border-radius: 6px;
+	box-shadow: 1px 1px 2px #A7A8AD;
+	background: #FcFcFc;
 }
+
+
 select{
 	font-family: "微软雅黑","宋体","仿宋","楷体";
 }
