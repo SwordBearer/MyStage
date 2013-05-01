@@ -4,13 +4,9 @@ body{
 	font-family: "微软雅黑","宋体","仿宋","楷体";
 	background: #EFF8F8;
 }
-.navbar-inner{
-	border-radius: 0px;
-}
+
 .main_content{
-	min-width:960px;
-	min-height: 300px;
-	width: 80%;
+	width:1000px;
 	margin: 60px auto;
 	border-radius: 6px;
 	box-shadow: 1px 1px 2px #A7A8AD;
