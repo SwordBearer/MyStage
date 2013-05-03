@@ -1,0 +1,1 @@
+<?php	return array ( 0 => 'id', 1 => 'catid', 2 => 'name', 3 => 'blogcount', 4 => 'listorder', '_autoinc' => true, '_pk' => 'id', '_type' => array ( 'id' => 'int(4)', 'catid' => 'int(4)', 'name' => 'varchar(40)', 'blogcount' => 'int(10)', 'listorder' => 'int(4)', ), );?>

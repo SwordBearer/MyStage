@@ -37,10 +37,32 @@
 </div>
 <div class="main_content">
 	<div class="blogDetails baseDiv">
-		<div class="title">
-			<a href="<?php echo U(blog_details);?>/blogid/<?php echo ($blog["id"]); ?>" target="_parent"><?php echo ($curBlog["title"]); ?></a>
+		<div class="head">
+			<a class="title" href="<?php echo U(blog_details);?>/blogid/<?php echo ($curBlog["id"]); ?>" target="_parent"><?php echo ($curBlog["title"]); ?></a>
+			<div class="blogInfo">
+				<span style="display:inline;">
+					发表于<?php echo ($curBlog["inputtime"]); ?>&nbsp;&nbsp;&nbsp;&nbsp;
+				专栏:<?php echo ($curBlog["topicname"]); ?>&nbsp;&nbsp;&nbsp;
+			阅读(<?php echo ($curBlog["readcount"]); ?>) | 评论(<?php echo ($curBlog["commentcount"]); ?>)
+				</span> 
+				<!-- Baidu Button BEGIN -->
+					<div id="bdshare" style="float:right;"class="bdshare_t bds_tools get-codes-bdshare">
+						<span class="bds_more">分享到：</span>
+						<a class="bds_tsina"></a>
+						<a class="bds_qzone"></a>
+						<a class="bds_tqq"></a>
+						<a class="bds_renren"></a>
+						<a class="bds_t163"></a>
+						<a class="shareCount"></a>
+					</div>
+					<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=870942" ></script>
+					<script type="text/javascript" id="bdshell_js"></script>
+					<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+					<!-- Baidu Button END -->
+			</div>
 		</div>
-		<div class="blogInfo"></div>
 		<div class="blogBody"><?php echo ($curBlog["content"]); ?></div>
 	</div>
 	<div id="gototop" style="display:none;">
@@ -66,7 +88,6 @@
         });
     });
 	</script>
-
 </div>
 </body>
 </html>
