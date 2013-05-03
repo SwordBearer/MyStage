@@ -1,18 +1,18 @@
 CREATE TABLE mystage_blog (
   id int(10) NOT NULL AUTO_INCREMENT,
-  status int(4) NOT NULL DEFAULT 2,
+  status int(4) NOT NULL DEFAULT '2',
   inputtime datetime NOT NULL,
   updatetime datetime NOT NULL,
   title varchar(100) NOT NULL,
   content text NOT NULL,
-  catid int(10) DEFAULT 1,
-  topicid int(10) DEFAULT 0,
-  typeid int(10) NOT NULL DEFAULT 1,
-  readcount int(10) NOT NULL DEFAULT 0,
+  catid int(10) DEFAULT '1',
+  topicid int(10) DEFAULT '0',
+  typeid int(10) NOT NULL DEFAULT '1',
+  readcount int(10) NOT NULL DEFAULT '0',
   PRIMARY KEY (id),
   KEY blog_cat_id (catid),
   KEY blog_topic_id (topicid),
   CONSTRAINT blog_cat_id FOREIGN KEY (catid) REFERENCES mystage_blog_cat (id) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT blog_topic_id FOREIGN KEY (topicid) REFERENCES mystage_blog_topic (id) ON DELETE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
 

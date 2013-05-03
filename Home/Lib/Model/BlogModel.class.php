@@ -2,9 +2,10 @@
 class BlogModel extends Model{
 
 	public function getAll(){
-		$sql="SELECT blog.id,blog.inputtime,blog.title,blog.catid,blog.readcount,(SELECT count(comm.id) FROM mystage_blog_comment AS comm
-		 WHERE blog.id=comm.blogid ) AS commentcount  FROM mystage_blog AS blog,mystage_blog_cat AS cat,mystage_blog_topic AS topic
-		  WHERE blog.status=1  AND blog.catid=cat.id AND blog.topicid=topic.id  ORDER BY updatetime DESC ";
+		$sql="SELECT blog.id,blog.title,blog.catid,blog.content,blog.readcount,blog.inputtime,topic.name AS topicname ,(SELECT count(comm.id) FROM mystage_blog_comment AS comm WHERE blog.id=comm.blogid ) AS commentcount 
+		FROM mystage_blog AS blog ,mystage_blog_topic AS topic 
+		WHERE blog.status=1   AND blog.topicid=topic.id 
+		ORDER BY updatetime DESC";
 		return $this->query($sql);
 	}
 	
@@ -23,7 +24,7 @@ class BlogModel extends Model{
 	}
 
 	public function getById($blogid){
-		$sql="SELECT blog.*,topic.name AS topicname FROM mystage_blog AS blog,mystage_blog_topic AS topic WHERE blog.id=".$blogid." AND blog.topicid=topic.id";
+		$sql="SELECT blog.*,topic.name AS topicname,(SELECT count(comm.id) FROM mystage_blog_comment AS comm WHERE blog.id=comm.blogid ) AS commentcount FROM mystage_blog AS blog,mystage_blog_topic AS topic WHERE blog.id=".$blogid." AND blog.topicid=topic.id";
 		$result=$this->query($sql);
 		return $result[0];
 	}
