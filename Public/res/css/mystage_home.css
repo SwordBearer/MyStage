@@ -2,14 +2,15 @@
 body{
 	padding: 0px;
 	margin:0px;
+	font-size: 14px;
 	font-family: "Helvetica Neue", "Hiragino Sans GB", "Segoe UI", "Microsoft Yahei", "微软雅黑", Tahoma, Arial, STHeiti, sans-serif;
-	background: url('../img/bg.jpg') #f0f0f0 repeat-x;
+	background: url('../img/bg.jpg') repeat-x;
 	background-attachment:fixed;
 }
 
 .main_content{
 	width:1000px;
-	margin: 80px auto;
+	margin: 60px auto;
 }
 /*右侧栏*/
 .rightSide{
@@ -109,9 +110,8 @@ body{
 	right: 10px;
 	bottom: 10px;
 }
-
-.blogDetails{
-	padding: 20px;
+.blogDetails .head{
+	padding:10px;
 }
 .blogDetails .head .title{
 	color: #003366;
@@ -124,8 +124,89 @@ body{
 	font-size: 13px;
 	color: #666;
 }
-
 .blogDetails .blogBody{
-	margin-top: 20px;
+	padding:20px 10px;
 	overflow: hidden;
 }
+.blogDetails .commentTitle{
+	padding-left: 15px;
+	height: 30px;
+	line-height: 30px;
+	font-weight: bold;
+	background: url(../img/tit_bg.jpg) repeat-x;
+}
+
+.blogDetails .commentList{
+	padding: 10px;
+}
+	.commDiv{
+		font-size: 12px;
+		border: 1px solid #d7d7d7;
+		margin-bottom: 10px;
+	}
+	.commDiv div {
+		background: #E3E3E3; 
+	}
+	.commDiv p{
+		margin-left: 16px;
+	}
+
+.blogDetails .commForm{
+	padding:10px;
+}
+
+.blogDetails .commForm textarea{
+	width:600px;
+	height:100px;
+}
+
+/*nav bar*/
+.nav{
+	position: fixed;
+	top: 0;
+    width: 100%;
+    background: #111;
+}
+.nav .nav-inner{
+	margin:0 auto;
+	width: 90%;
+    min-width: 900px;
+}
+.nav .brand{
+	display: block;
+	float: left;
+	padding: 10px 20px 10px;
+	font-size: 20px;
+	text-decoration: none;
+	color: #777777;
+}
+	.nav .brand:hover,
+	.nav .brand:focus {
+		color: #fff;
+	}
+.nav ul {  
+    margin: 0 auto;  
+    width: 100%;  
+    list-style: none;
+}
+	.nav ul li {
+		float: left;
+		color: #fff;
+	}  
+    .nav ul li a {  
+        display: block;
+        margin-right: 20px;  
+        font-size: 14px;
+        line-height: 48px;  
+        text-align: center;  
+        text-decoration: none;
+        color: #777;
+        width: 120px;
+    }  
+        .nav ul li a:hover {  
+            color: #fff;  
+        }  
+        .nav ul li .active{
+        	color: #fff;
+        }
+/*nav bar END*/

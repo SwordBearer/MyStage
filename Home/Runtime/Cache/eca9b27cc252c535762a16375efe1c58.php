@@ -1,23 +1,32 @@
-<include file="Public:libs_import"/>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="author" content="xmu.SwordBearer[ranxiedao@163.com]">
+	<link href="__PUBLIC__/res/css/bootstrap.min.css" rel="stylesheet" />
+	<script src="__PUBLIC__/res/js/jquery-1.9.1.min.js" type="text/javascript" ></script>
+  	<script src="__PUBLIC__/res/js/bootstrap.min.js" type="text/javascript" ></script>
+ 	<link href="__PUBLIC__/res/css/mystage_home.css" rel="stylesheet"/>
+</head>
 <body>
 <div class="nav">
   <div class="nav-inner">
     <a class="brand" href="#">SwordBearer's Lab</a>
     <ul>
       <li>
-        <a href="{:U(index)}">首页</a>
+        <a href="<?php echo U(index);?>">首页</a>
       </li>
       <li>
-        <a href="{:U(monkey)}">程序猿</a>
+        <a href="<?php echo U(monkey);?>">程序猿</a>
       </li>
       <li>
-        <a href="{:U(essay)}">个人日志</a>
+        <a href="<?php echo U(essay);?>">个人日志</a>
       </li>
       <li>
-        <a href="{:U(enshrine)}">收藏</a>
+        <a href="<?php echo U(enshrine);?>">收藏</a>
       </li>
       <li>
-        <a  class="active" href="{:U(about)}">关于</a>
+        <a  class="active" href="<?php echo U(about);?>">关于</a>
       </li>
     </ul>
   </div>

@@ -9,28 +9,26 @@
  	<link href="__PUBLIC__/res/css/mystage_home.css" rel="stylesheet"/>
 </head>
 <body>
-<div class="navbar navbar-inverse navbar-fixed-top">
-	<div class="navbar-inner">
-		<div class="container">
-			<a class="brand" href="#">SwordBearer's Lab</a>
-			<ul class="nav">
-				<li class="active">
-					<a href="<?php echo U(index);?>">首页</a>
-				</li>
-				<li>
-					<a href="<?php echo U(monkey);?>">程序猿</a>
-				</li>
-				<li>
-					<a href="<?php echo U(essay);?>">个人日志</a>
-				</li>
-				<li>
-					<a href="<?php echo U(enshrine);?>">收藏</a>
-				</li>
-				<li>
-					<a href="<?php echo U(about);?>">关于</a>
-				</li>
-			</ul>
-		</div>
+<div class="nav">
+	<div class="nav-inner">
+		<a class="brand" href="#">SwordBearer's Lab</a>
+		<ul>
+			<li>
+				<a class="active" href="<?php echo U(index);?>">首页</a>
+			</li>
+			<li>
+				<a href="<?php echo U(monkey);?>">程序猿</a>
+			</li>
+			<li>
+				<a href="<?php echo U(essay);?>">个人日志</a>
+			</li>
+			<li>
+				<a href="<?php echo U(enshrine);?>">收藏</a>
+			</li>
+			<li>
+				<a href="<?php echo U(about);?>">关于</a>
+			</li>
+		</ul>
 	</div>
 </div>
 <div class="main_content">
@@ -52,7 +50,7 @@
 		<?php if(is_array($allBlogs)): $i = 0; $__LIST__ = $allBlogs;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$blog): $mod = ($i % 2 );++$i;?><div class="feed">
 				<div class="head">
 					<span class="date"><?php echo ($blog["inputtime"]); ?></span>
-					<a href="<?php echo U(blog_details);?>/blogid/<?php echo ($blog["id"]); ?>" target="_parent"><?php if($blog['catid'] == 1): ?><img src="__PUBLIC__/res/img/ico_monkey.png" />
+					<a href="<?php echo U(blog_details);?>/blog/<?php echo ($blog["id"]); ?>" target="_parent"><?php if($blog['catid'] == 1): ?><img src="__PUBLIC__/res/img/ico_monkey.png" />
 						<?php elseif($blog['catid'] == 2 ): ?>
 						<img src="__PUBLIC__/res/img/ico_essay.png" />
 						<?php else: ?>

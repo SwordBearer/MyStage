@@ -9,28 +9,26 @@
  	<link href="__PUBLIC__/res/css/mystage_home.css" rel="stylesheet"/>
 </head>
 <body>
-<div class="navbar navbar-inverse navbar-fixed-top">
-	<div class="navbar-inner">
-		<div class="container">
-			<a class="brand" href="#">SwordBearer's Lab</a>
-			<ul class="nav">
-				<li>
-					<a href="<?php echo U(index);?>">首页</a>
-				</li>
-				<li>
-					<a href="<?php echo U(monkey);?>">程序猿</a>
-				</li>
-				<li>
-					<a href="<?php echo U(essay);?>">个人日志</a>
-				</li>
-				<li  class="active">
-					<a href="<?php echo U(enshrine);?>">收藏</a>
-				</li>
-				<li>
-					<a href="#">关于</a>
-				</li>
-			</ul>
-		</div>
+<div class="nav">
+	<div class="nav-inner">
+		<a class="brand" href="#">SwordBearer's Lab</a>
+		<ul>
+			<li>
+				<a href="<?php echo U(index);?>">首页</a>
+			</li>
+			<li>
+				<a href="<?php echo U(monkey);?>">程序猿</a>
+			</li>
+			<li>
+				<a href="<?php echo U(essay);?>">个人日志</a>
+			</li>
+			<li>
+				<a  class="active" href="<?php echo U(enshrine);?>">收藏</a>
+			</li>
+			<li>
+				<a href="<?php echo U(about);?>">关于</a>
+			</li>
+		</ul>
 	</div>
 </div>
 <div class="main_content">
