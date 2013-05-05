@@ -34,7 +34,7 @@ class BlogAction extends Action {
 
 	public function edit_blog(){
 		$blogid=$_REQUEST['blogid'];
-		if($blogid==NULL){
+		if(is_null($blogid)){
 			$this->error("数据错误!");
 		}
 		$Blog=new BlogModel();

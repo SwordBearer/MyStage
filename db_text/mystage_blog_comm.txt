@@ -1,0 +1,11 @@
+CREATE TABLE mystage_blog_comm (
+  id int(10) NOT NULL AUTO_INCREMENT,
+  blogid int(10) NOT NULL,
+  ipstr varchar(50) NOT NULL,
+  inputtime datetime NOT NULL,
+  content text NOT NULL,
+  PRIMARY KEY (id),
+  KEY comm_blogid (blogid),
+  CONSTRAINT comm_blogid FOREIGN KEY (blogid) REFERENCES mystage_blog (id) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
+

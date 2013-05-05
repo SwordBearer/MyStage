@@ -74,7 +74,7 @@
 						<p><?php echo ($comm["content"]); ?></p>
 					</div><?php endforeach; endif; else: echo "" ;endif; endif; ?>
 		</div>
-		<div class="commentTitle">发表评论</div>
+		<div class="commentTitle" id="addCommDiv">发表评论</div>
 		<form class="commForm" action="<?php echo U(addComm);?>" method="post">
 			<span>请输入评论内容:</span>
 			<br/>

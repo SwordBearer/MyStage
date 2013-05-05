@@ -13,13 +13,14 @@ class BlogModel extends Model{
 	}
 
 	public function getByTopic($topic){
-		$sql="SELECT * FROM mystage_blog AS blog , mystage_topic_blog_map AS map WHERE blog.status=1 AND blog.id=map.blogid AND map.topicid=".$topicid;
+		$sql="SELECT * FROM mystage_blog AS blog WHERE blog.status=1 AND blog.topicid=".$topicid;
 		$result=$this->query($sql);
 		return $result;
 	}
 
 	public function getById($blogid){
-		$sql="SELECT blog.*,topicmap.topicid FROM mystage_blog AS blog,mystage_topic_blog_map AS topicmap WHERE blog.id=".$blogid." AND blog.id=topicmap.blogid limit 1";
+		$sql="SELECT blog.*,topic.name FROM mystage_blog AS blog,mystage_blog_topic AS topic WHERE blog.id=".$blogid." AND blog.topicid=topic.id";
+		var_dump($sql);
 		$result=$this->query($sql);
 		return $result[0];
 	}

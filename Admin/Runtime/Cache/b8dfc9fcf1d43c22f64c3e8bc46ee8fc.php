@@ -5,6 +5,7 @@
 	<meta name="author" content="xmu.SwordBearer[ranxiedao@163.com]">
 	<link href="__PUBLIC__/res/css/bootstrap.min.css" rel="stylesheet" />
  	<link href="__PUBLIC__/res/css/mystage_admin.css" rel="stylesheet"/>
+ 	<link href="__PUBLIC__/res/css/mystage_common.css" rel="stylesheet"/>
   	<script src="__PUBLIC__/res/js/jquery-1.9.1.min.js" type="text/javascript" ></script>
   	<script src="__PUBLIC__/res/js/bootstrap.min.js" type="text/javascript" ></script>
 </head>
@@ -17,28 +18,26 @@
 </head>
 <body>
 
-<div class="navbar navbar-inverse navbar-fixed-top">
-	<div class="navbar-inner">
-		<div class="container">
-			<a class="brand" href="#">SwordBearer</a>
-			<ul class="nav">
-				<li>
-					<a href="<?php echo U(index);?>">博客管理</a>
-				</li>
-				<li>
-					<a href="<?php echo U(topic_manage);?>">专栏管理</a>
-				</li>
-				<li  class="active">
-					<a href="<?php echo U(draftbox);?>">草稿箱</a>
-				</li>
-				<li>
-					<a href="<?php echo U(wastebasket);?>">回收站</a>
-				</li>
-				<li>
-					<a href="<?php echo U(add_blog);?>">添加博客</a>
-				</li>
-			</ul>
-		</div>
+<div class="nav">
+	<div class="nav-inner">
+		<a class="brand" href="#">SwordBearer</a>
+		<ul>
+			<li>
+				<a href="<?php echo U(index);?>">博客管理</a>
+			</li>
+			<li>
+				<a href="<?php echo U(topic_manage);?>">专栏管理</a>
+			</li>
+			<li>
+				<a class="active" href="<?php echo U(draftbox);?>">草稿箱</a>
+			</li>
+			<li>
+				<a href="<?php echo U(wastebasket);?>">回收站</a>
+			</li>
+			<li>
+				<a href="<?php echo U(add_blog);?>">添加博客</a>
+			</li>
+		</ul>
 	</div>
 </div>
 

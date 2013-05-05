@@ -7,6 +7,7 @@
 	<script src="__PUBLIC__/res/js/jquery-1.9.1.min.js" type="text/javascript" ></script>
   	<script src="__PUBLIC__/res/js/bootstrap.min.js" type="text/javascript" ></script>
  	<link href="__PUBLIC__/res/css/mystage_home.css" rel="stylesheet"/>
+ 	<link href="__PUBLIC__/res/css/mystage_common.css" rel="stylesheet"/>
 </head>
 <body>
 <div class="nav">

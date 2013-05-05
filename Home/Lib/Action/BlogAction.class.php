@@ -84,7 +84,7 @@ class BlogAction extends Action {
 		if(!$result||is_null($result)){
 			$this->error("提交评论失败!!!");
 		}else{
-			$this->redirect('/Blog/blog_details#commentTitle',array('blog'=>$blogid),0);
+			$this->redirect('/Blog/blog_details#addCommDiv',array('blog'=>$blogid),0);
 		}
 	}
 
