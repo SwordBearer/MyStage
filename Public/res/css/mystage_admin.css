@@ -1,34 +1,20 @@
 body{
-	padding: 0px;
-	margin:0px;
-	font-family: "微软雅黑","宋体","仿宋","楷体";
 	background: #EFF8F8;
 }
-
 .main_content{
 	width:1000px;
-	margin: 60px auto;
+	margin: 66px auto;
 	border-radius: 6px;
+	padding: 10px;
 	box-shadow: 1px 1px 2px #A7A8AD;
 	background: #FcFcFc;
 }
-
-
-select{
-	font-family: "微软雅黑","宋体","仿宋","楷体";
-}
-
 .table th{
 	text-align:center;
 }
 .table td{
 	text-align:center;
 	vertical-align:center;
-}
-
-.table caption{
-	font-size: 14px;
-	font-weight:bold;
 }
 .tbl_head{
 	background:#96CDCD;

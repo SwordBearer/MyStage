@@ -2,10 +2,9 @@
 
 class PublicAction extends Action{
 	/*******************pages***********************/
-	public function admin_login(){
+	public function login(){
 		if(isset($_SESSION[C('USER_AUTH_KEY')])){
-			$this->display();
-			//$this->redirect(__GROUP__."/Index/index");
+			$this->redirect(__GROUP__."/Index/index");
 		}else{
 			$this->display();
 		}
@@ -17,20 +16,11 @@ class PublicAction extends Action{
 			$this->error("没有登录",__GROUP__."/Public/login");
 		}
 	}
-	//
-	public function saddAdmin(){
-		$data=array();
-		$data['username']=trim($_POST['username']);
-		$data['password']=md5(trim($_POST['password']));
-		$Admin=new AdminModel();
-		$Admin->add($data);
-	}
-
 
 	public function checkLogin(){
 		//生成认证条件
 		$data=array();
-		$data['username']=trim($_POST['username']);
+		$data['username']=md5(trim($_POST['username']));
 		$data['password']=md5(trim($_POST['password']));
 		$Admin=new AdminModel();
 		$result=$Admin->where($data)->find();

@@ -3,6 +3,8 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 	<meta name="author" content="xmu.SwordBearer[ranxiedao@163.com]">
+	<!-- link google font -->
+	<link href='http://fonts.googleapis.com/css?family=Tangerine:700|Nunito' rel='stylesheet' type='text/css'>
 	<link href="__PUBLIC__/res/css/bootstrap.min.css" rel="stylesheet" />
 	<script src="__PUBLIC__/res/js/jquery-1.9.1.min.js" type="text/javascript" ></script>
   	<script src="__PUBLIC__/res/js/bootstrap.min.js" type="text/javascript" ></script>
@@ -37,12 +39,14 @@
 	<div  class="rightSide">
 		<div id="weiboInfo" class="baseDiv">
 			<h4 class="sidebarTitle">W T F ?</h4>
-			<!-- 微博秀 -->
-			<iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=2&ptype=1&speed=0&skin=9&isTitle=0&noborder=0&isWeibo=1&isFans=1&uid=2407334984&verifier=ec0391a3&dpc=1"></iframe>
 			<ul class="sidebarMenu">
 				<li>日访问量：237</li>
 				<li>总访问量：3743</li>
+				<li>原创(231) | 转载(34) | 翻译(9)</li>
 			</ul>
+			<hr/>
+			<!-- 微博秀 -->
+			<iframe width="100%" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=2&ptype=1&speed=0&skin=9&isTitle=0&noborder=0&isWeibo=1&isFans=1&uid=2407334984&verifier=ec0391a3&dpc=1"></iframe>
 		</div>
 	</div>
 	<!-- end 右侧栏 -->
@@ -60,9 +64,9 @@
 				</div>
 				<div class="body"><?php echo ($blog["content"]); ?></div>
 				<div class="foot">
-					<span class="topic">专栏:<?php echo ($blog["topicname"]); ?></span>
+					<span class="topic">专栏:<?php echo ($blog["topicname"]); ?>&nbsp;&nbsp;&nbsp;&nbsp;</span>
 					阅读(<?php echo ($blog["readcount"]); ?>)| 评论(<?php echo ($blog["commentcount"]); ?>)&nbsp;&nbsp;
-					<a href="<?php echo U(blog_details);?>/blogid/<?php echo ($blog["id"]); ?>" target="_blank" style="color:#666;text-decoration:underline;">阅读全文...</a>
+					<a href="<?php echo U(blog_details);?>/blog/<?php echo ($blog["id"]); ?>" target="_blank" style="color:#666;text-decoration:underline;">阅读全文...</a>
 				</div>
 			</div><?php endforeach; endif; else: echo "" ;endif; ?>
 	</div>

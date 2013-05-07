@@ -36,6 +36,9 @@
 			<li>
 				<a href="<?php echo U(add_blog);?>">添加博客</a>
 			</li>
+			<li>
+				<a href="__GROUP__/Public/logout">退出</a>
+			</li>
 		</ul>
 	</div>
 </div>

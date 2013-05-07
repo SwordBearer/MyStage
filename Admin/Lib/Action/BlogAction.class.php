@@ -1,8 +1,5 @@
 <?php
 class BlogAction extends Action {
-
-
-
 /*****************pages*****************/
 	public function index(){
 		$this->checkUser();
