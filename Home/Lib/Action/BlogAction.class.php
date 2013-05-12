@@ -43,10 +43,15 @@ class BlogAction extends Action {
 			$this->error("数据错误");
 		}
 		$Blog=new BlogModel();
+		$condtion['id']=$blogid;
+		$Blog->where($condtion)->setInc('readcount',1);
 		$blog=$Blog->getById($blogid);
 		$comms=$this->getBlogComm($blogid);
 		$this->assign("curBlog",$blog);
 		$this->assign("allComms",$comms);
+
+		$result=$Blog->getRecentBlogs();
+		$this->assign("recentBlogs",$result);
 		$this->display();
 	}
 
@@ -76,7 +81,7 @@ class BlogAction extends Action {
 		}
 		$comm=$_POST['comm'];
 		$data['blogid']=$blogid;
-		$data['ipstr']=$_SERVER["REMOTE_ADDR"];
+		$data['ipstr']=$this->GetIP();
 		$data['inputtime']=date('Y-m-d H:i:s',time());
 		$data['content']=$comm;
 		$Comm=M('BlogComm');
@@ -87,6 +92,22 @@ class BlogAction extends Action {
 			$this->redirect('/Blog/blog_details#addCommDiv',array('blog'=>$blogid),0);
 		}
 	}
+	private function GetIP() {    
+        if (!empty($_SERVER['HTTP_CLIENT_IP'])) {    
+        //如果变量是非空或非零的值，则 empty()返回 FALSE。    
+            $IP = explode(',',$_SERVER['HTTP_CLIENT_IP']);    
+        }    
+        elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {    
+            $IP = explode(',',$_SERVER['HTTP_X_FORWARDED_FOR']);    
+        }    
+        elseif (!empty($_SERVER['REMOTE_ADDR'])) {    
+            $IP = explode(',',$_SERVER['REMOTE_ADDR']);    
+        }    
+        else {    
+            $IP[0] = 'None';    
+        }    
+        return $IP[0];    
+    }    
 
 	public function getBlogComm($blogid){
 		$Comm=M('BlogComm');

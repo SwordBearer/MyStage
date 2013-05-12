@@ -3,6 +3,8 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 	<meta name="author" content="xmu.SwordBearer[ranxiedao@163.com]">
+	<!-- link google font -->
+	<link href='http://fonts.googleapis.com/css?family=Tangerine:700|Nunito' rel='stylesheet' type='text/css'>
 	<link href="__PUBLIC__/res/css/bootstrap.min.css" rel="stylesheet" />
  	<link href="__PUBLIC__/res/css/mystage_admin.css" rel="stylesheet"/>
  	<link href="__PUBLIC__/res/css/mystage_common.css" rel="stylesheet"/>
@@ -19,7 +21,7 @@
 <body>
 <div class="nav">
 	<div class="nav-inner">
-		<a class="brand" href="#">SwordBearer</a>
+		<a class="brand" href="#">SwordBearer's Lab</a>
 		<ul>
 			<li>
 				<a href="<?php echo U(index);?>">博客管理</a>

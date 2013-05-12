@@ -14,7 +14,7 @@
 <body>
 <div class="nav">
 	<div class="nav-inner">
-		<a class="brand" href="#">SwordBearer's Lab</a>
+		<a class="brand" href="<?php echo U(index);?>">SwordBearer's Lab</a>
 		<ul>
 			<li>
 				<a href="<?php echo U(index);?>">首页</a>
@@ -36,32 +36,31 @@
 </div>
 <div class="main_content">
 	<!--右侧栏-->
-	<div  class="rightSide">
+	<div  class="rightSide baseDiv">
 		<!-- 所有专栏Topic -->
-		<div class="baseDiv">
-			<h4 class="sidebarTitle">博客专栏</h4>
-			<ul class="sidebarMenu">
-				<li>
-					<a href="<?php echo U(monkey);?>/catid/<?php echo ($curCat); ?>">全部</a>
-				</li>
-				<?php if(is_array($allTopics)): $i = 0; $__LIST__ = $allTopics;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$topic): $mod = ($i % 2 );++$i;?><li>
-						<a href="<?php echo U(monkey);?>/catid/<?php echo ($curCat); ?>/topicid/<?php echo ($topic["id"]); ?>"><?php echo ($topic["name"]); ?></a>
-					</li><?php endforeach; endif; else: echo "" ;endif; ?>
-			</ul>
-		</div>
+		<h4 class="sidebarTitle">博客专栏</h4>
+		<ul class="sidebarMenu">
+			<li>
+				<a href="<?php echo U(monkey);?>/catid/<?php echo ($curCat); ?>">全部</a>
+			</li>
+			<?php if(is_array($allTopics)): $i = 0; $__LIST__ = $allTopics;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$topic): $mod = ($i % 2 );++$i;?><li>
+					<a href="<?php echo U(monkey);?>/catid/<?php echo ($curCat); ?>/topicid/<?php echo ($topic["id"]); ?>"><?php echo ($topic["name"]); ?></a>
+				</li><?php endforeach; endif; else: echo "" ;endif; ?>
+		</ul>
 	</div>
 	<!-- end 右侧栏 -->
 	<div class="main baseDiv">
 		<?php if(is_array($allBlogs)): $i = 0; $__LIST__ = $allBlogs;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$blog): $mod = ($i % 2 );++$i;?><div class="feed">
 				<div class="head">
 					<span class="date"><?php echo ($blog["inputtime"]); ?></span>
-					<a href="<?php echo U(blog_details);?>/blog/<?php echo ($blog["id"]); ?>" target="_parent">
+					<a href="<?php echo U(blog_details);?>/blog/<?php echo ($blog["id"]); ?>" target="_blank">
 						<?php if($blog['typeid'] == 1): ?><img src="__PUBLIC__/res/img/ico_original.gif" />
-						<?php elseif($blog['typeid'] == 2 ): ?>
-						<img src="__PUBLIC__/res/img/ico_translated.gif" />
-						<?php else: ?>
-						<img src="__PUBLIC__/res/img/ico_repost.gif" /><?php endif; ?>
-					<?php echo ($blog["title"]); ?></a>
+							<?php elseif($blog['typeid'] == 2 ): ?>
+							<img src="__PUBLIC__/res/img/ico_translated.gif" />
+							<?php else: ?>
+							<img src="__PUBLIC__/res/img/ico_repost.gif" /><?php endif; ?>
+						<?php echo ($blog["title"]); ?>
+					</a>
 				</div>
 				<div class="body"><?php echo ($blog["content"]); ?></div>
 				<div class="foot">

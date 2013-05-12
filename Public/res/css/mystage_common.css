@@ -53,3 +53,32 @@ body{
         	color: #fff;
         }
 /*nav bar END*/
+
+/********/
+.dividerTitle{
+    padding-left: 15px;
+    height: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    background: url(../img/tit_bg.jpg) repeat-x;
+}
+
+/*博客详情*/
+.blogDetails{
+    padding: 10px;
+}
+.blogDetails .title{
+    padding-bottom: 10px;
+    font-size: 20px;
+    border-bottom: #D4D4D4 solid 1px;
+}
+.blogDetails .info{
+    font-size: 14px;
+    color: #9A9A9A;
+    display: inline;
+}
+
+.blogDetails .blogBody{
+    padding:10px;
+}
+/*****END****/

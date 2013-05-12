@@ -3,11 +3,9 @@ body{
 }
 .main_content{
 	width:1000px;
-	margin: 66px auto;
-	border-radius: 6px;
-	padding: 10px;
-	box-shadow: 1px 1px 2px #A7A8AD;
-	background: #FcFcFc;
+	margin: 80px auto;
+	background: #FFF;
+	border: #D4D4D4 solid 1px;
 }
 .table th{
 	text-align:center;

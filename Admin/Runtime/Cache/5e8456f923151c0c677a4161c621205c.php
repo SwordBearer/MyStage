@@ -1,4 +1,16 @@
-<include file="Public:libs_import"/>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="author" content="xmu.SwordBearer[ranxiedao@163.com]">
+	<!-- link google font -->
+	<link href='http://fonts.googleapis.com/css?family=Tangerine:700|Nunito' rel='stylesheet' type='text/css'>
+	<link href="__PUBLIC__/res/css/bootstrap.min.css" rel="stylesheet" />
+ 	<link href="__PUBLIC__/res/css/mystage_admin.css" rel="stylesheet"/>
+ 	<link href="__PUBLIC__/res/css/mystage_common.css" rel="stylesheet"/>
+  	<script src="__PUBLIC__/res/js/jquery-1.9.1.min.js" type="text/javascript" ></script>
+  	<script src="__PUBLIC__/res/js/bootstrap.min.js" type="text/javascript" ></script>
+</head>
 <script language="Javascript">
 
 	function editTopic(id,name,listorder){
@@ -29,58 +41,48 @@
 		<a class="brand" href="#">SwordBearer's Lab</a>
 		<ul>
 			<li>
-				<a href="{:U(index)}">博客管理</a>
+				<a href="<?php echo U(index);?>">博客管理</a>
 			</li>
 			<li>
-				<a class="active" href="{:U(topic_manage)}">专栏管理</a>
+				<a href="<?php echo U(topic_manage);?>">专栏管理</a>
 			</li>
 			<li>
-				<a href="{:U(draftbox)}">草稿箱</a>
+				<a class="active" href="<?php echo U(comment_manage);?>">评论管理</a>
 			</li>
 			<li>
-				<a href="{:U(wastebasket)}">回收站</a>
+				<a href="<?php echo U(draftbox);?>">草稿箱</a>
 			</li>
 			<li>
-				<a href="{:U(add_blog)}">添加博客</a>
+				<a href="<?php echo U(wastebasket);?>">回收站</a>
+			</li>
+			<li>
+				<a href="<?php echo U(add_blog);?>">添加博客</a>
 			</li>
 		</ul>
 	</div>
 </div>
 <div class="main_content">
-	<form class="input-prepend input-append" method="post" action="{:U('addTopic')}">
-		<select required name="new_topic_catid">
-			<volist name="allCats" id="cat">
-				<option value="{$cat.id}">{$cat.name}</option>
-			</volist>
-		</select>
-		<input type="text" name="new_topic_order"class="input input-small" placeholder="专栏序号" required />
-		<input type="text" name="new_topic_name"class="input" placeholder="专栏名称" required />
-		<input type="submit" class="btn btn-success" value="添加"/>
-	</form>
 	<form method="post" name="topic_form">
 		<table class="table table-hover table-condensed table-hover">
 			<thead>
 				<tr class="tbl_head">
-					<th>类别</th>
-					<th>名称</th>
-					<th>序号</th>
+					<th>时间</th>
+					<th>IP</th>
 					<th>博客</th>
+					<th>评论内容</th>
 					<th>操作</th>
 				</tr>
 			</thead>
 			<tbody>
-				<volist name="allTopics" id="topic">
-					<tr>
-						<td>{$topic.catname}</td>
-						<td>{$topic.name}</td>
-						<td>{$topic.listorder}</td>
-						<td>{$topic.blogcount}</td>
+				<?php if(is_array($allTopics)): $i = 0; $__LIST__ = $allTopics;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$topic): $mod = ($i % 2 );++$i;?><tr>
+						<td><?php echo ($topic["catname"]); ?></td>
+						<td><?php echo ($topic["name"]); ?></td>
+						<td><?php echo ($topic["listorder"]); ?></td>
+						<td><?php echo ($topic["blogcount"]); ?></td>
 						<td>
-							<a class="btn btn-small" onClick="editTopic({$topic.id},'{$topic.name}',{$topic.listorder})">编辑</a>
-							<a class="btn btn-small" onClick="deleteTopic({$topic.id})" >删除</a>
+							<a class="btn btn-small" onClick="deleteTopic(<?php echo ($topic["id"]); ?>)" >删除</a>
 						</td>
-					</tr>
-				</volist>
+					</tr><?php endforeach; endif; else: echo "" ;endif; ?>
 			</tbody>
 		</table>
 	</form>

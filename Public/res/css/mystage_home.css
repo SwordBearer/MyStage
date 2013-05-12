@@ -6,6 +6,11 @@ body{
 	width:1000px;
 	margin: 80px auto;
 }
+.baseDiv{
+	background: #FFF;
+	border:  1px solid #D4D4D4; 
+}
+
 /*右侧栏*/
 .rightSide{
 	width: 240px;
@@ -17,26 +22,18 @@ body{
 	overflow:hidden;
 }
 
-.baseDiv{
-	margin-bottom: 20px;
-	background: #FFF;
-	border: #DDD solid 1px;
-}
-
 .sidebarTitle{
-	color: #fff;
+	color: #535353;
 	margin:-1px;
-	padding: 5px;
-	vertical-align: top;
-	font-size: 1.2em;
-	line-height: 1.5em;
-	background: #4A708B;
-	border-bottom: 1px solid #DADFE1; 
-	text-indent: 1em;
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+	font-size: 18px;
+	line-height: 40px;
+	height: 40px;
+	background: #FBFBFB;
+	padding: 0 10px;
+	border: 1px solid #D4D4D4;
 }
 .sidebarMenu{
-	margin: 0;
+	margin: 0px 10px;
 	list-style:none;
 }
 
@@ -50,6 +47,25 @@ body{
 }
 .sidebarMenu li a:hover{
 	background: #f8f8f8;
+}
+
+.sidebarList{
+	list-style:none;
+	margin: 0px 10px;
+}
+.sidebarList li{
+	white-space: nowrap;
+	overflow: hidden;
+	height: 36px;
+	font-size: 14px;
+	line-height: 36px;
+	border-bottom: #D4D4D4 1px dashed;
+}
+.sidebarList li a{
+	color: #323232;
+}
+.sidebarList li a:hover{
+	color: #009933;
 }
 .feed{
 	line-height: 1.8em;
@@ -104,31 +120,6 @@ body{
 	right: 10px;
 	bottom: 10px;
 }
-.blogDetails .head{
-	padding:10px;
-}
-.blogDetails .head .title{
-	color: #003366;
-	font-size: 18px;
-	font-weight: bold;
-}
-
-.blogDetails .head .blogInfo{
-	margin: 10px 0 0 10px;
-	font-size: 13px;
-	color: #666;
-}
-.blogDetails .blogBody{
-	padding:0px 10px;
-	overflow: hidden;
-}
-.blogDetails .commentTitle{
-	padding-left: 15px;
-	height: 30px;
-	line-height: 30px;
-	font-weight: bold;
-	background: url(../img/tit_bg.jpg) repeat-x;
-}
 .commDiv{
 	border-bottom: #ddd solid 1px;
 	font-size: 12px;
@@ -150,10 +141,10 @@ body{
 		word-wrap: break-word;
 	}
 
-.blogDetails .commForm{
+.commForm{
 	padding:10px;
 }
-.blogDetails .commForm textarea{
+.commForm textarea{
 	width:600px;
 	height:100px;
 	white-space:pre-wrap;

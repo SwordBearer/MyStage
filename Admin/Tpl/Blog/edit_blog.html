@@ -2,14 +2,24 @@
 <script type="text/javascript">window.UEDITOR_HOME_URL="__PUBLIC__/ueditor/";</script>
 <script type="text/javascript" src="__PUBLIC__/ueditor/editor_config.js"></script>
 <script type="text/javascript" src="__PUBLIC__/ueditor/editor_all.js"></script>
+<style type="text/css">
+.blogInfo{
+	width:160px;
+	margin-right:20px;
+}
+.blogTitle{
+	width:860px;
+}
+</style>
 </head>
 <body>
-<div class="navbar navbar-inverse">
-	<div class="navbar-inner">
-		<a class="brand" href="#">SwordBearer</a>
-		<ul class="nav">
-			<li class="active">
-				<a href="{:U(index)}">博客管理</a>
+
+<div class="nav">
+	<div class="nav-inner">
+		<a class="brand" href="#">SwordBearer's Lab</a>
+		<ul>
+			<li>
+				<a class="active" href="{:U(index)}">博客管理</a>
 			</li>
 			<li>
 				<a href="{:U(topic_manage)}">专栏管理</a>
@@ -30,12 +40,12 @@
 	<form method="post" action="{:U(saveBlog)}" onkeydown="if(event.keyCode==13){return false;}">
 		<div class="input-prepend">
 			<label class="add-on">标题</label>
-			<input type="text" required name="blog_title" class="input-xxlarge" value="{$curBlog.title}"/>
+			<input type="text" required name="blog_title" class="blogTitle" value="{$curBlog.title}"/>
 		</div>
 		<br/>
 		<div class="input-prepend">
 			<label class="add-on">分类</label>
-			<select required name="blog_cat">
+			<select required name="blog_cat" class="blogInfo">
 				<volist name="allCats" id="cat">
 					<if condition="$cat.id eq  $curBlog.catid ">
 						<option value="{$cat.id}" selected>{$cat.name}</option>
@@ -47,7 +57,7 @@
 		</div>
 		<div class="input-prepend">
 			<label class="add-on">专栏</label>
-			<select required name="blog_topic">
+			<select required name="blog_topic" class="blogInfo">
 				<volist name="allTopics" id="topic">
 					<if condition="$topic.id eq  $curBlog.topicid ">
 						<option value="{$topic.id}" selected >{$topic.name}</option>
@@ -59,7 +69,7 @@
 		</div>
 		<div class="input-prepend">
 			<label class="add-on">类型</label>
-			<select required name="blog_type">
+			<select required name="blog_type" class="blogInfo">
 				<volist name="allTypes" id="type">
 					<if condition="$type.id eq  $curBlog.typeid ">
 						<option value="{$type.id}" selected>{$type.name}</option>
@@ -69,6 +79,10 @@
 				</volist>
 			</select>
 		</div>
+		<span class="input-prepend">
+			<label class="add-on">创建日期</label>
+			<input class="blogInfo" type="text" name="blog_time" value="{$curBlog.inputtime}"/>
+		</span>
 		<input type="hidden" value="{$curBlog.id}" name="blog_id"/>
 		<!---*********编辑框***********-->
 		<div>

@@ -14,7 +14,7 @@
 <body>
 <div class="nav">
 	<div class="nav-inner">
-		<a class="brand" href="#">SwordBearer's Lab</a>
+		<a class="brand" href="<?php echo U(index);?>">SwordBearer's Lab</a>
 		<ul>
 			<li>
 				<a href="<?php echo U(index);?>">首页</a>
@@ -55,7 +55,7 @@
 		<?php if(is_array($allBlogs)): $i = 0; $__LIST__ = $allBlogs;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$blog): $mod = ($i % 2 );++$i;?><div class="feed">
 				<div class="head">
 					<span class="date"><?php echo ($blog["inputtime"]); ?></span>
-					<a href="<?php echo U(blog_details);?>/blog/<?php echo ($blog["id"]); ?>" target="_parent">
+					<a href="<?php echo U(blog_details);?>/blog/<?php echo ($blog["id"]); ?>" target="_blank">
 						<?php if($blog['typeid'] == 1): ?><img src="__PUBLIC__/res/img/ico_original.gif" />
 						<?php elseif($blog['typeid'] == 2 ): ?>
 						<img src="__PUBLIC__/res/img/ico_translated.gif" />

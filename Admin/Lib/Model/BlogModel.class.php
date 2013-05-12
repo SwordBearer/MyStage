@@ -20,7 +20,6 @@ class BlogModel extends Model{
 
 	public function getById($blogid){
 		$sql="SELECT blog.*,topic.name FROM mystage_blog AS blog,mystage_blog_topic AS topic WHERE blog.id=".$blogid." AND blog.topicid=topic.id";
-		var_dump($sql);
 		$result=$this->query($sql);
 		return $result[0];
 	}

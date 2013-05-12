@@ -3,6 +3,8 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 	<meta name="author" content="xmu.SwordBearer[ranxiedao@163.com]">
+	<!-- link google font -->
+	<link href='http://fonts.googleapis.com/css?family=Tangerine:700|Nunito' rel='stylesheet' type='text/css'>
 	<link href="__PUBLIC__/res/css/bootstrap.min.css" rel="stylesheet" />
  	<link href="__PUBLIC__/res/css/mystage_admin.css" rel="stylesheet"/>
  	<link href="__PUBLIC__/res/css/mystage_common.css" rel="stylesheet"/>
@@ -19,7 +21,7 @@
 <body>
 <div class="nav">
 	<div class="nav-inner">
-		<a class="brand" href="#">SwordBearer</a>
+		<a class="brand" href="#">SwordBearer's Lab</a>
 		<ul>
 			<li>
 				<a  class="active" href="<?php echo U(index);?>">博客管理</a>
@@ -59,13 +61,13 @@
 				<tbody>
 					<?php if(is_array($allBlogs)): $i = 0; $__LIST__ = $allBlogs;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$blog): $mod = ($i % 2 );++$i;?><tr>
 							<td><?php echo ($blog["id"]); ?></td>
-							<td style="text-align: left;">
-								<a href="<?php echo U(blog_details);?>/blogid/<?php echo ($blog["id"]); ?>"><?php echo ($blog["title"]); ?></a>
+							<td style="text-align:left;">
+								<a href="<?php echo U(blog_details);?>/blog/<?php echo ($blog["id"]); ?>"><?php echo ($blog["title"]); ?></a>
 							</td>
 							<td><?php echo ($blog["topicname"]); ?></td>
 							<td><?php echo ($blog["inputtime"]); ?></td>
 							<td>
-								<a href="<?php echo U(edit_blog);?>/blogid/<?php echo ($blog["id"]); ?>"class="btn btn-small">编辑</a>
+								<a href="<?php echo U(edit_blog);?>/blog/<?php echo ($blog["id"]); ?>"class="btn btn-small">编辑</a>
 								<a class="btn btn-small" onClick="wasteBlog(<?php echo ($blog["id"]); ?>)" >删除</a>
 							</td>
 						</tr><?php endforeach; endif; else: echo "" ;endif; ?>

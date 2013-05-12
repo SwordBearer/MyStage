@@ -37,23 +37,43 @@
 	</div>
 </div>
 <div class="main_content">
-	<div class="blogDetails baseDiv">
-		<div class="head">
-			<a class="title" href="<?php echo U(blog_details);?>/blog/<?php echo ($curBlog["id"]); ?>" target="_parent"><?php echo ($curBlog["title"]); ?></a>
-			<div class="blogInfo">
-				<div style="display: inline;margin-left: 10px;line-height: 25px;">
+	<!--右侧栏-->
+	<div  class="rightSide baseDiv">
+		<h4 class="sidebarTitle">W T F ?</h4>
+		<ul class="sidebarMenu">
+			<li>日访问量：437</li>
+			<li>总访问量：6743</li>
+			<li>原创(231) | 转载(34) | 翻译(9)</li>
+		</ul>
+		<h4 class="sidebarTitle">相关推荐</h4>
+		<ul class="sidebarList">
+			<?php if(is_array($recentBlogs)): $i = 0; $__LIST__ = $recentBlogs;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li><a href="<?php echo U(blog_details);?>/blog/<?php echo ($vo["id"]); ?>"><?php echo ($vo["title"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+		</ul>
+	</div>
+	<!-- end 右侧栏 -->
+	<div class="main baseDiv">
+		<div class="blogDetails">
+			<div class="title"><?php echo ($curBlog["title"]); ?></div>
+			<div class="info">
+				阅读(<?php echo ($curBlog["readcount"]); ?>) |
+				<a href="#commentTitle">评论(<?php echo ($curBlog["commentcount"]); ?>)</a>
+				&nbsp;&nbsp;&nbsp;
 					发表于<?php echo ($curBlog["inputtime"]); ?>&nbsp;&nbsp;&nbsp;&nbsp;
-				专栏:<?php echo ($curBlog["topicname"]); ?>&nbsp;&nbsp;&nbsp;
-			阅读(<?php echo ($curBlog["readcount"]); ?>) |
-					<a href="#commentTitle">评论(<?php echo ($curBlog["commentcount"]); ?>)</a>
-				</div>
-				<!--百度喜欢后分享按钮 -->
-				<div class="bdlikebutton" style="float:left;"></div>
+				专栏:<?php echo ($curBlog["topicname"]); ?>
 			</div>
+			<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" style="float: right;">
+				<a class="bds_qzone"></a>
+				<a class="bds_tsina"></a>
+				<a class="bds_tqq"></a>
+				<a class="bds_renren"></a>
+				<a class="bds_t163"></a>
+				<span class="bds_more">更多</span>
+				<a class="shareCount"></a>
+			</div>
+			<div class="blogBody"><?php echo ($curBlog["content"]); ?></div>
 		</div>
-		<br/>
-		<div class="blogBody"><?php echo ($curBlog["content"]); ?></div>
-		<div class="commentTitle" id="commentTitle">评论</div>
+
+		<div class="dividerTitle" id="commentTitle">评论</div>
 		<div class="commentList">
 			<?php if(empty($allComms)): ?><span style="margin:10px;">暂无评论</span>
 				<?php else: ?>
@@ -74,7 +94,7 @@
 						</table>
 					</div><?php endforeach; endif; else: echo "" ;endif; endif; ?>
 		</div>
-		<div class="commentTitle" id="addCommDiv">发表评论</div>
+		<div class="dividerTitle" id="addCommDiv">发表评论</div>
 		<form class="commForm" action="<?php echo U(addComm);?>" method="post">
 			<span>请输入评论内容:</span>
 			<br/>
@@ -86,19 +106,13 @@
 	</div>
 </div>
 
-<!-- 百度喜欢后分享 按钮 -->
-<script id="bdlike_shell"></script>
-<script>
-var bdShare_config = {
-	"type":"small",
-	"color":"red",
-	"uid":"870942",
-	"likeText":"点赞",
-	"likedText":"已赞过",
-	"share":"yes"
-};
-document.getElementById("bdlike_shell").src="http://bdimg.share.baidu.com/static/js/like_shell.js?t=" + Math.ceil(new Date()/3600000);
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=870942" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
 </script>
+<!-- Baidu Button END -->
 
 <!-- 回到顶部 -->
 <div id="gototop" style="display:none;">

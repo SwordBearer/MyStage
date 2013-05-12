@@ -9,5 +9,4 @@ Class BlogTopicModel extends Model{
 		return $result;
 	}
 }
-
 ?>

@@ -8,7 +8,7 @@ class BlogAction extends Action {
 	}
 
 	public function blog_details(){
-		$blogid=$_REQUEST['blogid'];
+		$blogid=$_REQUEST['blog'];
 		if($blogid==NULL){
 			$this->error("数据错误!");
 		}
@@ -19,6 +19,7 @@ class BlogAction extends Action {
 		}else{
 			$this->assign("curBlog",$blog);
 		}
+		$this->getCommsByBlog($blogid);
 		$this->display();
 	}
 
@@ -30,7 +31,8 @@ class BlogAction extends Action {
 	}
 
 	public function edit_blog(){
-		$blogid=$_REQUEST['blogid'];
+		$this->checkUser();
+		$blogid=$_REQUEST['blog'];
 		if(is_null($blogid)){
 			$this->error("数据错误!");
 		}
@@ -93,10 +95,14 @@ class BlogAction extends Action {
 		if($isSave){
 			$data['status']=2;
 		}
-
+		$inputtime=$_POST['blog_time'];
+		if(is_null($inputtime)){
+			$inputtime=date('Y-m-d H:i:s',time());
+		}
 		$data['catid']=$_POST['blog_cat'];
 		$data['typeid']=$_POST['blog_type'];
-		$data['inputtime']=date('Y-m-d H:i:s',time());
+		$data['topicid']=$_POST['blog_topic'];
+		$data['inputtime']=$inputtime;
 		$data['updatetime']=date('Y-m-d H:i:s',time());
 		$data['title']=$_POST['blog_title'];
 		$content=$_POST['blog_content'];
@@ -106,10 +112,6 @@ class BlogAction extends Action {
 		if(!$result||$result==0){
 			$this->error('添加博客失败！！！');
 		}else{
-			$TopicMap=M('TopicBlogMap');
-			$data2['topicid']=$_POST['blog_topic'];
-			$data2['blogid']=$result;
-			$result2=$TopicMap->add($data2);
 			$this->redirect(__GROUP__."/Blog/index");
 		}
 	}
@@ -229,6 +231,7 @@ class BlogAction extends Action {
 		$this->assign("allTypes",$result);
 	}
 
+
 /*****************Topic****************************/
 
 	public function getAllTopics(){
@@ -292,6 +295,27 @@ class BlogAction extends Action {
 			$this->error('编辑失败');
 		}else{
 			$this->redirect(__GROUP__."/Blog/topic_manage");
+		}
+	}
+/************* Comment *******************/
+	function getCommsByBlog($blogid){
+		$Comm=new BlogCommModel();
+		$result=$Comm->getCommsByBlog($blogid);
+		$this->assign("allComms",$result);
+	}
+
+	function deleteComm(){
+		$this->checkUser();
+		$commid=$_REQUEST['commid'];
+		if(is_null($commid)){
+			$this->error('删除评论失败:找不到该评论');
+		}
+		$Comm=new BlogCommModel();
+		$result=$Comm->delete($commid);
+		if(!$result||$result==0){
+			$this->error('删除失败');
+		}else{
+			$this->redirect(__GROUP__."/Blog/index");
 		}
 	}
 

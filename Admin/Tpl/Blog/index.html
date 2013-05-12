@@ -9,7 +9,7 @@
 <body>
 <div class="nav">
 	<div class="nav-inner">
-		<a class="brand" href="#">SwordBearer</a>
+		<a class="brand" href="#">SwordBearer's Lab</a>
 		<ul>
 			<li>
 				<a  class="active" href="{:U(index)}">博客管理</a>
@@ -51,13 +51,13 @@
 					<volist name="allBlogs" id="blog">
 						<tr>
 							<td>{$blog.id}</td>
-							<td style="text-align: left;">
-								<a href="{:U(blog_details)}/blogid/{$blog.id}">{$blog.title}</a>
+							<td style="text-align:left;">
+								<a href="{:U(blog_details)}/blog/{$blog.id}">{$blog.title}</a>
 							</td>
 							<td>{$blog.topicname}</td>
 							<td>{$blog.inputtime}</td>
 							<td>
-								<a href="{:U(edit_blog)}/blogid/{$blog.id}"class="btn btn-small">编辑</a>
+								<a href="{:U(edit_blog)}/blog/{$blog.id}"class="btn btn-small">编辑</a>
 								<a class="btn btn-small" onClick="wasteBlog({$blog.id})" >删除</a>
 							</td>
 						</tr>

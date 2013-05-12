@@ -14,7 +14,7 @@
 <body>
 <div class="nav">
   <div class="nav-inner">
-    <a class="brand" href="#">SwordBearer's Lab</a>
+    <a class="brand" href="<?php echo U(index);?>">SwordBearer's Lab</a>
     <ul>
       <li>
         <a href="<?php echo U(index);?>">首页</a>
