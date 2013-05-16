@@ -12,14 +12,11 @@
  	<link href="__PUBLIC__/res/css/mystage_common.css" rel="stylesheet"/>
 </head>
 <title><?php echo ($curBlog["title"]); ?></title>
-<link href="__PUBLIC__/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="__PUBLIC__/ueditor/third-party/SyntaxHighlighter/shCore.js"></script>
-<script type="text/javascript">SyntaxHighlighter.all();</script>
 </head>
 <body>
 <div class="nav">
 	<div class="nav-inner">
-		<a class="brand" href="<?php echo U(index);?>">SwordBearer's Lab</a>
+		<a class="brand" href="#">SwordBearer's Lab</a>
 		<ul>
 			<li>
 				<a href="<?php echo U(index);?>">首页</a>
@@ -39,42 +36,40 @@
 		</ul>
 	</div>
 </div>
-<!--floatNav-->
-<div class="floatNav">
-	<h4 class="sidebarTitle">W T F ?</h4>
-	<ul class="floatMenu">
-		<li>
-			阅读(<?php echo ($curBlog["readcount"]); ?>) |
-			<a href="#commentTitle">评论(<?php echo ($curBlog["commentcount"]); ?>)</a>
-		</li>
-		<li>发表时间：<?php echo ($curBlog["inputtime"]); ?></li>
-		<li>所属专栏：<?php echo ($curBlog["topicname"]); ?></li>
-	</ul>
-	<h4 class="sidebarTitle">相关推荐</h4>
-	<ul class="sidebarList">
-		<?php if(is_array($recentBlogs)): $i = 0; $__LIST__ = $recentBlogs;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li>
-				<a href="<?php echo U(blog_details);?>/blog/<?php echo ($vo["id"]); ?>" title="<?php echo ($vo["title"]); ?>"><?php echo ($vo["title"]); ?></a>
-			</li><?php endforeach; endif; else: echo "" ;endif; ?>
-	</ul>
-</div>
-<!-- end floatNav -->
-
 <div class="main_content">
-	<div class="baseDiv">
+	<!--右侧栏-->
+	<div  class="rightSide baseDiv">
+		<h4 class="sidebarTitle">W T F ?</h4>
+		<ul class="sidebarMenu">
+			<li>日访问量：437</li>
+			<li>总访问量：6743</li>
+			<li>原创(231) | 转载(34) | 翻译(9)</li>
+		</ul>
+		<h4 class="sidebarTitle">相关推荐</h4>
+		<ul class="sidebarList">
+			<?php if(is_array($recentBlogs)): $i = 0; $__LIST__ = $recentBlogs;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li><a href="<?php echo U(blog_details);?>/blog/<?php echo ($vo["id"]); ?>"><?php echo ($vo["title"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+		</ul>
+	</div>
+	<!-- end 右侧栏 -->
+	<div class="main baseDiv">
 		<div class="blogDetails">
-			<div class="blogHead">
-				<div class="title"><?php echo ($curBlog["title"]); ?></div>
-				<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" style="float: right;">
-					<a class="bds_qzone"></a>
-					<a class="bds_tsina"></a>
-					<a class="bds_tqq"></a>
-					<a class="bds_renren"></a>
-					<a class="bds_t163"></a>
-					<span class="bds_more">更多</span>
-					<a class="shareCount"></a>
-				</div>
+			<div class="title"><?php echo ($curBlog["title"]); ?></div>
+			<div class="info">
+				阅读(<?php echo ($curBlog["readcount"]); ?>) |
+				<a href="#commentTitle">评论(<?php echo ($curBlog["commentcount"]); ?>)</a>
+				&nbsp;&nbsp;&nbsp;
+					发表于<?php echo ($curBlog["inputtime"]); ?>&nbsp;&nbsp;&nbsp;&nbsp;
+				专栏:<?php echo ($curBlog["topicname"]); ?>
 			</div>
-
+			<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" style="float: right;">
+				<a class="bds_qzone"></a>
+				<a class="bds_tsina"></a>
+				<a class="bds_tqq"></a>
+				<a class="bds_renren"></a>
+				<a class="bds_t163"></a>
+				<span class="bds_more">更多</span>
+				<a class="shareCount"></a>
+			</div>
 			<div class="blogBody"><?php echo ($curBlog["content"]); ?></div>
 		</div>
 

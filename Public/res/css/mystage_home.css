@@ -3,7 +3,7 @@ body{
     background-attachment:fixed;
 }
 .main_content{
-	width:860px;
+	width:1000px;
 	margin: 80px auto;
 }
 .baseDiv{
@@ -17,24 +17,9 @@ body{
 	float: right;
 	margin-left: 10px;
 }
-.floatNav{
-	background: #FFF;
-	position: fixed;
-	right: 4px;
-	width:230px;
-	border:1px solid #D4D4D4; 
-}
-
-.floatNav .floatMenu{
-	list-style: none;
-	margin: 6px;
-}
-.floatNav .floatMenu li{
-	line-height: 1.6em;
-}
 /*主体内容*/
 .main{
-	overflow:auto;
+	overflow:hidden;
 }
 
 .sidebarTitle{
@@ -50,7 +35,6 @@ body{
 .sidebarMenu{
 	margin: 0px 10px;
 	list-style:none;
-	background-color: red;
 }
 
 .sidebarMenu li a{

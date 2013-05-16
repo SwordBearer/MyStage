@@ -12,8 +12,8 @@
   	<script src="__PUBLIC__/res/js/bootstrap.min.js" type="text/javascript" ></script>
 </head>
 <script type="text/javascript">window.UEDITOR_HOME_URL="__PUBLIC__/ueditor/";</script>
-<script type="text/javascript" src="__PUBLIC__/ueditor/ueditor.config.js"></script>
-<script type="text/javascript" src="__PUBLIC__/ueditor/ueditor.all.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/ueditor/editor_config.js"></script>
+<script type="text/javascript" src="__PUBLIC__/ueditor/editor_all.js"></script>
 <style type="text/css">
 .blogInfo{
 	width:160px;

@@ -1,23 +1,23 @@
 <?php
-	
-
     /**
      * Created by JetBrains PhpStorm.
      * User: taoqili
      * Date: 12-7-18
      * Time: 上午10:42
      */
+    
+
     header("Content-Type: text/html; charset=utf-8");
     error_reporting(E_ERROR | E_WARNING);
-    date_default_timezone_set("Asia/chongqing");
     include "Uploader.class.php";
     //上传图片框中的描述表单名称，
     $title = htmlspecialchars($_POST['pictitle'], ENT_QUOTES);
     $path = htmlspecialchars($_POST['dir'], ENT_QUOTES);
 
     //上传配置
+    $uploadConfig=require "tyc_upload_config.php";
     $config = array(
-        "savePath" => ($path == "1" ? "upload/" : "upload1/"),
+        "savePath" =>$uploadConfig['imageSavePath'],//($path == "1" ? "upload/" : "upload1/"),
         "maxSize" => 1000, //单位KB
         "allowFiles" => array(".gif", ".png", ".jpg", ".jpeg", ".bmp")
     );
