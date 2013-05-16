@@ -1,5 +1,8 @@
 <include file="Public:libs_import"/>
 <title>{$curBlog.title}</title>
+<link href="__PUBLIC__/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/ueditor/third-party/SyntaxHighlighter/shCore.js"></script>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
 </head>
 <body>
 <div class="nav">
@@ -36,11 +39,14 @@
 		<h4 class="sidebarTitle">相关推荐</h4>
 		<ul class="sidebarList">
 			<volist name="recentBlogs" id="vo">
-				<li><a href="{:U(blog_details)}/blog/{$vo.id}">{$vo.title}</a></li>
+				<li>
+					<a href="{:U(blog_details)}/blog/{$vo.id}">{$vo.title}</a>
+				</li>
 			</volist>
 		</ul>
 	</div>
 	<!-- end 右侧栏 -->
+	<!-- 左侧栏：显示博客内容 -->
 	<div class="main baseDiv">
 		<div class="blogDetails">
 			<div class="title">{$curBlog.title}</div>
@@ -51,7 +57,10 @@
 					发表于{$curBlog.inputtime}&nbsp;&nbsp;&nbsp;&nbsp;
 				专栏:{$curBlog.topicname}
 			</div>
-			<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" style="float: right;">
+			<div class="blogBody">{$curBlog.content}</div>
+			<br/>
+			<!-- 百度分享控件 -->
+			<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"   style="float: right;">
 				<a class="bds_qzone"></a>
 				<a class="bds_tsina"></a>
 				<a class="bds_tqq"></a>
@@ -60,10 +69,10 @@
 				<span class="bds_more">更多</span>
 				<a class="shareCount"></a>
 			</div>
-			<div class="blogBody">{$curBlog.content}</div>
 		</div>
-
-		<div class="dividerTitle" id="commentTitle">评论</div>
+		<br/>
+		<br/>
+		<div class="dividerTitle"id="commentTitle">评论</div>
 		<div class="commentList">
 			<empty name="allComms">
 				<span style="margin:10px;">暂无评论</span>

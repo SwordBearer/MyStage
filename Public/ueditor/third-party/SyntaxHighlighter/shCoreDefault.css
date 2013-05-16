@@ -28,7 +28,7 @@
     vertical-align: baseline !important;
     width: auto !important;
     box-sizing: content-box !important;
-    font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important;
+    font-family:"Consolas",Courier, "Bitstream Vera Sans Mono", "Courier New",monospace !important;
     font-weight: normal !important;
     font-style: normal !important;
     font-size: 1em !important;
@@ -63,6 +63,7 @@
     word-wrap: normal;
 }
 
+
 .syntaxhighlighter caption {
     text-align: left !important;
     padding: .5em 0 0.5em 1em !important;
@@ -92,6 +93,7 @@
 }
 .syntaxhighlighter td.code .line {
     padding: 0 1em !important;
+    overflow:hidden;
 }
 .syntaxhighlighter.nogutter td.code .container textarea, .syntaxhighlighter.nogutter td.code .line {
     padding-left: 0em !important;
@@ -213,19 +215,24 @@
 .syntaxhighlighter.printing .break, .syntaxhighlighter.printing .break a {
     color: black !important;
 }
-.syntaxhighlighter {
+/*.syntaxhighlighter {
     background-color: white !important;
-}
+}*/
+
+/*by swordbearer*/
+/*
 .syntaxhighlighter .alt1 {
     background-color: white !important;
 }
 .syntaxhighlighter .alt2 {
     background-color: #e0e0e0 !important;
 }
+*/
 /*.syntaxhighlighter .line.highlighted.alt1, .syntaxhighlighter .line.highlighted.alt2 {*/
     /*background-color: #e0e0e0 !important;*/
-/*}*/
-.syntaxhighlighter .line.highlighted.number {
+/*}
+*/
+.syntaxhighlighter .line .highlighted.number {
     color: black !important;
 }
 .syntaxhighlighter caption {
@@ -269,17 +276,30 @@
 .syntaxhighlighter .toolbar a:hover {
     color: black !important;
 }
+/*
 .syntaxhighlighter .plain, .syntaxhighlighter .plain a {
     color: black !important;
+}*/
+/*by swordbearer*/
+.syntaxhighlighter{
+    background-color: #22252B !important;
 }
+.syntaxhighlighter .plain{
+    color: #f0f0f0 !important;
+}
+
 .syntaxhighlighter .comments, .syntaxhighlighter .comments a {
-    color: #008200 !important;
+    color: #EE9A49 !important;
+    font-family: "微软雅黑"!important;
+    font-size: 12px !important;
+    font-style:  italic !important;
 }
 .syntaxhighlighter .string, .syntaxhighlighter .string a {
-    color: blue !important;
+    color: #89D336 !important;
 }
 .syntaxhighlighter .keyword {
-    color: #006699 !important;
+    color: #3399FF !important;
+    font-weight: bold !important;
 }
 .syntaxhighlighter .preprocessor {
     color: gray !important;
@@ -309,8 +329,4 @@
 }
 .syntaxhighlighter .color3, .syntaxhighlighter .color3 a {
     color: red !important;
-}
-
-.syntaxhighlighter .keyword {
-    font-weight: bold !important;
 }

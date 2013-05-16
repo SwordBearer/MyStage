@@ -74,11 +74,10 @@ body{
 }
 .blogDetails .info{
     font-size: 14px;
+    margin: 10px;
     color: #9A9A9A;
-    display: inline;
 }
 
 .blogDetails .blogBody{
-    padding:10px;
 }
 /*****END****/

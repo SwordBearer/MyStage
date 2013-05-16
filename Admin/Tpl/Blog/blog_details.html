@@ -1,5 +1,8 @@
 <include file="Public:libs_import"/>
-
+<title>{$curBlog.title}</title>
+<link href="__PUBLIC__/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/ueditor/third-party/SyntaxHighlighter/shCore.js"></script>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
 <script language="Javascript">
 	function wasteBlog(id){
 		jQuery("#btnDel").attr('href','__URL__/wasteBlog/blogid/'+id);
@@ -17,7 +20,8 @@
 	margin-left: 6px;
 	white-space:pre-wrap;
 	word-wrap: break-word;
-}</style>
+}
+</style>
 </head>
 <body>
 <div class="nav">
