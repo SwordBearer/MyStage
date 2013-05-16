@@ -9,10 +9,8 @@
     header("Content-Type: text/html; charset=utf-8");
     error_reporting(E_ERROR|E_WARNING);
     //远程抓取图片配置
-    //上传配置
-    $uploadConfig=require "tyc_upload_config.php";
     $config = array(
-        "savePath" =>$uploadConfig['catcherSavePath'] ,            //保存路径
+        "savePath" => "upload/" ,            //保存路径
         "allowFiles" => array( ".gif" , ".png" , ".jpg" , ".jpeg" , ".bmp" ) , //文件允许格式
         "maxSize" => 3000                    //文件大小限制，单位KB
     );

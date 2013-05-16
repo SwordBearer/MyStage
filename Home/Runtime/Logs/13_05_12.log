@@ -18885,3 +18885,93 @@ INFO: [ view_end ] --START--
 INFO: Run ShowPageTrace Behavior [ RunTime:0.000625s ]
 INFO: [ view_end ] --END-- [ RunTime:0.000660s ]
 
+[ 2013-05-12T18:06:02+08:00 ] 127.0.0.1 /MyStage/index.php/Blog/index
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.021895s ]
+INFO: [ route_check ] --END-- [ RunTime:0.021968s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000553s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000595s ]
+SQL: SHOW COLUMNS FROM `mystage_blog` [ RunTime:0.469264s ]
+SQL: SELECT blog.id,blog.inputtime,blog.title,blog.catid,blog.content,blog.readcount,topic.name AS topicname ,(SELECT count(comm.id) FROM mystage_blog_comm AS comm WHERE blog.id=comm.blogid ) AS commentcount 
+		FROM mystage_blog AS blog ,mystage_blog_topic AS topic 
+		WHERE blog.status=1 AND blog.topicid=topic.id 
+		ORDER BY updatetime DESC [ RunTime:0.108673s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.029444s ]
+INFO: [ view_template ] --END-- [ RunTime:0.029514s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Home\Runtime\Cache\cfdd517e0d671e92ae3da660d3de2eb0.php 第 17 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Home\Runtime\Cache\cfdd517e0d671e92ae3da660d3de2eb0.php 第 20 行.
+NOTIC: [8] Use of undefined constant monkey - assumed 'monkey' D:\xampp\htdocs\MyStage\Home\Runtime\Cache\cfdd517e0d671e92ae3da660d3de2eb0.php 第 23 行.
+NOTIC: [8] Use of undefined constant essay - assumed 'essay' D:\xampp\htdocs\MyStage\Home\Runtime\Cache\cfdd517e0d671e92ae3da660d3de2eb0.php 第 26 行.
+NOTIC: [8] Use of undefined constant enshrine - assumed 'enshrine' D:\xampp\htdocs\MyStage\Home\Runtime\Cache\cfdd517e0d671e92ae3da660d3de2eb0.php 第 29 行.
+NOTIC: [8] Use of undefined constant about - assumed 'about' D:\xampp\htdocs\MyStage\Home\Runtime\Cache\cfdd517e0d671e92ae3da660d3de2eb0.php 第 32 行.
+NOTIC: [8] Use of undefined constant blog_details - assumed 'blog_details' D:\xampp\htdocs\MyStage\Home\Runtime\Cache\cfdd517e0d671e92ae3da660d3de2eb0.php 第 58 行.
+NOTIC: [8] Use of undefined constant blog_details - assumed 'blog_details' D:\xampp\htdocs\MyStage\Home\Runtime\Cache\cfdd517e0d671e92ae3da660d3de2eb0.php 第 71 行.
+NOTIC: [8] Use of undefined constant blog_details - assumed 'blog_details' D:\xampp\htdocs\MyStage\Home\Runtime\Cache\cfdd517e0d671e92ae3da660d3de2eb0.php 第 58 行.
+NOTIC: [8] Use of undefined constant blog_details - assumed 'blog_details' D:\xampp\htdocs\MyStage\Home\Runtime\Cache\cfdd517e0d671e92ae3da660d3de2eb0.php 第 71 行.
+NOTIC: [8] Use of undefined constant blog_details - assumed 'blog_details' D:\xampp\htdocs\MyStage\Home\Runtime\Cache\cfdd517e0d671e92ae3da660d3de2eb0.php 第 58 行.
+NOTIC: [8] Use of undefined constant blog_details - assumed 'blog_details' D:\xampp\htdocs\MyStage\Home\Runtime\Cache\cfdd517e0d671e92ae3da660d3de2eb0.php 第 71 行.
+NOTIC: [8] Use of undefined constant blog_details - assumed 'blog_details' D:\xampp\htdocs\MyStage\Home\Runtime\Cache\cfdd517e0d671e92ae3da660d3de2eb0.php 第 58 行.
+NOTIC: [8] Use of undefined constant blog_details - assumed 'blog_details' D:\xampp\htdocs\MyStage\Home\Runtime\Cache\cfdd517e0d671e92ae3da660d3de2eb0.php 第 71 行.
+NOTIC: [8] Use of undefined constant blog_details - assumed 'blog_details' D:\xampp\htdocs\MyStage\Home\Runtime\Cache\cfdd517e0d671e92ae3da660d3de2eb0.php 第 58 行.
+NOTIC: [8] Use of undefined constant blog_details - assumed 'blog_details' D:\xampp\htdocs\MyStage\Home\Runtime\Cache\cfdd517e0d671e92ae3da660d3de2eb0.php 第 71 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.365474s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.365519s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.018840s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.010299s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.001598s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001159s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.032054s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.014254s ]
+INFO: [ view_end ] --END-- [ RunTime:0.014306s ]
+
+[ 2013-05-12T18:06:44+08:00 ] 127.0.0.1 /MyStage/index.php/Blog/index
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.000601s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000656s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000573s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000614s ]
+SQL: SHOW COLUMNS FROM `mystage_blog` [ RunTime:0.003571s ]
+SQL: SELECT blog.id,blog.inputtime,blog.title,blog.catid,blog.content,blog.readcount,topic.name AS topicname ,(SELECT count(comm.id) FROM mystage_blog_comm AS comm WHERE blog.id=comm.blogid ) AS commentcount 
+		FROM mystage_blog AS blog ,mystage_blog_topic AS topic 
+		WHERE blog.status=1 AND blog.topicid=topic.id 
+		ORDER BY updatetime DESC [ RunTime:0.004726s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000774s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000861s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Home\Runtime\Cache\cfdd517e0d671e92ae3da660d3de2eb0.php 第 17 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Home\Runtime\Cache\cfdd517e0d671e92ae3da660d3de2eb0.php 第 20 行.
+NOTIC: [8] Use of undefined constant monkey - assumed 'monkey' D:\xampp\htdocs\MyStage\Home\Runtime\Cache\cfdd517e0d671e92ae3da660d3de2eb0.php 第 23 行.
+NOTIC: [8] Use of undefined constant essay - assumed 'essay' D:\xampp\htdocs\MyStage\Home\Runtime\Cache\cfdd517e0d671e92ae3da660d3de2eb0.php 第 26 行.
+NOTIC: [8] Use of undefined constant enshrine - assumed 'enshrine' D:\xampp\htdocs\MyStage\Home\Runtime\Cache\cfdd517e0d671e92ae3da660d3de2eb0.php 第 29 行.
+NOTIC: [8] Use of undefined constant about - assumed 'about' D:\xampp\htdocs\MyStage\Home\Runtime\Cache\cfdd517e0d671e92ae3da660d3de2eb0.php 第 32 行.
+NOTIC: [8] Use of undefined constant blog_details - assumed 'blog_details' D:\xampp\htdocs\MyStage\Home\Runtime\Cache\cfdd517e0d671e92ae3da660d3de2eb0.php 第 58 行.
+NOTIC: [8] Use of undefined constant blog_details - assumed 'blog_details' D:\xampp\htdocs\MyStage\Home\Runtime\Cache\cfdd517e0d671e92ae3da660d3de2eb0.php 第 71 行.
+NOTIC: [8] Use of undefined constant blog_details - assumed 'blog_details' D:\xampp\htdocs\MyStage\Home\Runtime\Cache\cfdd517e0d671e92ae3da660d3de2eb0.php 第 58 行.
+NOTIC: [8] Use of undefined constant blog_details - assumed 'blog_details' D:\xampp\htdocs\MyStage\Home\Runtime\Cache\cfdd517e0d671e92ae3da660d3de2eb0.php 第 71 行.
+NOTIC: [8] Use of undefined constant blog_details - assumed 'blog_details' D:\xampp\htdocs\MyStage\Home\Runtime\Cache\cfdd517e0d671e92ae3da660d3de2eb0.php 第 58 行.
+NOTIC: [8] Use of undefined constant blog_details - assumed 'blog_details' D:\xampp\htdocs\MyStage\Home\Runtime\Cache\cfdd517e0d671e92ae3da660d3de2eb0.php 第 71 行.
+NOTIC: [8] Use of undefined constant blog_details - assumed 'blog_details' D:\xampp\htdocs\MyStage\Home\Runtime\Cache\cfdd517e0d671e92ae3da660d3de2eb0.php 第 58 行.
+NOTIC: [8] Use of undefined constant blog_details - assumed 'blog_details' D:\xampp\htdocs\MyStage\Home\Runtime\Cache\cfdd517e0d671e92ae3da660d3de2eb0.php 第 71 行.
+NOTIC: [8] Use of undefined constant blog_details - assumed 'blog_details' D:\xampp\htdocs\MyStage\Home\Runtime\Cache\cfdd517e0d671e92ae3da660d3de2eb0.php 第 58 行.
+NOTIC: [8] Use of undefined constant blog_details - assumed 'blog_details' D:\xampp\htdocs\MyStage\Home\Runtime\Cache\cfdd517e0d671e92ae3da660d3de2eb0.php 第 71 行.
+NOTIC: [8] Use of undefined constant blog_details - assumed 'blog_details' D:\xampp\htdocs\MyStage\Home\Runtime\Cache\cfdd517e0d671e92ae3da660d3de2eb0.php 第 58 行.
+NOTIC: [8] Use of undefined constant blog_details - assumed 'blog_details' D:\xampp\htdocs\MyStage\Home\Runtime\Cache\cfdd517e0d671e92ae3da660d3de2eb0.php 第 71 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.011112s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011167s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000570s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000496s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000372s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000437s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002021s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000480s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000516s ]
+

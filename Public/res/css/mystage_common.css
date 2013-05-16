@@ -4,6 +4,9 @@ body{
     font-family:Helvetica,Arial,"微软雅黑",sans-serif;
     font-size: 14px;
 }
+.test{
+    display: none;
+}
 /*nav bar*/
 .nav{
 	position: fixed;
@@ -67,17 +70,14 @@ body{
 .blogDetails{
     padding: 10px;
 }
-.blogDetails .title{
-    padding-bottom: 10px;
-    font-size: 20px;
+.blogDetails .blogHead{
     border-bottom: #D4D4D4 solid 1px;
+    padding-bottom: 14px;
+    font-size: 20px;
 }
-.blogDetails .info{
-    font-size: 14px;
-    color: #9A9A9A;
+.blogDetails .title{
     display: inline;
 }
-
 .blogDetails .blogBody{
     padding:10px;
 }

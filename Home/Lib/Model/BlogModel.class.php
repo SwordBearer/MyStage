@@ -29,8 +29,8 @@ class BlogModel extends Model{
 		return $result[0];
 	}
 
-	public function getRecentBlogs(){
-		$sql="SELECT blog.id,blog.title,blog.inputtime FROM mystage_blog AS blog WHERE blog.status=1 ORDER BY inputtime DESC limit 10 ";
+	public function getRecentBlogsByCat($catid){
+		$sql="SELECT blog.id,blog.title,blog.inputtime FROM mystage_blog AS blog WHERE blog.status=1 AND blog.catid=".$catid." ORDER BY inputtime DESC limit 10 ";
 		$result=$this->query($sql);
 		return $result;
 	}

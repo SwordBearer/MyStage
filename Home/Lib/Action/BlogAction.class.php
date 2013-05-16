@@ -47,10 +47,9 @@ class BlogAction extends Action {
 		$Blog->where($condtion)->setInc('readcount',1);
 		$blog=$Blog->getById($blogid);
 		$comms=$this->getBlogComm($blogid);
+		$result=$Blog->getRecentBlogsByCat($blog['catid']);
 		$this->assign("curBlog",$blog);
 		$this->assign("allComms",$comms);
-
-		$result=$Blog->getRecentBlogs();
 		$this->assign("recentBlogs",$result);
 		$this->display();
 	}
