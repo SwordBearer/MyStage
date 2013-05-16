@@ -6,6 +6,7 @@ MyStage
   后台在 /Admin 目录中；
   前台在 /Home 目录中；
 运行环境：Apache Server + MySQL ，可以直接部署使用；
+部署介绍请看这里 https://github.com/SwordBearer/MyStage/blob/master/%E6%B5%8B%E8%AF%95%E9%83%A8%E7%BD%B2.txt
 
 
 
