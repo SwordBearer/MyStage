@@ -302,6 +302,7 @@ class BlogAction extends Action {
 		$Comm=new BlogCommModel();
 		$result=$Comm->getCommsByBlog($blogid);
 		$this->assign("allComms",$result);
+		$this->assign("blogCommsCount",count($result));
 	}
 
 	function deleteComm(){

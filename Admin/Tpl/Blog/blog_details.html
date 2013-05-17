@@ -53,12 +53,12 @@
 			发表于{$curBlog.inputtime}&nbsp;&nbsp;&nbsp;&nbsp;
 				专栏:{$curBlog.topicname}&nbsp;&nbsp;&nbsp;
 			阅读({$curBlog.readcount}) |
-			<a href="#commentTitle">评论({$curBlog.commentcount})</a>
+			<a href="#commentTitle">评论({$blogCommsCount})</a>
 		</div>
 		<div class="blogBody">{$curBlog.content}</div>
 	</div>
 	<br/>
-	<div class="dividerTitle" id="addCommDiv">评论</div>
+	<div class="dividerTitle" id="commentTitle">评论</div>
 	<empty name="allComms">
 		<span style="margin:10px;">暂无评论</span>
 		<else/>
