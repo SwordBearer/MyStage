@@ -19,16 +19,16 @@
 
 持续更新中.....
 
-## 后台介绍
+## 后台预览
 
-*登录后台管理界面
-<img src="https://github.com/SwordBearer/MyStage/blob/master/screenshots/admin_login.png"/>
-*后台主页
-<img src="https://github.com/SwordBearer/MyStage/blob/master/screenshots/admin_index.png"/>
-<img src="https://github.com/SwordBearer/MyStage/blob/master/screenshots/admin_category_manage.png"/>
-*添加博客
-<img src="https://github.com/SwordBearer/MyStage/blob/master/screenshots/admin_login.png"/>
+* 登录后台管理界面
+![](https://github.com/SwordBearer/MyStage/raw/master/screenshots/admin_login.png)
+* 后台主页
+![](https://github.com/SwordBearer/MyStage/raw/master/screenshots/admin_index.png)
 
+![](https://github.com/SwordBearer/MyStage/raw/master/screenshots/admin_category_manage.PNG)
+* 添加博客
+![](https://github.com/SwordBearer/MyStage/raw/master/screenshots/admin_add_blog.PNG)
 
 
 ## Copyright and license
