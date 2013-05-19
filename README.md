@@ -10,7 +10,7 @@
 
 ## 项目说明
 
-* 数据库设计:在[/db_text](https://github.com/SwordBearer/MyStage/tree/master/db_text)目录下.
+* 数据库设计:在[/db_text](https://github.com/SwordBearer/MyStage/tree/master/db_text)目录下,由于是个人博客,对性能要求不是很高，所以设计有些不合理，后续将进行修改..
 * 界面美化: 在[/Public/res](https://github.com/SwordBearer/MyStage/tree/master/Public/res) 文件夹下面,分别是CSS,JavaScript和图片(img)文件.
 * 博客后台基于[Bootstrap](https://github.com/twitter/bootstrap)和[JQuery](https://github.com/jquery/jquery)来实现，前台使用自定义的CSS文件.
 * 博客中使用的四张图片: 原创(ico_original.gif) , 翻译(ico_translate.gif) , 转载(ico_repost.gif),以及标题栏背景图(tit_bg.jpg)
@@ -18,6 +18,17 @@
 * 使用[uEditor](https://github.com/campaign/ueditor)作为博客编辑器;代码高亮基于[SyntaxHighlighter](https://github.com/alexgorbatchev/SyntaxHighlighter),并更改了代码显示样式.
 
 持续更新中.....
+
+## 后台介绍
+
+*登录后台管理界面
+<img src="https://github.com/SwordBearer/MyStage/blob/master/screenshots/admin_login.png"/>
+*后台主页
+<img src="https://github.com/SwordBearer/MyStage/blob/master/screenshots/admin_index.png"/>
+<img src="https://github.com/SwordBearer/MyStage/blob/master/screenshots/admin_category_manage.png"/>
+*添加博客
+<img src="https://github.com/SwordBearer/MyStage/blob/master/screenshots/admin_login.png"/>
+
 
 
 ## Copyright and license
