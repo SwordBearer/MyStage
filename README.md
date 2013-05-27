@@ -17,11 +17,9 @@
 均取自CSDN网站.
 * 使用[uEditor](https://github.com/campaign/ueditor)作为博客编辑器;代码高亮基于[SyntaxHighlighter](https://github.com/alexgorbatchev/SyntaxHighlighter),并更改了代码显示样式.
 
-持续更新中.....
+## 后台界面预览
 
-## 后台预览
-
-* 登录后台管理界面
+* 后台登录界面
 ![](https://github.com/SwordBearer/MyStage/raw/master/screenshots/admin_login.png)
 * 后台主页
 ![](https://github.com/SwordBearer/MyStage/raw/master/screenshots/admin_index.png)
