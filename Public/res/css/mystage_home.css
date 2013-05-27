@@ -8,14 +8,15 @@ body{
 }
 .baseDiv{
 	background: #FFF;
-	border:  1px solid #D4D4D4; 
+	border:  1px solid #D4D4D4;
+	padding: 0px;
 }
 
 /*右侧栏*/
 .rightSide{
 	width: 240px;
 	float: right;
-	margin-left: 10px;
+	margin-left: 6px;
 }
 /*主体内容*/
 .main{
@@ -24,7 +25,6 @@ body{
 
 .sidebarTitle{
 	color: #535353;
-	margin:-1px;
 	font-size: 18px;
 	line-height: 40px;
 	height: 40px;
@@ -33,7 +33,7 @@ body{
 	border: 1px solid #D4D4D4;
 }
 .sidebarMenu{
-	margin: 0px 10px;
+	margin: 0px;
 	list-style:none;
 }
 
@@ -46,7 +46,8 @@ body{
 	color: #444;
 }
 .sidebarMenu li a:hover{
-	background: #f8f8f8;
+	background: #f5f5f5;
+	color: #c00;
 }
 
 .sidebarList{
@@ -74,43 +75,18 @@ body{
 	overflow: hidden;
 	border-bottom: #efefef 1px solid;
 }
-.feed .head{ 
-	margin-bottom: 6px;
-	overflow: hidden;
-	line-height: 3.2em;
-	height: 3.2em;
-}
-
-.feed .head .date{
-	background: #7798cb;
-	color: #fff;
-	width: 50px;
-	line-height: 1.6em;
-	float: right;
-	overflow: hidden;
-	text-align: center;
-}
-
+	.feed:hover{
+		background: #f5f5f5;
+	}
 .feed .head a{
 	color: #036;
 	font-size: 16px;
-	font-weight: bold;
 }
 
-.feed .body{
-	font-size: 14px;
-	max-height: 160px;
-	overflow: hidden;
-	margin-bottom: 10px;
-}
-
-/*博客图片预览*/
-.feed .body img{
-	max-width: 200px;
-}
 .feed .foot{
 	font-size: 12px;
 	color: #666;
+	margin-left: 20px;
 }
 
 #gototop {

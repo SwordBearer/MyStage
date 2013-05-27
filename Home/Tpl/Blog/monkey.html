@@ -26,7 +26,7 @@
 	<!--右侧栏-->
 	<div  class="rightSide baseDiv">
 		<!-- 所有专栏Topic -->
-		<h4 class="sidebarTitle">博客专栏</h4>
+		<div class="sidebarTitle">博客专栏</div>
 		<ul class="sidebarMenu">
 			<li>
 				<a href="{:U(monkey)}/catid/{$curCat}">全部</a>
@@ -43,7 +43,7 @@
 		<volist name="allBlogs" id="blog">
 			<div class="feed">
 				<div class="head">
-					<span class="date">{$blog.inputtime}</span>
+				<!-- 	<span class="date">{$blog.inputtime}</span> -->
 					<a href="{:U(blog_details)}/blog/{$blog.id}" target="_blank">
 						<if condition="$blog['typeid'] eq 1" >
 							<img src="__PUBLIC__/res/img/ico_original.gif" />
@@ -55,11 +55,11 @@
 						{$blog.title}
 					</a>
 				</div>
-				<div class="body">{$blog.content}</div>
-				<div class="foot">
+				<!-- <div class="body">{$blog.content}</div>
+				 --><div class="foot">
 					<span class="topic">专栏:{$blog.topicname}&nbsp;&nbsp;&nbsp;&nbsp;</span>
-					阅读({$blog.readcount})| 评论({$blog.commentcount})&nbsp;&nbsp;
-					<a href="{:U(blog_details)}/blog/{$blog.id}" target="_blank" style="color:#666;text-decoration:underline;">阅读全文...</a>
+					阅读({$blog.readcount})| 评论({$blog.commentcount}) 
+					<!-- <a href="{:U(blog_details)}/blog/{$blog.id}" target="_blank" style="color:#666;text-decoration:underline;">阅读全文...</a> -->
 				</div>
 			</div>
 		</volist>

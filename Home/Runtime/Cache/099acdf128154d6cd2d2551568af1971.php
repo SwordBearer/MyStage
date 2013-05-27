@@ -1,5 +1,18 @@
-<include file="Public:libs_import"/>
-<title>{$curBlog.title}</title>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="author" content="xmu.SwordBearer[ranxiedao@163.com]">
+	<title>键人唐的博客</title>
+	<!-- link google font -->
+	<link href='http://fonts.googleapis.com/css?family=Tangerine:700|Nunito' rel='stylesheet' type='text/css'>
+	<link href="__PUBLIC__/res/css/bootstrap.min.css" rel="stylesheet" />
+	<script src="__PUBLIC__/res/js/jquery-1.9.1.min.js" type="text/javascript" ></script>
+  	<script src="__PUBLIC__/res/js/bootstrap.min.js" type="text/javascript" ></script>
+ 	<link href="__PUBLIC__/res/css/mystage_home.css" rel="stylesheet"/>
+ 	<link href="__PUBLIC__/res/css/mystage_common.css" rel="stylesheet"/>
+</head>
+<title><?php echo ($curBlog["title"]); ?></title>
 <link href="__PUBLIC__/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="__PUBLIC__/ueditor/third-party/SyntaxHighlighter/shCore.js"></script>
 <script type="text/javascript">SyntaxHighlighter.all();</script>
@@ -7,22 +20,22 @@
 <body>
 <div class="nav">
 	<div class="nav-inner">
-		<a class="brand" href="{:U(index)}">SwordBearer's Lab</a>
+		<a class="brand" href="<?php echo U(index);?>">SwordBearer's Lab</a>
 		<ul>
 			<li>
-				<a href="{:U(index)}">首页</a>
+				<a href="<?php echo U(index);?>">首页</a>
 			</li>
 			<li>
-				<a href="{:U(monkey)}">程序猿</a>
+				<a href="<?php echo U(monkey);?>">程序猿</a>
 			</li>
 			<li>
-				<a href="{:U(essay)}">个人日志</a>
+				<a href="<?php echo U(essay);?>">个人日志</a>
 			</li>
 			<li>
-				<a href="{:U(enshrine)}">收藏</a>
+				<a href="<?php echo U(enshrine);?>">收藏</a>
 			</li>
 			<li>
-				<a href="{:U(about)}">关于</a>
+				<a href="<?php echo U(about);?>">关于</a>
 			</li>
 		</ul>
 	</div>
@@ -38,26 +51,24 @@
 		</ul>
 		<h4 class="sidebarTitle">相关推荐</h4>
 		<ul class="sidebarList">
-			<volist name="recentBlogs" id="vo">
-				<li>
-					<a href="{:U(blog_details)}/blog/{$vo.id}">{$vo.title}</a>
-				</li>
-			</volist>
+			<?php if(is_array($recentBlogs)): $i = 0; $__LIST__ = $recentBlogs;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li>
+					<a href="<?php echo U(blog_details);?>/blog/<?php echo ($vo["id"]); ?>"><?php echo ($vo["title"]); ?></a>
+				</li><?php endforeach; endif; else: echo "" ;endif; ?>
 		</ul>
 	</div>
 	<!-- end 右侧栏 -->
 	<!-- 左侧栏：显示博客内容 -->
 	<div class="main baseDiv">
 		<div class="blogDetails">
-			<div class="title">{$curBlog.title}</div>
+			<div class="title"><?php echo ($curBlog["title"]); ?></div>
 			<div class="info">
-				阅读({$curBlog.readcount}) |
-				<a href="#commentTitle">评论({$curBlog.commentcount})</a>
+				阅读(<?php echo ($curBlog["readcount"]); ?>) |
+				<a href="#commentTitle">评论(<?php echo ($curBlog["commentcount"]); ?>)</a>
 				&nbsp;&nbsp;&nbsp;
-					发表于{$curBlog.inputtime}&nbsp;&nbsp;&nbsp;&nbsp;
-				专栏:{$curBlog.topicname}
+					发表于<?php echo ($curBlog["inputtime"]); ?>&nbsp;&nbsp;&nbsp;&nbsp;
+				专栏:<?php echo ($curBlog["topicname"]); ?>
 			</div>
-			<div class="blogBody">{$curBlog.content}</div>
+			<div class="blogBody"><?php echo ($curBlog["content"]); ?></div>
 			<br/>
 			<!-- 百度分享控件 -->
 			<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"   style="float: right;">
@@ -74,36 +85,32 @@
 		<br/>
 		<div class="dividerTitle"id="commentTitle">评论</div>
 		<div class="commentList">
-			<empty name="allComms">
-				<span style="margin:10px;">暂无评论</span>
-				<else/>
-				<volist name="allComms" id="comm">
-					<div class="commDiv">
+			<?php if(empty($allComms)): ?><span style="margin:10px;">暂无评论</span>
+				<?php else: ?>
+				<?php if(is_array($allComms)): $i = 0; $__LIST__ = $allComms;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$comm): $mod = ($i % 2 );++$i;?><div class="commDiv">
 						<table>
 							<tr>
 								<td>
 									<div class="commInfo">
-										{$comm.inputtime}
+										<?php echo ($comm["inputtime"]); ?>
 										<br/>
-										<a>IP:{$comm.ipstr}</a>
+										<a>IP:<?php echo ($comm["ipstr"]); ?></a>
 									</div>
 								</td>
 								<td>
-									<p class="comm">{$comm.content}</p>
+									<p class="comm"><?php echo ($comm["content"]); ?></p>
 								</td>
 							</tr>
 						</table>
-					</div>
-				</volist>
-			</empty>
+					</div><?php endforeach; endif; else: echo "" ;endif; endif; ?>
 		</div>
 		<div class="dividerTitle" id="addCommDiv">发表评论</div>
-		<form class="commForm" action="{:U(addComm)}" method="post">
+		<form class="commForm" action="<?php echo U(addComm);?>" method="post">
 			<span>请输入评论内容:</span>
 			<br/>
 			<textarea name="comm" required></textarea>
 			<br/>
-			<input type="hidden" name="blog" value="{$curBlog.id}"/>
+			<input type="hidden" name="blog" value="<?php echo ($curBlog["id"]); ?>"/>
 			<input style="btn btn-success" type="submit" value="提交"/>
 		</form>
 	</div>
