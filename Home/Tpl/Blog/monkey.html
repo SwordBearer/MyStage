@@ -1,4 +1,5 @@
 <include file="Public:libs_import"/>
+<title>键人唐-程序开发</title>
 <body>
 <div class="nav">
 	<div class="nav-inner">
@@ -43,27 +44,28 @@
 		<volist name="allBlogs" id="blog">
 			<div class="feed">
 				<div class="head">
-				<!-- 	<span class="date">{$blog.inputtime}</span> -->
-					<a href="{:U(blog_details)}/blog/{$blog.id}" target="_blank">
-						<if condition="$blog['typeid'] eq 1" >
-							<img src="__PUBLIC__/res/img/ico_original.gif" />
-							<elseif condition="$blog['typeid'] eq 2 "/>
-							<img src="__PUBLIC__/res/img/ico_translated.gif" />
-							<else/>
-							<img src="__PUBLIC__/res/img/ico_repost.gif" />
-						</if>
-						{$blog.title}
-					</a>
-				</div>
-				<!-- <div class="body">{$blog.content}</div>
-				 --><div class="foot">
-					<span class="topic">专栏:{$blog.topicname}&nbsp;&nbsp;&nbsp;&nbsp;</span>
-					阅读({$blog.readcount})| 评论({$blog.commentcount}) 
-					<!-- <a href="{:U(blog_details)}/blog/{$blog.id}" target="_blank" style="color:#666;text-decoration:underline;">阅读全文...</a> -->
-				</div>
+					<!-- 	<span class="date">{$blog.inputtime}</span>
+				-->
+				<a href="{:U(blog_details)}/blog/{$blog.id}" target="_blank">
+					<if condition="$blog['typeid'] eq 1" >
+						<img src="__PUBLIC__/res/img/ico_original.gif" />
+						<elseif condition="$blog['typeid'] eq 2 "/>
+						<img src="__PUBLIC__/res/img/ico_translated.gif" />
+						<else/>
+						<img src="__PUBLIC__/res/img/ico_repost.gif" />
+					</if>
+					{$blog.title}
+				</a>
 			</div>
-		</volist>
-	</div>
+			<div class="foot">
+				<span class="topic">专栏:{$blog.topicname}</span>
+				&nbsp;&nbsp;
+		阅读({$blog.readcount})&nbsp;&nbsp;
+				<a href="{:U(blog_details)}/blog/{$blog.id}#commentTitle" target="_blank">评论({$blog.commentcount})</a>
+			</div>
+		</div>
+	</volist>
+</div>
 </div>
 </body>
 </html>

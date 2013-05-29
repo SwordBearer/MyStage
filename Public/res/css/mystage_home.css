@@ -71,22 +71,28 @@ body{
 .feed{
 	line-height: 1.8em;
 	color: #444;
-	padding: 6px;
+	padding: 4px;
 	overflow: hidden;
 	border-bottom: #efefef 1px solid;
 }
 	.feed:hover{
 		background: #f5f5f5;
 	}
+
 .feed .head a{
 	color: #036;
 	font-size: 16px;
 }
-
 .feed .foot{
 	font-size: 12px;
 	color: #666;
 	margin-left: 20px;
+}
+.feed .foot a{
+	color: #666
+}
+.feed .foot a:hover{
+	color: #DC143C;
 }
 
 #gototop {

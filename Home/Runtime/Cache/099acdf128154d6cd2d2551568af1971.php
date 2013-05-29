@@ -3,7 +3,6 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 	<meta name="author" content="xmu.SwordBearer[ranxiedao@163.com]">
-	<title>键人唐的博客</title>
 	<!-- link google font -->
 	<link href='http://fonts.googleapis.com/css?family=Tangerine:700|Nunito' rel='stylesheet' type='text/css'>
 	<link href="__PUBLIC__/res/css/bootstrap.min.css" rel="stylesheet" />
@@ -12,7 +11,7 @@
  	<link href="__PUBLIC__/res/css/mystage_home.css" rel="stylesheet"/>
  	<link href="__PUBLIC__/res/css/mystage_common.css" rel="stylesheet"/>
 </head>
-<title><?php echo ($curBlog["title"]); ?></title>
+<title>键人唐--<?php echo ($curBlog["title"]); ?></title>
 <link href="__PUBLIC__/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="__PUBLIC__/ueditor/third-party/SyntaxHighlighter/shCore.js"></script>
 <script type="text/javascript">SyntaxHighlighter.all();</script>
