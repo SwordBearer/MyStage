@@ -1,28 +1,98 @@
 body{
-    background: #ededef;/*url('../img/bg.jpg');*/
-    background-attachment:fixed;
+    padding: 0px;
+    margin:0px;
+    font-family:Helvetica,Arial,"微软雅黑",sans-serif;
+    font-size: 14px;
+    background:url(../img/bg/main.jpg) top center;
 }
+::-moz-selection {
+	background: #000;
+	color: #fff;
+	text-shadow: none;
+}
+::selection {
+	background: #000;
+	color: #fff;
+	text-shadow: none;
+}
+
+#gototop {
+	position: fixed;
+	float: right;
+	z-index: 10;
+	right: 10px;
+	bottom: 10px;
+}
+/*nav bar*/
+.nav{
+	position: fixed;
+    z-index: 100;
+	top:0;
+    width: 100%;
+    background: #222;
+    vertical-align: middle;
+}
+/**/
+.nav .nav-inner{
+	margin:0 auto;
+	width: 80%;
+    min-width: 900px;
+    line-height: 4em;
+}
+
+/*Logo*/
+.nav .brand{
+    font-size: 3.2em;
+    font-family: 'Tangerine',cursive;
+    text-decoration: none;
+    font-weight: bold;
+    color: #777;
+    float: left;
+    margin-right: 20px;
+    padding: 0 20px;
+}
+	.nav .brand:hover,
+	.nav .brand:focus {
+		color: #fff;
+	}
+
+.nav ul {
+    display: inline;
+    list-style: none;
+}
+.nav ul li{
+    float: left;
+}
+.nav ul li a { 
+    text-decoration: none;
+    color: #777;
+    font-size:1.2em;
+    display:block;
+    padding: 20px;
+    }  
+        .nav ul li a:hover {  
+            color: #fff;  
+        }  
+        .nav ul li a.active{
+        	color: #fff;
+            background: #24bfc4;
+        }
+
+/*nav bar END*/
 .main_content{
-	width:1000px;
+	width:880px;
 	margin: 80px auto;
 }
 .baseDiv{
 	background: #FFF;
 	border:  1px solid #D4D4D4;
-	padding: 0px;
 }
-
 /*右侧栏*/
 .rightSide{
 	width: 240px;
 	float: right;
 	margin-left: 6px;
 }
-/*主体内容*/
-.main{
-	overflow:hidden;
-}
-
 .sidebarTitle{
 	color: #535353;
 	font-size: 18px;
@@ -36,7 +106,6 @@ body{
 	margin: 0px;
 	list-style:none;
 }
-
 .sidebarMenu li a{
 	text-decoration: none;
 	display: block;
@@ -68,6 +137,9 @@ body{
 .sidebarList li a:hover{
 	color: #009933;
 }
+.feedDiv{
+	overflow:hidden;
+}
 .feed{
 	line-height: 1.8em;
 	color: #444;
@@ -94,41 +166,50 @@ body{
 .feed .foot a:hover{
 	color: #DC143C;
 }
-
-#gototop {
-	position: fixed;
-	float: right;
-	z-index: 10;
-	right: 10px;
-	bottom: 10px;
+/*博客详情*/
+.blogDiv{
+	padding: 20px;
 }
-.commDiv{
-	border-bottom: #ddd solid 1px;
-	font-size: 12px;
+.blogDiv .blogTitle{
+    padding-bottom: 10px;
+    font-size: 20px;
+    border-bottom: #D4D4D4 solid 1px;
 }
-	.commDiv:hover{
-		background: #F7F7F7;
-	}
-
-	.commDiv .commInfo {
-		padding:2px 10px;
-		width: 120px;
-		height: 100%;
-		display: block;
-		border-right: 1px #F0F0F0 solid;
-	}
-	.commDiv .comm{
-		margin-left: 6px;
-		white-space:pre-wrap;
-		word-wrap: break-word;
-	}
-
-.commForm{
-	padding:10px;
+.blogDiv .blogInfo{
+    font-size: 14px;
+    margin: 10px;
+    color: #9A9A9A;
 }
-.commForm textarea{
-	width:600px;
-	height:100px;
-	white-space:pre-wrap;
-	word-wrap: break-word;
+.blogDiv .blogContent{
+    
+}
+.blogDiv .blogState{
+    background: #e0eaf1;
+    border-radius: 3px;
+    margin-top: 10px;
+    padding: 8px 15px;
+    border-left: 6px #3CB371 solid;
+}
+/*****END****/
+
+/*相关推荐*/
+.related_articles {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #E2F3FF;
+    border: 1px solid #99A9B4;
+    border-radius: 4px;
+}
+.related_articles .title{
+	font-weight: bold;
+	font-size: 16px;
+}
+/*评论*/
+.commentDiv{
+}
+ .commentTitle{
+ 	border bottom: 1px #C0C0C0 solid;
+	margin-top: 12px;
+	font-weight: bold;
+	font-size: 16px;
 }

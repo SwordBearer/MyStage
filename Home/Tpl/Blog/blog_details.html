@@ -27,52 +27,46 @@
 		</ul>
 	</div>
 </div>
-<div class="main_content">
-	<!--右侧栏-->
-	<div  class="rightSide baseDiv">
-		<div class="sidebarTitle">W T F ?</div>
-		<ul class="sidebarMenu">
-			<li>日访问量：437</li>
-			<li>总访问量：6743</li>
-			<li>原创(231) | 转载(34) | 翻译(9)</li>
-		</ul>
-		<h4 class="sidebarTitle">相关推荐</h4>
-		<ul class="sidebarList">
-			<volist name="recentBlogs" id="vo">
-				<li>
-					<a href="{:U(blog_details)}/blog/{$vo.id}">{$vo.title}</a>
-				</li>
-			</volist>
-		</ul>
-	</div>
-	<!-- end 右侧栏 -->
-	<!-- 左侧栏：显示博客内容 -->
-	<div class="main baseDiv">
-		<div class="blogDetails">
-			<div class="title">{$curBlog.title}</div>
-			<div class="info">
-				阅读({$curBlog.readcount}) |
-				<a href="#commentTitle">评论({$curBlog.commentcount})</a>
-				&nbsp;&nbsp;&nbsp;
+<div class="baseDiv main_content">
+	<div class="blogDiv">
+		<div class="blogTitle">{$curBlog.title}</div>
+		<div class="blogInfo">
+			阅读({$curBlog.readcount}) |
+			<a href="#commentTitle">评论({$curBlog.commentcount})</a>
+			&nbsp;&nbsp;&nbsp;
 					发表于{$curBlog.inputtime}&nbsp;&nbsp;&nbsp;&nbsp;
 				专栏:{$curBlog.topicname}
-			</div>
-			<div class="blogBody">{$curBlog.content}</div>
-			<br/>
-			<!-- 百度分享控件 -->
-			<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"   style="float: right;">
-				<a class="bds_qzone"></a>
-				<a class="bds_tsina"></a>
-				<a class="bds_tqq"></a>
-				<a class="bds_renren"></a>
-				<a class="bds_t163"></a>
-				<span class="bds_more">更多</span>
-				<a class="shareCount"></a>
-			</div>
+		</div>
+		<div class="blogContent">{$curBlog.content}</div>
+		<div class="blogState">
+			<p>声明：本站文章除注明转载外，均为本站原创或编译欢迎任何形式的转载，但请务必注明出处</p>
+			<p>作者：键人唐</p>
+			<p>原文地址：<a href="{:U(blog_details)}/blog/{$curBlog.id}" target="_blank">{:U(blog_details)}/blog/{$curBlog.id}</a>
+		</div><br/>
+		<!-- 百度分享控件 -->
+		<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"   style="float: right;">
+			<a class="bds_qzone"></a>
+			<a class="bds_tsina"></a>
+			<a class="bds_tqq"></a>
+			<a class="bds_renren"></a>
+			<a class="bds_t163"></a>
+			<span class="bds_more">更多</span>
+			<a class="shareCount"></a>
 		</div>
 		<br/>
-		<br/>
-		<div class="dividerTitle"id="commentTitle">评论</div>
+		<div  class="related_articles">
+			<div class="title">相关推荐</div>
+			<ul class="sidebarList">
+				<volist name="recentBlogs" id="vo">
+					<li>
+						<a href="{:U(blog_details)}/blog/{$vo.id}">{$vo.title}</a>
+					</li>
+				</volist>
+			</ul>
+		</div>
+		<div class="commentTitle">评论</div>
+		<div class="commentDiv">
+		</div>
 		<div class="commentList">
 			<empty name="allComms">
 				<span style="margin:10px;">暂无评论</span>
@@ -97,7 +91,7 @@
 				</volist>
 			</empty>
 		</div>
-		<div class="dividerTitle" id="addCommDiv">发表评论</div>
+		<div class="commentTitle" id="addCommDiv">发表评论</div>
 		<form class="commForm" action="{:U(addComm)}" method="post">
 			<span>请输入评论内容:</span>
 			<br/>

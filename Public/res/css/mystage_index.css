@@ -1,0 +1,36 @@
+body{overflow:hidden; margin:0px; padding:0px;}
+#main_bg{
+	background-image: url(../img/bg/bg_index.jpg);
+    background-attachment: fixed;
+    width: 100%;
+    min-height: 1000px;
+}
+
+.effect2{
+	background: url(../img/bg/effect_2.png) repeat left top;
+	position: relative;
+	height: 100%;
+	z-index: 999 !important;
+}
+
+.container{
+	width: 1000px;
+	max-width: 1000px;
+	margin:0 auto;
+	background: red;
+	text-align: center;
+}
+
+.entrybtn{
+	display: inline-block;
+	cursor: pointer;
+	margin: 10px;
+	padding: 10px 0;
+	min-width: 183px;
+	border: 1px solid #3e3e3e;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 28px;
+	line-height: 36px;
+	font-weight: 300;
+	color: #3e3e3e;
+}
