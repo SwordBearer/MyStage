@@ -111,3 +111,9 @@ body{
 .blogDiv .blogBody{
 }
 /*****END****/
+.comm_content{
+    text-align:left !important;
+    margin-left: 6px;
+    white-space:pre-wrap;
+    word-wrap: break-word;
+}

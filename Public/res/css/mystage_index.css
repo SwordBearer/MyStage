@@ -1,6 +1,6 @@
 body{overflow:hidden; margin:0px; padding:0px;}
-#main_bg{
-	background-image: url(../img/bg/sbg_index.jpg);
+#index_bgs{
+	background-image: url(../img/bg/bg_index.jpg);
     background-attachment: fixed;
     width: 100%;
     min-height: 1000px;
@@ -10,6 +10,8 @@ body{overflow:hidden; margin:0px; padding:0px;}
 	background: url(../img/bg/effect_2.png) repeat left top;
 	position: relative;
 	height: 100%;
+	width: 2000px;
+	height: 2000px;
 	z-index: 999 !important;
 }
 

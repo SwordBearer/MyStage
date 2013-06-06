@@ -3,15 +3,15 @@ body{
     margin:0px;
     font-family:Helvetica,Arial,"微软雅黑",sans-serif;
     font-size: 14px;
-    background:url(../img/bg/main.jpg) top center;
+    background:url(../img/bg/effect_2.png) top center;
 }
 ::-moz-selection {
-	background: #000;
+	background: #20B2AA;
 	color: #fff;
 	text-shadow: none;
 }
 ::selection {
-	background: #000;
+	background: #20B2AA;
 	color: #fff;
 	text-shadow: none;
 }
@@ -181,7 +181,6 @@ body{
     color: #9A9A9A;
 }
 .blogDiv .blogContent{
-    
 }
 .blogDiv .blogState{
     background: #e0eaf1;
@@ -192,24 +191,91 @@ body{
 }
 /*****END****/
 
+/*区域分割线*/
+.field{
+  border-top: 1px solid #D4D4D4;
+}
+.field legend{
+  font-size:.6em;
+  line-height: 1em;
+  width:80px;
+  padding:6px 4px;
+  background-color: #96CDCD;
+  border-radius: 10px;
+  border: 1px solid #777;
+  text-align: center;
+}
+
 /*相关推荐*/
 .related_articles {
     margin-top: 20px;
-    padding: 10px;
-    background-color: #E2F3FF;
-    border: 1px solid #99A9B4;
-    border-radius: 4px;
 }
-.related_articles .title{
+
+.related_articles ul{
+	margin: 6px;
+	list-style: none;
+}
+.related_articles li{
+	line-height: 2em;
+}
+
+/*评论列表*/
+.commItem{
+	border-bottom: #eee 1px solid;
+}
+.commItem:hover{
+	background: #f0f0f0;
+}
+.commInfo{
+	color: #666;
+}
+.commContent{
+	padding: 10px;
+	color: #666;
+    text-align:left !important;
+    word-wrap: break-word;
+}
+
+/****添加评论*******/
+.commForm{
+	margin-top: 20px;
+}
+.commForm ul{
+	list-style: none;
+  	margin: 0;
+  	padding: 0;
+}
+.commForm  ul li {
+  margin: .9em 0 0 0;
+  padding: 0;
+}
+form label{
+	display: block;
+	float: left;
+	clear: left;
+	text-align: right;
+	width: 120px;
+  	padding: .4em 0 0 0;
+  	margin: .15em .5em 0 0;
+}
+form input[type=text],textarea {
+  display: block;
+  margin: 0;
+  padding: .4em;
+  width: 60%;
+  border-radius: 0;
+}
+.form-submit{
 	font-weight: bold;
-	font-size: 16px;
+	text-transform: uppercase;
+	line-height: 3.125em;
+	color: #fff;
+	background-color: #20b2aa;
+	display: block;
+	padding: 0 1em;
+	margin: 10px auto;
+	border: none;
 }
-/*评论*/
-.commentDiv{
-}
- .commentTitle{
- 	border bottom: 1px #C0C0C0 solid;
-	margin-top: 12px;
-	font-weight: bold;
-	font-size: 16px;
+.form-submit:hover{
+	background-color: #4A708B;
 }

@@ -38,67 +38,66 @@
 				专栏:{$curBlog.topicname}
 		</div>
 		<div class="blogContent">{$curBlog.content}</div>
-		<div class="blogState">
-			<p>声明：本站文章除注明转载外，均为本站原创或编译欢迎任何形式的转载，但请务必注明出处</p>
-			<p>作者：键人唐</p>
-			<p>原文地址：<a href="{:U(blog_details)}/blog/{$curBlog.id}" target="_blank">{:U(blog_details)}/blog/{$curBlog.id}</a>
-		</div><br/>
+		<!-- 原创声明 -->
+		<if condition="$curBlog.typeid eq 1">
+			<include file="Public:statement"/>
+			<br/>
+		</if>
 		<!-- 百度分享控件 -->
 		<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"   style="float: right;">
-			<a class="bds_qzone"></a>
 			<a class="bds_tsina"></a>
 			<a class="bds_tqq"></a>
 			<a class="bds_renren"></a>
-			<a class="bds_t163"></a>
-			<span class="bds_more">更多</span>
+			<span class="bds_more"></span>
 			<a class="shareCount"></a>
 		</div>
 		<br/>
-		<div  class="related_articles">
-			<div class="title">相关推荐</div>
-			<ul class="sidebarList">
-				<volist name="recentBlogs" id="vo">
-					<li>
-						<a href="{:U(blog_details)}/blog/{$vo.id}">{$vo.title}</a>
-					</li>
-				</volist>
-			</ul>
-		</div>
-		<div class="commentTitle">评论</div>
-		<div class="commentDiv">
-		</div>
-		<div class="commentList">
-			<empty name="allComms">
-				<span style="margin:10px;">暂无评论</span>
-				<else/>
-				<volist name="allComms" id="comm">
-					<div class="commDiv">
-						<table>
-							<tr>
-								<td>
-									<div class="commInfo">
-										{$comm.inputtime}
-										<br/>
-										<a>IP:{$comm.ipstr}</a>
-									</div>
-								</td>
-								<td>
-									<p class="comm">{$comm.content}</p>
-								</td>
-							</tr>
-						</table>
-					</div>
-				</volist>
-			</empty>
-		</div>
-		<div class="commentTitle" id="addCommDiv">发表评论</div>
+		<br/>
+		<fieldset class="field">
+			<legend>相关推荐</legend>
+			<div class="related_articles">
+				<ul>
+					<volist name="recentBlogs" id="vo">
+						<li>
+							<a href="{:U(blog_details)}/blog/{$vo.id}">{$vo.title}</a>
+						</li>
+					</volist>
+				</ul>
+			</div>
+		</fieldset>
+		<!-- 评论 -->
+		<fieldset class="field"  id="commentTitle">
+			<legend>评论</legend>
+			<div class="commentList">
+				<empty name="allComms">
+					<span style="margin:10px;">暂无评论</span>
+					<else/>
+					<volist name="allComms" id="comm">
+						<div class="commItem">
+						<div class="commInfo">
+							<!-- {$comm.ipstr}&nbsp;&nbsp; -->{$comm.inputtime}
+						</div>
+						<div class="commContent">
+							{$comm.content}</div>
+						</div>
+					</volist>
+				</empty>
+			</div>
+		</fieldset>
+		<!-- 发表评论 -->
 		<form class="commForm" action="{:U(addComm)}" method="post">
-			<span>请输入评论内容:</span>
-			<br/>
-			<textarea name="comm" required></textarea>
-			<br/>
+			<ul>
+				<li>
+					<label for="email">Email</label>
+					<input type="text" name="email"required/>
+				</li>
+				<li>
+					<label for="comm">评论内容</label>
+					<textarea name="comm" required></textarea>
+				</li>
+			</ul>
 			<input type="hidden" name="blog" value="{$curBlog.id}"/>
-			<input style="btn btn-success" type="submit" value="提交"/>
+			<input class="form-submit" type="submit" value="Submit"/>
 		</form>
 	</div>
 </div>
