@@ -1,8 +1,20 @@
 body{
 	background: #EFF8F8;
 }
+::-moz-selection {
+    background: #20B2AA;
+    color: #fff;
+    text-shadow: none;
+}
+::selection {
+    background: #20B2AA;
+    color: #fff;
+    text-shadow: none;
+}
 .main_content{
-	margin: 80px auto;
+    padding: 10px;
+    width:880px;
+    margin: 80px auto;
 	background: #FFF;
 	border: #D4D4D4 solid 1px;
 }
@@ -116,4 +128,21 @@ body{
     margin-left: 6px;
     white-space:pre-wrap;
     word-wrap: break-word;
+}
+/*添加博客*/
+.blogTitle{
+    width:800px;
+}
+.blogTitle input{
+    width:100%;
+}
+#addBlogTbl{
+    width: 830px;
+}
+#addBlogTbl td input,select{
+    width:154px;
+    margin-right: 20px;
+}
+select{
+    padding: 0px;
 }
