@@ -8,7 +8,7 @@ class BlogAction extends Action {
 	}
 
 	public function blog_details(){
-		$blogid=$_REQUEST['blog'];
+		$blogid=$_REQUEST['blogid'];
 		if($blogid==NULL){
 			$this->error("数据错误!");
 		}
@@ -32,7 +32,7 @@ class BlogAction extends Action {
 
 	public function edit_blog(){
 		$this->checkUser();
-		$blogid=$_REQUEST['blog'];
+		$blogid=$_REQUEST['blogid'];
 		if(is_null($blogid)){
 			$this->error("数据错误!");
 		}
@@ -135,7 +135,7 @@ class BlogAction extends Action {
 		$data['id']=$blogid;
 		$data['catid']=$_POST['blog_cat'];
 		$data['typeid']=$_POST['blog_type'];
-		$data['inputtime']=date('Y-m-d H:i:s',time());
+		$data['inputtime']=$_POST['blog_time'];
 		$data['updatetime']=date('Y-m-d H:i:s',time());
 		$data['title']=$_POST['blog_title'];
 		$content=$_POST['blog_content'];
@@ -152,7 +152,7 @@ class BlogAction extends Action {
 			$this->redirect(__GROUP__."/Blog/index");
 		}
 	}
-
+/*将草稿发布为正式博客*/
 	public function publishBlog(){
 		$blogid=$_REQUEST['blogid'];
 		if($blogid==NULL){

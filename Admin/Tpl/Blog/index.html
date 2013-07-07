@@ -29,6 +29,9 @@
 			<li>
 				<a href="__GROUP__/Public/logout">退出</a>
 			</li>
+			<li>
+				<a href="http://swordbearer.sinaapp.com/index.php/Blog/index" target="_blank">前台</a>
+			</li>
 		</ul>
 	</div>
 </div>
@@ -52,12 +55,12 @@
 						<tr>
 							<td>{$blog.id}</td>
 							<td style="text-align:left;">
-								<a href="{:U(blog_details)}/blog/{$blog.id}">{$blog.title}</a>
+								<a href="{:U(blog_details)}/blogid/{$blog.id}">{$blog.title}</a>
 							</td>
 							<td>{$blog.topicname}</td>
 							<td>{$blog.inputtime}</td>
 							<td>
-								<a href="{:U(edit_blog)}/blog/{$blog.id}"class="btn btn-small">编辑</a>
+								<a href="{:U(edit_blog)}/blogid/{$blog.id}"class="btn btn-small">编辑</a>
 								<a class="btn btn-small" onClick="wasteBlog({$blog.id})" >删除</a>
 							</td>
 						</tr>
