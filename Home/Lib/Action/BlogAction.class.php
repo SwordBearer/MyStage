@@ -1,9 +1,5 @@
 <?php
 class BlogAction extends Action {
-    public function index(){
-    	$this->getAllBlogs();
-    	$this->display();
-	}
 	public function monkey(){
 		$topicid=$_REQUEST['topicid'];
 		if(is_null($topicid)){
@@ -34,6 +30,11 @@ class BlogAction extends Action {
 		$this->assign("curCat",3);
 		$this->getTopicsByCat(3);
 		$this->getBlogsByTopic(3,$topicid);
+		$this->display();
+	}
+	
+	public function about(){
+		$this->assign("curCat",4);
 		$this->display();
 	}
 

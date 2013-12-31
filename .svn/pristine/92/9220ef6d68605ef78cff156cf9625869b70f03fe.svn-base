@@ -1,0 +1,26 @@
+ <include file="libs_import"/>
+ <body>
+<!-- Navbar ================================= -->
+<div class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="">SwordBearer</a>
+      <ul class="nav">
+        <li>
+          <a href="__GROUP__/Blog/index">个人博客</a>
+        </li>
+        <li>
+          <a href="__GROUP__/Enshrine/index">美文网摘</a>
+        </li>
+        <li>
+          <a href="__GROUP__/Ads/index">广告管理</a>
+        </li>
+        <li class="active">
+          <a href="__GROUP__/Public/about">关于</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+ </body>
+ </html>

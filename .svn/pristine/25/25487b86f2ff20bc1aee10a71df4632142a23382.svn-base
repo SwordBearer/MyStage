@@ -1,0 +1,174 @@
+
+#gototop {
+	position: fixed;
+	float: right;
+	z-index: 10;
+	right: 10px;
+	bottom: 10px;
+}
+/*nav bar END*/
+.main_content{
+	max-width:1000px;
+	margin: 80px auto;
+}
+/*右侧栏*/
+.sidenav {
+padding: 10px;
+background-color: #fff;
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+-webkit-box-shadow: 0 1px 4px rgba(0,0,0,.065);
+-moz-box-shadow: 0 1px 4px rgba(0,0,0,.065);
+box-shadow: 0 1px 4px rgba(0,0,0,.065);
+}
+.sidebarTitle{
+	color: #535353;
+	font-size: 18px;
+	line-height: 40px;
+	height: 40px;
+	background: #FBFBFB;
+	padding: 0 10px;
+	border: 1px solid #D4D4D4;
+}
+.feedDiv{
+	overflow:hidden;
+}
+.feed{
+	line-height: 1.8em;
+	color: #444;
+	padding: 14px;
+	border-bottom: #efefef 1px solid;
+}
+	.feed:hover{
+		background: #f5f5f5;
+	}
+
+.feed .head a{
+	color: #036;
+	font-size: 16px;
+}
+.feed .foot{
+	font-size: 12px;
+	color: #666;
+	margin-left: 20px;
+}
+.feed .foot a{
+	color: #666
+}
+.feed .foot a:hover{
+	color: #DC143C;
+}
+/*博客详情*/
+.blogDiv{
+	padding: 20px;
+}
+.blogDiv .blogTitle{
+    padding-bottom: 10px;
+    font-size: 20px;
+    border-bottom: #D4D4D4 solid 1px;
+}
+.blogDiv .blogInfo{
+    font-size: 14px;
+    margin: 10px;
+    color: #9A9A9A;
+}
+.blogDiv .blogContent{
+}
+.blogDiv .blogState{
+    background: #e0eaf1;
+    border-radius: 3px;
+    margin-top: 10px;
+    padding: 8px 15px;
+    border-left: 6px #3CB371 solid;
+}
+/*****END****/
+
+/*区域分割线*/
+.field{
+  border-top: 1px solid #D4D4D4;
+}
+.field legend{
+  font-size:.6em;
+  line-height: 1em;
+  width:80px;
+  padding:6px 4px;
+  background-color: #96CDCD;
+  border-radius: 10px;
+  border: 1px solid #777;
+  text-align: center;
+}
+
+/*相关推荐*/
+.related_articles {
+    margin-top: 20px;
+}
+
+.related_articles ul{
+	margin: 6px;
+	list-style: none;
+}
+.related_articles li{
+	line-height: 2em;
+}
+
+/*评论列表*/
+.commItem{
+	border-bottom: #eee 1px solid;
+}
+.commItem:hover{
+	background: #f0f0f0;
+}
+.commInfo{
+	color: #666;
+}
+.commContent{
+	padding: 10px;
+	color: #666;
+    text-align:left !important;
+    word-wrap: break-word;
+}
+
+/****添加评论*******/
+.commForm{
+	margin-top: 20px;
+}
+.commForm ul{
+	list-style: none;
+  	margin: 0;
+  	padding: 0;
+}
+.commForm  ul li {
+  margin: .9em 0 0 0;
+  padding: 0;
+}
+form label{
+	display: block;
+	float: left;
+	clear: left;
+	text-align: right;
+	width: 120px;
+  	padding: .4em 0 0 0;
+  	margin: .15em .5em 0 0;
+}
+form input[type=text],textarea {
+  display: block;
+  margin: 0;
+  padding: .4em;
+  width: 60%;
+  border-radius: 0;
+}
+.form-submit{
+	font-weight: bold;
+	text-transform: uppercase;
+	line-height: 3.125em;
+	color: #fff;
+	background-color: #20b2aa;
+	display: block;
+	padding: 0 1em;
+	margin: 10px auto;
+	border: none;
+}
+.form-submit:hover{
+	background-color: #4A708B;
+}

@@ -1,0 +1,92 @@
+body{
+    padding: 0px;
+    margin:0px;
+    font-family:Helvetica,Arial,"微软雅黑",sans-serif;
+    font-size: 14px;
+    background:url(../img/bg/main.jpg) top center
+}
+/*nav bar*/
+.nav{
+	position: fixed;
+    z-index: 100;
+	top:0;
+    width: 100%;
+    background: #222;
+    vertical-align: middle;
+}
+/**/
+.nav .nav-inner{
+	margin:0 auto;
+	width: 80%;
+    min-width: 900px;
+    line-height: 4em;
+}
+
+
+/*Logo*/
+.nav .brand{
+    font-size: 3.2em;
+    font-family: 'Tangerine',cursive;
+    text-decoration: none;
+    font-weight: bold;
+    color: #777;
+    float: left;
+    margin-right: 20px;
+    padding: 0 20px;
+}
+	.nav .brand:hover,
+	.nav .brand:focus {
+		color: #fff;
+	}
+
+.nav ul {
+    display: inline;
+    list-style: none;
+}
+.nav ul li{
+    float: left;
+}
+.nav ul li a { 
+    text-decoration: none;
+    color: #777;
+    font-size:1.2em;
+    display:block;
+    padding: 20px;
+    }  
+        .nav ul li a:hover {  
+            color: #fff;  
+        }  
+        .nav ul li a.active{
+        	color: #fff;
+            background: #24bfc4;
+        }
+
+/*nav bar END*/
+
+/********/
+.dividerTitle{
+    padding-left: 15px;
+    height: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    background: url(../img/bg/tit_bg.jpg) repeat-x;
+}
+
+/*博客详情*/
+.blogDetails{
+    padding: 10px;
+}
+.blogDetails .title{
+    padding-bottom: 10px;
+    font-size: 20px;
+    border-bottom: #D4D4D4 solid 1px;
+}
+.blogDetails .info{
+    font-size: 14px;
+    margin: 10px;
+    color: #9A9A9A;
+}
+
+.blogDetails .blogBody{
+}
+/*****END****/

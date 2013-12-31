@@ -1,32 +1,9 @@
-<include file="Public:libs_import"/>
-<title>键人唐--{$curBlog.title}</title>
+<include file="header"/>
 <link href="__PUBLIC__/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="__PUBLIC__/ueditor/third-party/SyntaxHighlighter/shCore.js"></script>
 <script type="text/javascript">SyntaxHighlighter.all();</script>
 </head>
 <body>
-<div class="nav">
-	<div class="nav-inner">
-		<a class="brand" href="{:U(index)}">SwordBearer's Lab</a>
-		<ul>
-			<li>
-				<a href="{:U(index)}">首页</a>
-			</li>
-			<li>
-				<a href="{:U(monkey)}">程序猿</a>
-			</li>
-			<li>
-				<a href="{:U(essay)}">个人日志</a>
-			</li>
-			<li>
-				<a href="{:U(enshrine)}">收藏</a>
-			</li>
-			<li>
-				<a href="{:U(about)}">关于</a>
-			</li>
-		</ul>
-	</div>
-</div>
 <div class="baseDiv main_content">
 	<div class="blogDiv">
 		<div class="blogTitle">{$curBlog.title}</div>
@@ -41,30 +18,15 @@
 		<!-- 原创声明 -->
 		<if condition="$curBlog.typeid eq 1">
 			<include file="Public:statement"/>
-			<br/>
 		</if>
-		<!-- 百度分享控件 -->
-		<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"   style="float: right;">
+		<!-- 百度分享控件 
+		<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
 			<a class="bds_tsina"></a>
 			<a class="bds_tqq"></a>
 			<a class="bds_renren"></a>
 			<span class="bds_more"></span>
 			<a class="shareCount"></a>
-		</div>
-		<br/>
-		<br/>
-		<fieldset class="field">
-			<legend>相关推荐</legend>
-			<div class="related_articles">
-				<ul>
-					<volist name="recentBlogs" id="vo">
-						<li>
-							<a href="{:U(blog_details)}/blog/{$vo.id}">{$vo.title}</a>
-						</li>
-					</volist>
-				</ul>
-			</div>
-		</fieldset>
+		</div> -->
 		<!-- 评论 -->
 		<fieldset class="field"  id="commentTitle">
 			<legend>评论</legend>
@@ -101,7 +63,6 @@
 		</form>
 	</div>
 </div>
-
 <!-- Baidu Button BEGIN -->
 <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=870942" ></script>
 <script type="text/javascript" id="bdshell_js"></script>

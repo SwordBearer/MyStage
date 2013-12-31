@@ -1,0 +1,122 @@
+<include file="Public:libs_import"/>
+<script language="Javascript">
+
+	function editTopic(id,name,listorder){
+		jQuery('#newTopicName').val(name);
+		jQuery('#newTopicOrder').val(listorder);
+		jQuery('#editDialog').modal('show').on('shown',function(){
+		jQuery("#btnSave").click(function(){
+			var newName=jQuery('#newTopicName').val();
+			var newOrder=jQuery('#newTopicOrder').val();
+			newName=newName.replace(/(^\s*)|(\s*$)/g, "");
+			if(newName==name&&newOrder==listorder){
+				return;
+			}else{
+			jQuery(this).attr('href','__URL__/editTopic/topicid/'+id+'/topicname/'+newName+'/listorder/'+newOrder);
+		}
+		});
+		});
+	}
+	function deleteTopic(id){
+		jQuery("#btnDel").attr('href','__URL__/deleteTopic/topicid/'+id);
+		jQuery('#deleteDialog').modal('show');
+	}
+</script>
+</head>
+<body>
+<div class="nav">
+	<div class="nav-inner">
+		<a class="brand" href="#">SwordBearer's Lab</a>
+		<ul>
+			<li>
+				<a href="{:U(index)}">博客管理</a>
+			</li>
+			<li>
+				<a class="active" href="{:U(topic_manage)}">专栏管理</a>
+			</li>
+			<li>
+				<a href="{:U(draftbox)}">草稿箱</a>
+			</li>
+			<li>
+				<a href="{:U(wastebasket)}">回收站</a>
+			</li>
+			<li>
+				<a href="{:U(add_blog)}">添加博客</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="main_content">
+	<form class="input-prepend input-append" method="post" action="{:U('addTopic')}">
+		<select required name="new_topic_catid">
+			<volist name="allCats" id="cat">
+				<option value="{$cat.id}">{$cat.name}</option>
+			</volist>
+		</select>
+		<input type="text" name="new_topic_order"class="input input-small" placeholder="专栏序号" required />
+		<input type="text" name="new_topic_name"class="input" placeholder="专栏名称" required />
+		<input type="submit" class="btn btn-success" value="添加"/>
+	</form>
+	<form method="post" name="topic_form">
+		<table class="table table-hover table-condensed table-hover">
+			<thead>
+				<tr class="tbl_head">
+					<th>类别</th>
+					<th>名称</th>
+					<th>序号</th>
+					<th>博客</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<volist name="allTopics" id="topic">
+					<tr>
+						<td>{$topic.catname}</td>
+						<td>{$topic.name}</td>
+						<td>{$topic.listorder}</td>
+						<td>{$topic.blogcount}</td>
+						<td>
+							<a class="btn btn-small" onClick="editTopic({$topic.id},'{$topic.name}',{$topic.listorder})">编辑</a>
+							<a class="btn btn-small" onClick="deleteTopic({$topic.id})" >删除</a>
+						</td>
+					</tr>
+				</volist>
+			</tbody>
+		</table>
+	</form>
+	<div class="modal hide fade" id="editDialog">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>修改专栏</h3>
+		</div>
+		<div class="modal-body">
+			<div class="input-prepend">
+				<label class="add-on">专栏序号</label>
+				<input id="newTopicOrder"  type="text" autofocus/>
+			</div>
+			<div class="input-prepend">
+				<label class="add-on">专栏名称</label>
+				<input id="newTopicName" type="text"/>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<a id="btnSave" href="#" class="btn btn-primary">保存</a>
+			<button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+		</div>
+	</div>
+	<div class="modal hide" id="deleteDialog">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>删除专栏</h3>
+		</div>
+		<div class="modal-body">
+			<lable>确定要删除该专栏吗？</lable>
+		</div>
+		<div class="modal-footer">
+			<a id="btnDel" href="#" class="btn btn-danger">删除</a>
+			<a class="btn" data-dismiss="modal" aria-hidden="true">取消</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>

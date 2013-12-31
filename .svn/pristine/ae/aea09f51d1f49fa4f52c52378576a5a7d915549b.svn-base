@@ -1,0 +1,58 @@
+<include file="header"/>
+<script language="Javascript">
+	function wasteBlog(id){
+		jQuery("#btnDel").attr('href','__URL__/wasteBlog/blogid/'+id);
+		jQuery('#deleteDialog').modal('show');
+	}
+</script>
+</head>
+<div class="main_content">
+	<form method="post" name="blog_form">
+		<empty name="allBlogs">
+			暂时没有博客
+			<else/>
+			<table class="table table-condensed table-hover" >
+				<thead class="tbl_head">
+					<tr>
+						<th>ID</th>
+						<th>标题</th>
+						<th>专栏</th>
+						<th>创建时间</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<volist name="allBlogs" id="blog">
+						<tr>
+							<td>{$blog.id}</td>
+							<td style="text-align:left;">
+								<a href="{:U(blog_details)}/blogid/{$blog.id}">{$blog.title}</a>
+							</td>
+							<td>{$blog.topicname}</td>
+							<td>{$blog.inputtime}</td>
+							<td>
+								<a href="{:U(edit_blog)}/blogid/{$blog.id}"class="btn btn-small">编辑</a>
+								<a class="btn btn-small" onClick="wasteBlog({$blog.id})" >删除</a>
+							</td>
+						</tr>
+					</volist>
+				</tbody>
+			</table>
+		</empty>
+	</form>
+</div>
+<div class="modal hide" id="deleteDialog">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<h3>删除博客</h3>
+	</div>
+	<div class="modal-body">
+		<lable>确定要删除该博客吗(可以从回收站中找回)？</lable>
+	</div>
+	<div class="modal-footer">
+		<a id="btnDel" href="#" class="btn btn-danger">删除</a>
+		<a class="btn" data-dismiss="modal" aria-hidden="true">取消</a>
+	</div>
+</div>
+</body>
+</html>

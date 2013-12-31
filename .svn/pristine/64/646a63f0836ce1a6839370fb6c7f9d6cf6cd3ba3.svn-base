@@ -1,0 +1,97 @@
+<include file="Public:libs_import"/>
+<script type="text/javascript">window.UEDITOR_HOME_URL="__PUBLIC__/ueditor/";</script>
+<script type="text/javascript" src="__PUBLIC__/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="__PUBLIC__/ueditor/ueditor.all.min.js"></script>
+</head>
+<body>
+<div class="nav">
+	<div class="nav-inner">
+		<a class="brand" href="#">SwordBearer's Lab</a>
+		<ul>
+			<li>
+				<a href="{:U(index)}">博客管理</a>
+			</li>
+			<li>
+				<a href="{:U(topic_manage)}">专栏管理</a>
+			</li>
+			<li>
+				<a href="{:U(draftbox)}">草稿箱</a>
+			</li>
+			<li>
+				<a href="{:U(wastebasket)}">回收站</a>
+			</li>
+			<li>
+				<a class="active" href="{:U(add_blog)}">添加博客</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="main_content" id="main_content">
+	<form method="post" action="{:U(addBlog)}" onkeydown="if(event.keyCode==13){return false;}">
+		<div class="input-prepend blogTitle" >
+			<label class="add-on">博客标题</label>
+			<input type="text" required name="blog_title"/>
+		</div>
+		<br/>
+		<table id="addBlogTbl">
+			<tr>
+				<td>
+					<div class="input-prepend">
+						<label class="add-on">类型</label>
+						<select required name="blog_type">
+							<volist name="allTypes" id="type">
+								<option value="{$type.id}">{$type.name}</option>
+							</volist>
+						</select>
+					</div>
+				</td>
+				<td>
+					<div class="input-prepend">
+						<label class="add-on">专栏</label>
+						<select required name="blog_topic" >
+							<volist name="allTopics" id="topic">
+								<option value="{$topic.id}">{$topic.name}</option>
+							</volist>
+						</select>
+					</div>
+				</td>
+				<td>
+
+					<div class="input-prepend">
+						<label class="add-on">分类</label>
+						<select required name="blog_cat">
+							<volist name="allCats" id="cat">
+								<option value="{$cat.id}">{$cat.name}</option>
+							</volist>
+						</select>
+					</div>
+				</td>
+				<td>
+					<div class="input-prepend">
+						<label class="add-on">创建日期</label>
+						<input class="blogInfo input" type="text" name="blog_time"/>
+					</div>
+				</td>
+			</tr>
+		</table>
+
+		<!---*********编辑框***********-->
+		<div>
+			<script type="text/plain" id="blogEditor" name="blog_content" ></script>
+			<script type="text/javascript">
+			var editorWidth=document.getElementById("main_content").clientWidth-20;
+				UE.getEditor("blogEditor", {
+					lang:"zh-cn", //语言
+					initialFrameWidth:editorWidth,
+					initialFrameHeight:300
+				});
+			</script>
+		</div>
+		<center style="margin:10px;">
+			<input type="submit" class="btn btn-success btn" value="发布文章" name="publish"/>
+			<input type="submit" class="btn btn-primary btn" value="保存草稿" name="save"/>
+		</center>
+	</form>
+</div>
+</body>
+</html>

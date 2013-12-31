@@ -4,7 +4,7 @@ class PublicAction extends Action{
 	/*******************pages***********************/
 	public function login(){
 		if(isset($_SESSION[C('USER_AUTH_KEY')])){
-			$this->redirect(__GROUP__."/Index/index");
+			$this->redirect(__GROUP__."/index/index");
 		}else{
 			$this->display();
 		}
@@ -13,7 +13,7 @@ class PublicAction extends Action{
 	/***********************functions******************/
 	public function checkUser(){
 		if(!isset($_SESSION[C('USER_AUTH_KEY')])){
-			$this->error("没有登录",__GROUP__."/Public/login");
+			$this->error("没有登录",__GROUP__."/public/login");
 		}
 	}
 

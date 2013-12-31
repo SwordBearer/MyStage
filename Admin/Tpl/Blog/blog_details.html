@@ -1,4 +1,4 @@
-<include file="Public:libs_import"/>
+<include file="header"/>
 <title>{$curBlog.title}</title>
 <link href="__PUBLIC__/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="__PUBLIC__/ueditor/third-party/SyntaxHighlighter/shCore.js"></script>
@@ -15,29 +15,6 @@
 	}
 </script>
 </head>
-<body>
-<div class="nav">
-	<div class="nav-inner">
-		<a class="brand" href="#">SwordBearer's Lab</a>
-		<ul>
-			<li>
-				<a href="{:U(index)}">博客管理</a>
-			</li>
-			<li>
-				<a href="{:U(topic_manage)}">专栏管理</a>
-			</li>
-			<li>
-				<a href="{:U(draftbox)}">草稿箱</a>
-			</li>
-			<li>
-				<a href="{:U(wastebasket)}">回收站</a>
-			</li>
-			<li>
-				<a href="{:U(add_blog)}">添加博客</a>
-			</li>
-		</ul>
-	</div>
-</div>
 <div class="main_content">
 	<div class="blogDetails baseDiv">
 		<div class="title">{$curBlog.title}</div>

@@ -1,0 +1,33 @@
+body{
+    padding: 0px;
+    margin:0px;
+    font-family:Helvetica,Arial,"微软雅黑",sans-serif;
+    font-size: 14px;
+}
+::-moz-selection {
+	background: #20B2AA;
+	color: #fff;
+	text-shadow: none;
+}
+::selection {
+	background: #20B2AA;
+	color: #fff;
+	text-shadow: none;
+}
+
+/*博客详情*/
+.blogDetails{
+    padding: 10px;
+}
+.blogDetails .title{
+    padding-bottom: 10px;
+    font-size: 20px;
+    border-bottom: #D4D4D4 solid 1px;
+}
+.blogDetails .info{
+    font-size: 14px;
+    margin: 10px;
+    color: #9A9A9A;
+}
+
+/*****END****/

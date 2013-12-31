@@ -1,0 +1,81 @@
+<include file="Public:libs_import"/>
+<script language="Javascript">
+	function deleteBlog(id){
+		jQuery("#btnDel").attr('href','__URL__/deleteBlog/blogid/'+id);
+		jQuery('#deleteDialog').modal('show');
+	}
+</script>
+</head>
+<body>
+<div class="nav">
+	<div class="nav-inner">
+		<a class="brand" href="#">SwordBearer's Lab</a>
+		<ul>
+			<li>
+				<a href="{:U(index)}">博客管理</a>
+			</li>
+			<li>
+				<a href="{:U(topic_manage)}">专栏管理</a>
+			</li>
+			<li>
+				<a href="{:U(draftbox)}">草稿箱</a>
+			</li>
+			<li>
+				<a class="active" href="{:U(wastebasket)}">回收站</a>
+			</li>
+			<li>
+				<a href="{:U(add_blog)}">添加博客</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="main_content">
+	<form method="post" name="blog_form">
+		<empty name="allBlogs">
+			暂时没有回收的博客
+			<else/>
+			<table class="table table-condensed table-hover" >
+				<thead class="tbl_head">
+					<tr>
+						<th>ID</th>
+						<th>标题</th>
+						<th>专栏</th>
+						<th>创建时间</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<volist name="allBlogs" id="blog">
+						<tr>
+							<td>{$blog.id}</td>
+							<td>
+								<a href="{:U(blog_details)}/blogid/{$blog.id}">{$blog.title}</a>
+							</td>
+							<td>{$blog.topicname}</td>
+							<td>{$blog.inputtime}</td>
+							<td>
+								<a href="{:U(recoveryBlog)}/blogid/{$blog.id}"class="btn btn-small btn-success">恢复</a>
+								<a class="btn btn-small" onClick="deleteBlog({$blog.id})" >删除</a>
+							</td>
+						</tr>
+					</volist>
+				</tbody>
+			</table>
+		</empty>
+	</form>
+	<div class="modal hide" id="deleteDialog">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>删除博客</h3>
+		</div>
+		<div class="modal-body">
+			<lable>确定要删除该博客吗(此操作将彻底删除博客！！！)？</lable>
+		</div>
+		<div class="modal-footer">
+			<a id="btnDel" href="#" class="btn btn-danger">删除</a>
+			<a class="btn" data-dismiss="modal" aria-hidden="true">取消</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>

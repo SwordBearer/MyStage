@@ -1,0 +1,97 @@
+<include file="header"/>
+<title>{$curBlog.title}</title>
+<link href="__PUBLIC__/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/ueditor/third-party/SyntaxHighlighter/shCore.js"></script>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<script language="Javascript">
+	function wasteBlog(id){
+		jQuery("#btnDel").attr('href','__URL__/wasteBlog/blogid/'+id);
+		jQuery('#deleteDialog').modal('show');
+	}
+
+	function deleteComm(id){
+		jQuery("#btnDel").attr('href','__URL__/deleteComm/commid/'+id);
+		jQuery('#deleteDialog').modal('show');
+	}
+</script>
+</head>
+<div class="main_content">
+	<div class="blogDetails baseDiv">
+		<div class="title">{$curBlog.title}</div>
+		<div class="info">
+			发表于{$curBlog.inputtime}&nbsp;&nbsp;&nbsp;&nbsp;
+				专栏:{$curBlog.topicname}&nbsp;&nbsp;&nbsp;
+			阅读({$curBlog.readcount}) |
+			<a href="#commentTitle">评论({$blogCommsCount})</a>
+		</div>
+		<div class="blogBody">{$curBlog.content}</div>
+	</div>
+	<br/>
+	<div class="dividerTitle" id="commentTitle">评论</div>
+	<empty name="allComms">
+		<span style="margin:10px;">暂无评论</span>
+		<else/>
+		<form method="post" name="topic_form">
+			<table class="table table-hover table-condensed table-hover">
+				<thead>
+					<tr class="tbl_head">
+						<th>时间</th>
+						<th>IP</th>
+						<th>评论内容</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<volist name="allComms" id="comm">
+						<tr>
+							<td>{$comm.inputtime}</td>
+							<td>{$comm.ipstr}</td>
+							<td class="comm_content">{$comm.content}</td>
+							<td>
+								<a class="btn btn-small" onClick="deleteComm({$comm.id})" >删除</a>
+							</td>
+						</tr>
+					</volist>
+				</tbody>
+			</table>
+		</form>
+	</empty>
+</div>
+<div class="modal hide" id="deleteDialog">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<h3>删除评论</h3>
+	</div>
+	<div class="modal-body">
+		<lable>确定要删除该条评论吗？</lable>
+	</div>
+	<div class="modal-footer">
+		<a id="btnDel" href="#" class="btn btn-danger">删除</a>
+		<a class="btn" data-dismiss="modal" aria-hidden="true">取消</a>
+	</div>
+</div>
+<div id="gototop" style="display:none;">
+	<a id="gototop_hint" href="#" title="回到顶部">
+		<img src="__PUBLIC__/res/img/gototop.png" alt="TOP" />
+	</a>
+</div>
+<script type="text/javascript">
+    $(function(){
+        var d_top=$('#gototop');
+        document.onscroll=function(){
+            var scrTop=(document.body.scrollTop||document.documentElement.scrollTop);
+            if(scrTop>500){
+                d_top.show();
+            }else{
+                d_top.hide();
+            }
+        }
+        $('#gototop_hint').click(function(){
+            scrollTo(0,0);
+            this.blur();
+            return false;
+        });
+    });
+	</script>
+</body>
+</html>

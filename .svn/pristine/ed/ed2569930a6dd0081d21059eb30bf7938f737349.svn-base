@@ -1,0 +1,99 @@
+<include file="header"/>
+<link href="__PUBLIC__/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/ueditor/third-party/SyntaxHighlighter/shCore.js"></script>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+<body>
+<div class="baseDiv main_content">
+	<div class="blogDiv">
+		<div class="blogTitle">{$curBlog.title}</div>
+		<div class="blogInfo">
+			阅读({$curBlog.readcount}) |
+			<a href="#commentTitle">评论({$curBlog.commentcount})</a>
+			&nbsp;&nbsp;&nbsp;
+					发表于{$curBlog.inputtime}&nbsp;&nbsp;&nbsp;&nbsp;
+				专栏:{$curBlog.topicname}
+		</div>
+		<div class="blogContent">{$curBlog.content}</div>
+		<!-- 原创声明 -->
+		<if condition="$curBlog.typeid eq 1">
+			<include file="Public:statement"/>
+		</if>
+		<!-- 百度分享控件 
+		<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+			<a class="bds_tsina"></a>
+			<a class="bds_tqq"></a>
+			<a class="bds_renren"></a>
+			<span class="bds_more"></span>
+			<a class="shareCount"></a>
+		</div> -->
+		<!-- 评论 -->
+		<fieldset class="field"  id="commentTitle">
+			<legend>评论</legend>
+			<div class="commentList">
+				<empty name="allComms">
+					<span style="margin:10px;">暂无评论</span>
+					<else/>
+					<volist name="allComms" id="comm">
+						<div class="commItem">
+						<div class="commInfo">
+							<!-- {$comm.ipstr}&nbsp;&nbsp; -->{$comm.inputtime}
+						</div>
+						<div class="commContent">
+							{$comm.content}</div>
+						</div>
+					</volist>
+				</empty>
+			</div>
+		</fieldset>
+		<!-- 发表评论 -->
+		<form class="commForm" action="{:U(addComm)}" method="post">
+			<ul>
+				<li>
+					<label for="email">Email</label>
+					<input type="text" name="email"required/>
+				</li>
+				<li>
+					<label for="comm">评论内容</label>
+					<textarea name="comm" required></textarea>
+				</li>
+			</ul>
+			<input type="hidden" name="blog" value="{$curBlog.id}"/>
+			<input class="form-submit" type="submit" value="Submit"/>
+		</form>
+	</div>
+</div>
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=870942" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+
+<!-- 回到顶部 -->
+<div id="gototop" style="display:none;">
+	<a id="gototop_hint" href="#" title="回到顶部">
+		<img src="__PUBLIC__/res/img/gototop.png" alt="TOP" />
+	</a>
+</div>
+<script type="text/javascript">
+    $(function(){
+        var d_top=$('#gototop');
+        document.onscroll=function(){
+            var scrTop=(document.body.scrollTop||document.documentElement.scrollTop);
+            if(scrTop>500){
+                d_top.show();
+            }else{
+                d_top.hide();
+            }
+        }
+        $('#gototop_hint').click(function(){
+            scrollTo(0,0);
+            this.blur();
+            return false;
+        });
+    });
+	</script>
+</body>
+</html>

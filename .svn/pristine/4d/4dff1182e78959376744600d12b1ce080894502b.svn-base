@@ -1,0 +1,25 @@
+<include file="header"/>
+<div class="main_content">
+  <!--右侧栏-->
+  <div  class="rightSide">
+    <div id="weiboInfo" class="baseDiv">
+      <!-- <div class="sidebarTitle">W T F ?</div>
+      <ul class="sidebarMenu">
+        <li>日访问量：237</li>
+        <li>总访问量：3743</li>
+        <li>原创(231) | 转载(34) | 翻译(9)</li>
+      </ul> -->
+      <!-- 微博秀 -->
+      <iframe width="100%" height="800" class="share_self"  frameborder="0" scrolling="no" 
+	  src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=800&fansRow=1&ptype=1&skin=9&isTitle=0&noborder=1&isWeibo=1&isFans=1&uid=2407334984&verifier=ec0391a3&colors=d6f3f7,ffffff,000000,1b9891,f0f0f0&dpc=1">
+	  </iframe>
+       
+    </div>
+  </div>
+  <!-- end 右侧栏 -->
+  <!-- 主要内容 -->
+  <div class="main">
+  </div>
+</div>
+</body>
+</html>

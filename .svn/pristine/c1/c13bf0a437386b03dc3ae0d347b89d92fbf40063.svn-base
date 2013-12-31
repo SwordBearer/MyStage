@@ -1,0 +1,37 @@
+[ 2013-05-17T00:51:30+08:00 ] 127.0.0.1 /MyStage/admin.php/blog/add_blog
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.020789s ]
+INFO: [ route_check ] --END-- [ RunTime:0.020870s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.012977s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.013040s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_topic` [ RunTime:0.002670s ]
+SQL: SELECT cat.name AS catname,topic.*
+			FROM mystage_blog_topic AS topic,mystage_blog_cat AS cat
+			WHERE topic.catid=cat.id ORDER BY cat.id,topic.listorder [ RunTime:0.000493s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_cat` [ RunTime:0.002406s ]
+SQL: SELECT * FROM `mystage_blog_cat`  [ RunTime:0.000261s ]
+SQL: SHOW COLUMNS FROM `mystage_blog_type` [ RunTime:0.002296s ]
+SQL: SELECT * FROM `mystage_blog_type`  [ RunTime:0.000523s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.038115s ]
+INFO: [ view_template ] --END-- [ RunTime:0.038178s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 33 行.
+NOTIC: [8] Use of undefined constant topic_manage - assumed 'topic_manage' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 36 行.
+NOTIC: [8] Use of undefined constant draftbox - assumed 'draftbox' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 39 行.
+NOTIC: [8] Use of undefined constant wastebasket - assumed 'wastebasket' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 42 行.
+NOTIC: [8] Use of undefined constant add_blog - assumed 'add_blog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 45 行.
+NOTIC: [8] Use of undefined constant addBlog - assumed 'addBlog' D:\xampp\htdocs\MyStage\Admin\Runtime\Cache\cedb0ea141b06cf0be54e41ede6a20cc.php 第 51 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.211935s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.211982s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001243s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.001720s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.001620s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.002674s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007416s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.017597s ]
+INFO: [ view_end ] --END-- [ RunTime:0.017652s ]
+
